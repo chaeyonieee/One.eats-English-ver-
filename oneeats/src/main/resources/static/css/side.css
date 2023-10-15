@@ -1,0 +1,41 @@
+ul,li{
+	text-decoration: none;
+	list-style: none;
+}
+
+ul.ul_menus>li{
+	margin-top: 24px;
+}
+ul.ul_menus{
+	margin-bottom: 24px;
+	margin-left: 16px
+}
+
+#side_menu_title{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	margin-top: 12px;
+	margin-left: 4px;
+	font-weight: 600;
+	font-size: 22px;
+}
+
+#side_recentrecipe_row{
+	margin-left: 12px; margin-top: 12px; margin-right: 12px;
+}
+.img-square-wrapper{
+	width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
+}
+
+.selected_menu{
+	color:#a3d060;
+	
+}
+.selected_menu img{
+	filter: invert(73%) sepia(63%) saturate(335%) hue-rotate(39deg) brightness(94%) contrast(89%);
+}

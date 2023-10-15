@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.example.demo.review.dao.ReviewDAO">
+	
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="creDate" column="creDate" />
+	</resultMap>
+		
+		<resultMap id="GoodsResult" type="goodsVO">
+		<result column="goodsNo" property="goodsNo" />
+		<result column="name" property="name" />
+		<result column="price" property="price" />
+		<result column="rapping" property="rapping" />
+		<result column="manufacturer" property="manufacturer" />
+		<result column="weight" property="weight" />
+		<result column="expDate" property="expDate"
+			javaType="java.sql.Date" />
+		<result column="description" property="description" />
+		<result column="harvest" property="harvest" />
+		<result column="creDate" property="creDate"
+			javaType="java.sql.Date" />
+		<result column="img1" property="img1" />
+		<result column="img2" property="img2" />
+		<result column="img3" property="img3" />
+		<result column="img4" property="img4" />
+		<result column="img5" property="img5" />
+		<result column="category" property="category" />
+		<result column="type" property="type" />
+		<result column="memberNo" property="memberNo" />
+		<result column="seller_id" property="seller_id" />
+	</resultMap>
+	
+	<resultMap id="OrderResult" type="orderVO">
+		<result property="order_seqNo" column="order_seqNo" />
+		<result property="orderNo" column="orderNo" />
+		<result property="orderer_name" column="orderer_name" />
+		<result property="orderer_phone" column="orderer_phone" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_address" column="receiver_address" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="receiver_comment" column="receiver_comment" />
+		<result property="used_point" column="used_point" />
+		<result property="used_couponId" column="used_couponId" />
+		<result property="payment_price" column="payment_price" />
+		<result property="discount_price" column="discount_price" />
+		<result property="shippingfee" column="shippingfee" />
+		<result property="point_price" column="point_price" />
+		<result property="total_price" column="total_price" />
+		<result property="payment_type" column="payment_type" />
+		<result property="orderDate" column="orderDate" />
+		<result property="delivery_status" column="delivery_status" />
+		<result property="deliveryDate" column="deliveryDate" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="goods_inbun" column="goods_inbun" />
+		<result property="memberNo" column="memberNo" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="weight" column="weight" />
+		<result property="gun" column="gun" />
+		<result property="shippingFee" column="shippingFee" />
+		<result property="optionNo" column="optionNo" />
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="name" column="name" />
+		<result column="img1" property="img1" />
+		<result column="price" property="price" />
+	</resultMap>
+	
+		
+		
+		<select id="SearchGoods" parameterType="orderVO" resultMap="OrderResult">
+		<![CDATA[
+			select t_order.order_seqNo, t_order.memberNo, t_order.orderNo, goods.goodsNo, goods.name, goods.price, goods.img1 
+            from t_order
+            inner join goods 
+            on t_order.goodsNo=goods.goodsNo
+            where t_order.order_seqNo=#{order_seqNo} and t_order.memberNo=#{memberNo}
+		]]>
+	</select>
+	
+	<select id="newReviewNo" resultType="int">
+		<![CDATA[
+			select ifnull(max(reviewNo),0)+1 from review
+		]]>
+	</select>
+	
+	<!-- Review insert -->
+	<insert id="reviewInsert" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="reviewNo">
+		<![CDATA[
+		insert into review(star, reviewImg, content, goodsNo, memberNo)
+		values(#{star}, #{reviewImg}, #{content}, #{goodsNo}, #{memberNo})
+		]]>
+	</insert>
+	
+	<update id="updateOrderReviewStatus" parameterType="java.util.Map">
+		update t_order
+		set review_status='Write Complete'
+		where review_status='미Write' and memberNo=#{memberNo} and orderNo=#{orderNo} and goodsNo=#{goodsNo}
+	</update>
+	
+	<select id="isReviewed" parameterType="java.util.Map" resultType="int">
+		select count(reviewNo) from review where goodsNo=#{goodsNo} and memberNo=#{memberNo} and creDate between date_sub(now(),interval 1 month) and now() 
+	</select>
+
+		
+	<update id="updateMemberPoint" parameterType="java.util.Map">
+		update member
+		set
+		<choose>
+			<when test="reviewImg!=null and reviewImg!=''">
+				point=point+150
+			</when>
+			<otherwise>
+				point=point+50
+			</otherwise>
+		</choose>
+		where memberNo=#{memberNo}
+	</update>
+	
+	<insert id="insertPointHistoryForReview" parameterType="java.util.Map">
+		insert into point_history
+		(name, finishDate, amount, memberNo)
+		values
+		<choose>
+			<when test="reviewImg!=null and reviewImg!=''">
+				('사진Review',date_add(now(),interval 1 month),150,#{memberNo})
+			</when>
+			<otherwise>
+				('글Review',date_add(now(),interval 1 month),50,#{memberNo})
+			</otherwise>
+		</choose>
+	</insert>
+</mapper>

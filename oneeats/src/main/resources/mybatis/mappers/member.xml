@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.member.dao.MemberDAO">
+	<resultMap id="MemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="gender" column="gender" />
+		<result property="birth" column="birth" />
+		<result property="sms_agreement" column="sms_agreement" />
+		<result property="email_agreement" column="email_agreement" />
+		<result property="busNo" column="busNo" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+		<result property="nickname" column="nickname" />
+		<result property="intro" column="intro" />
+		<result property="profileImg" column="profileImg" />
+		<result property="point" column="point" />
+	</resultMap>
+
+	<select id="insertMemberNo" resultType="int">
+		<![CDATA[
+			SELECT ifnull(MAX(memberNo),0)+1 FROM member;
+		]]>
+	</select>
+
+	<insert id="insertNewMember" parameterType="memberVO">
+		<![CDATA[
+		insert into member(memberNo, type, id, pwd, name, email, phone, 
+		gender, birth, sms_agreement, email_agreement, address, address_detail, zipCode)
+		values(#{memberNo}, "사용자" ,#{id}, #{pwd}, #{name}, #{email}, #{phone}, 
+		#{gender}, #{birth}, #{sms_agreement}, #{email_agreement}, #{address}, #{address_detail}, #{zipCode})
+		]]>
+	</insert>
+
+	<insert id="insertSellerNewMember" parameterType="memberVO">
+		insert into
+		member(memberNo, type, busNo, id, pwd, zipCode,
+		name, email, phone, gender, birth, 
+		sms_agreement, email_agreement, address, address_detail)
+		values(#{memberNo}, "Business", #{busNo}, #{id}, #{pwd},#{zipCode},
+		#{name}, #{email}, #{phone}, #{gender}, #{birth},
+		#{sms_agreement}, #{email_agreement}, #{address}, #{address_detail})
+
+	</insert>
+
+	<select id="login" resultType="memberVO"
+		parameterType="java.util.Map">
+     <![CDATA[
+      select * from member 
+	   where 
+	   id=#{id} and pwd=#{pwd}	
+     ]]>
+	</select>
+
+
+	<select id="idSearch" resultType="String"
+		parameterType="memberVO">
+     <![CDATA[
+       select id from member
+       where 
+       name=#{name} and phone=#{phone}
+     ]]>
+	</select>
+
+
+	<select id="pwSearch" resultType="memberVO"
+		parameterType="memberVO">
+     <![CDATA[
+       select * from member
+       where 
+       name=#{name} and phone=#{phone} and id=#{id}
+     ]]>
+	</select>
+
+	<update id="updatePw" parameterType="memberVO">
+    <![CDATA[
+      update member 
+      set pwd=#{pwd}
+      where 
+      id=#{id}
+]]>
+
+
+	</update>
+
+
+	<insert id="insertMemberWithMap" parameterType="java.util.Map">
+		insert into
+		member(memberNo, type, id, pwd, name, email, phone, gender,
+		birth,
+		sms_agreement, email_agreement, address, address_detail, zipCode)
+		values(#{memberNo}, "사용자", #{id}, #{pwd}, #{name}, #{email}, #{phone},
+		#{gender}, #{birth}, #{sms_agreement}, #{email_agreement}, #{address},
+		#{address_detail}, #{zipCode})
+
+	</insert>
+	
+	<insert id="insertSellerMemberWithMap" parameterType="java.util.Map">
+		insert into
+		member(memberNo, type, busNo, id, pwd, zipCode,
+		name, email, phone, gender, birth, 
+		sms_agreement, email_agreement, address, address_detail)
+		values(#{memberNo}, "Business", #{busNo}, #{id}, #{pwd},#{zipCode},
+		#{name}, #{email}, #{phone}, #{gender}, #{birth},
+		#{sms_agreement}, #{email_agreement}, #{address}, #{address_detail})
+
+	</insert>
+	
+
+	<!-- api Login을 위해 Email로 Member이 존재하는지 Confirm하는 쿼리 -->
+	<select id="selectMemberByEmail" parameterType="String">
+		select * from
+		member where email=#{email}
+	</select>
+
+	<select id="selectMemberById" parameterType="String">
+		select * from member
+		where id=#{id}
+	</select>
+	
+	<select id="selectIdList" parameterType="memberVO" resultType="String">
+		select id from member where name=#{name} and phone=#{phone}
+	</select>
+	
+	
+	<insert id="insertRandomBunho" parameterType="String">
+		insert into random_verification (number) values(#{randomNumber}) 
+	</insert>
+	
+	<select id="selectVerificationNumber" parameterType="String">
+		select number from random_verification where number=#{inputNumber} and verificated="no" and creDate BETWEEN DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 5 MINUTE) AND CURRENT_TIMESTAMP order by creDate limit 1 
+	</select>
+	
+	
+	<select id="selectVerificationNoByNumber" parameterType="String" resultType="int">
+		select count(verNo) from random_verification where number=#{number} and verificated="no" order by creDate limit 1
+	</select>
+	
+	<update id="updateVerificationNumberVerificated" parameterType="String">
+		update random_verification set verificated="yes" where verNo=#{inzung_id}
+	</update>
+	
+	
+	<select id="selectMemberFromSNSId" parameterType="java.util.Map" resultType="String">
+		select id from t_sns where sns_id=#{sns_id} and sns_type=#{sns_type} 
+	</select>
+	
+	<insert id="insertSNSIdWithMap" parameterType="java.util.Map">
+		insert into t_sns (id,sns_id,sns_type) values (#{id},#{sns_id},#{sns_type})
+	</insert>
+	
+	<select id="selectNewSNSMemberNo" resultType="int">
+		select count(*) from t_sns
+	</select>
+</mapper>

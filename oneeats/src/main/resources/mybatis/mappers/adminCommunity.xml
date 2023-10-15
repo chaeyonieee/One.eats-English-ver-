@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.example.demo.admin.community.dao.AdminCommunityDAO">
+	<!-- 리절트 맵 정의 -->
+	<resultMap id="noticeResult" type="noticeVO">
+		<result property="noticeNo" column="noticeNo" />
+		<result property="category" column="category" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="creDate" column="creDate" />
+	</resultMap>
+
+	<resultMap id="mostQnAResult" type="mostQnAVO">
+		<result property="qnaNo" column="qnaNo" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="creDate" column="creDate" />
+		<result property="category" column="category" />
+	</resultMap>
+	<resultMap id="oneQnAResult" type="oneQnAVO">
+		<result property="qnaNo" column="qnaNo" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="creDate" column="creDate" />
+		<result property="status" column="status" />
+		<result property="parentNo" column="parentNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="memberName" column="memberName" />
+		<result property="profile" column="profile" />
+		<result property="id" column="id" />
+	</resultMap>
+
+	<resultMap id="recipeResult" type="recipeVO">
+		<result property="recipeNo" column="recipeNo" />
+		<result column="title" property="title" />
+		<result column="cooking_time" property="cooking_time" />
+		<result column="description" property="description" />
+		<result column="cookingImg" property="cookingImg" />
+		<result column="category" property="category" />
+		<result column="inbun" property="inbun" />
+		<result column="creDate" property="creDate"
+			javaType="java.sql.Date" />
+		<result column="memberNo" property="memberNo" />
+		<result column="memberId" property="memberId" />
+	</resultMap>
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="sellerNo" column="sellerNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="sellerId" column="sellerId" />
+		<result property="memberId" column="memberId" />
+	</resultMap>
+
+<select id="selectNoticeListWithPagingMap"
+		parameterType="java.util.Map" resultMap="noticeResult">
+		select * from notice 
+		<if test="category!='all'">
+			where category=#{category}
+		</if>
+		order by creDate desc
+		limit #{start},10
+	</select>
+
+
+	<select id="selectNoticeListTotalNumWithCategory"
+		parameterType="java.util.Map" resultType="int">
+		select count(noticeNo) from notice
+		<if test="category!='all'">
+			where category=#{category}
+		</if>
+	</select>
+
+<select id="oneQnAList" resultMap="oneQnAResult">
+		select oneqna.*, member.id
+		from oneqna
+		inner join member on oneqna.memberNo=member.memberNo where
+		parentNo=0
+	</select>
+	
+	
+	<select id="selectOneQnAListWithPagingMap"
+		parameterType="java.util.Map" resultMap="oneQnAResult">
+		select oneqna.*, member.id
+		from oneqna
+		inner join member on oneqna.memberNo=member.memberNo 
+		where parentNo=0 
+		order by creDate limit #{start},10
+	</select>
+
+
+	<select id="selectOneQnAListTotalNumWithCategory" resultType="int">
+		select count(qnaNo) from oneqna where parentNo=0
+	</select>
+
+	
+
+	<select id="sellectAllRecipe" resultMap="recipeResult"
+		parameterType="recipeVO">
+	    <![CDATA[
+			select * from recipe
+		]]>
+	</select>
+
+	<update id="adminNotideDetailupdate" parameterType="noticeVO">
+		update notice
+		set category = #{category}, title = #{title}, content = #{content}
+		where
+		noticeNo=#{noticeNo}
+	</update>
+
+	<select id="adminNoticeList" resultMap="noticeResult"
+		parameterType="String">
+		select * from notice
+	</select>
+
+	<select id="adminNoticeDetail" resultMap="noticeResult">
+	    <![CDATA[
+			select * from notice 
+			where
+			noticeNo=#{noticeNo}
+		]]>
+	</select>
+
+	<select id="newNum" resultType="int">
+		<![CDATA[
+			select ifnull(max(noticeNo),0)+1 from notice
+		]]>
+	</select>
+
+	<insert id="addNotice" parameterType="noticeVO">
+		<![CDATA[
+		insert into notice(noticeNo,title, category, content)
+		values
+		(#{noticeNo}, #{title}, #{category}, #{content})
+		]]>
+	</insert>
+
+	<delete id="deleteNotice" parameterType="int">
+		delete from notice where
+		noticeNo=#{noticeNo}
+	</delete>
+
+	<select id="selectMostQnAListWithPagingMap"
+		parameterType="java.util.Map" resultMap="mostQnAResult">
+		select * from mostQnA
+		<if test="category!='all'">
+			where category=#{category}
+		</if>
+		order by creDate
+		limit #{start},10
+	</select>
+
+	<select id="selectMostQnAListTotalNumWithCategory"
+		parameterType="String" resultType="int">
+		select count(qnaNo) from mostQnA
+		<if test="category!='all'">
+			where category=#{category}
+		</if>
+	</select>
+
+	<insert id="insertNewMostQnAWithMap"
+		parameterType="java.util.Map">
+		insert into mostQnA (title, content, category) values
+		(#{title},#{content},#{category})
+	</insert>
+
+	<select id="selectMostQnAByNo" parameterType="String"
+		resultType="mostQnAVO">
+		select * from mostQnA where qnaNo=#{qnaNo}
+	</select>
+
+	<update id="updateMostQnAWithMap" parameterType="java.util.Map">
+		update mostQnA
+		set category=#{category}, title=#{title}, content=#{content} where
+		qnaNo=#{qnaNo}
+	</update>
+
+	<delete id="deleteMostQnA" parameterType="int">
+		delete from mostQnA
+		where qnaNo=#{qnaNo}
+	</delete>
+
+	<select id="selectRecipeListWithPagingMap"
+		parameterType="java.util.Map" resultMap="recipeResult">
+		select recipe.*,member.id as memberId from recipe
+		inner join member
+		on
+		recipe.memberNo=member.memberNo
+		where recipeNo in
+		( select recipeNo
+		from(
+		select t.*,m.id as memberId from(
+		select r.*,i.name as
+		ingredientName from recipe as r
+		inner join ingredient as i
+		on
+		r.recipeNo=i.recipeNo
+		) t
+		inner join member as m
+		on t.memberNo=m.memberNo
+
+		) tt
+		where 1=1
+
+
+		<choose>
+			<when test="recipe_search_type==null or recipe_search_type==''">
+				and 1=1
+			</when>
+			<when test="recipe_search_type=='all'">
+				and title Like CONCAT('%', #{recipe_search_word},
+				'%') or description like CONCAT('%', #{recipe_search_word}, '%') or
+				memberId like CONCAT('%',#{recipe_search_word},
+				'%') or
+				ingredientName like
+				CONCAT('%',#{recipe_search_word}, '%')
+			</when>
+			<otherwise>
+				<choose>
+					<when test="recipe_search_type=='title'">
+						and title like CONCAT('%', #{recipe_search_word},
+						'%')
+					</when>
+					<when test="recipe_search_type=='description'">
+						and description like CONCAT('%',
+						#{recipe_search_word}, '%')
+					</when>
+					<when test="recipe_search_type=='memberId'">
+						and memberId like CONCAT('%',#{recipe_search_word},
+						'%')
+					</when>
+					<when test="recipe_search_type=='ingredient'">
+						and ingredientName like
+						CONCAT('%',#{recipe_search_word}, '%')
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+
+
+		<if test="category!=null and category!=''">
+			and category=#{category}
+		</if>
+
+		)
+		order by creDate desc
+		limit #{start}, 10
+	</select>
+
+
+	<select id="selectTotalRecipeNum" parameterType="java.util.Map"
+		resultType="int">
+		select count(*) from recipe
+		inner join member
+		on
+		recipe.memberNo=member.memberNo
+		where recipeNo in
+		( select recipeNo
+		from(
+		select t.*,m.id as memberId from(
+		select r.*,i.name as
+		ingredientName from recipe as r
+		inner join ingredient as i
+		on
+		r.recipeNo=i.recipeNo
+		) t
+		inner join member as m
+		on t.memberNo=m.memberNo
+
+		) tt
+		where 1=1
+
+		<choose>
+			<when test="recipe_search_type==null or recipe_search_type==''">
+				and 1=1
+			</when>
+			<when test="recipe_search_type=='all'">
+				and title Like CONCAT('%', #{recipe_search_word},
+				'%') or description like CONCAT('%', #{recipe_search_word}, '%') or
+				memberId like CONCAT('%',#{recipe_search_word},
+				'%') or
+				ingredientName like
+				CONCAT('%',#{recipe_search_word}, '%')
+			</when>
+			<otherwise>
+				<choose>
+					<when test="recipe_search_type=='title'">
+						and title like CONCAT('%', #{recipe_search_word},
+						'%')
+					</when>
+					<when test="recipe_search_type=='description'">
+						and description like CONCAT('%',
+						#{recipe_search_word}, '%')
+					</when>
+					<when test="recipe_search_type=='memberId'">
+						and memberId like CONCAT('%',#{recipe_search_word},
+						'%')
+					</when>
+					<when test="recipe_search_type=='ingredient'">
+						and ingredientName like
+						CONCAT('%',#{recipe_search_word}, '%')
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+
+
+		<if test="category!=null and category!=''">
+			and category=#{category}
+		</if>
+
+		)
+
+	</select>
+
+
+	<select id="selectReviewListWithPagingMap"
+		parameterType="java.util.Map" resultMap="ReviewResult">
+		select * from
+		(select t2.*, m2.id as memberId from
+		(select t1.*,m.id as
+		sellerId from
+		(select r.*,g.memberNo as sellerNo, g.name as goodsName
+		from review r
+		inner join goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join
+		member m
+		on t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on
+		t2.memberNo=m2.memberNo) t3
+		where 1=1
+		<choose>
+			<when test="filter_type==null or filter_type==''">
+				and 1=1
+			</when>
+			<when test="filter_type=='all'">
+				and goodsName Like CONCAT('%', #{filter_word},
+				'%') or
+				content like CONCAT('%', #{filter_word}, '%') or
+				memberId like
+				CONCAT('%',#{filter_word},
+				'%') or
+				sellerId like
+				CONCAT('%',#{filter_word}, '%') or goodsNo=#{filter_word}
+			</when>
+			<otherwise>
+				<choose>
+					<when test="filter_type=='goodsName'">
+						and goodsName like CONCAT('%', #{filter_word},
+						'%')
+					</when>
+					<when test="filter_type=='content'">
+						and content like CONCAT('%',
+						#{filter_word}, '%')
+					</when>
+					<when test="filter_type=='memberId'">
+						and memberId like CONCAT('%',#{filter_word},
+						'%')
+					</when>
+					<when test="filter_type=='sellerId'">
+						and sellerId like
+						CONCAT('%',#{filter_word}, '%')
+					</when>
+					<when test="filter_type=='goodsNo'">
+						and goodsNo=#{filter_word}
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+		limit #{start},10
+	</select>
+
+
+	<select id="selectTotalReviewNum" parameterType="java.util.Map"
+		resultType="int">
+		select count(*) from
+		(select t2.*, m2.id as memberId from
+		(select
+		t1.*,m.id as sellerId from
+		(select r.*,g.memberNo as sellerNo, g.name
+		as goodsName from review r
+		inner join goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join member m
+		on t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on t2.memberNo=m2.memberNo) t3
+		where 1=1
+		<choose>
+			<when test="filter_type==null or filter_type==''">
+				and 1=1
+			</when>
+			<when test="filter_type=='all'">
+				and goodsName Like CONCAT('%', #{filter_word},
+				'%') or
+				content like CONCAT('%', #{filter_word}, '%') or
+				memberId like
+				CONCAT('%',#{filter_word},
+				'%') or
+				sellerId like
+				CONCAT('%',#{filter_word}, '%') or goodsNo=#{filter_word}
+			</when>
+			<otherwise>
+				<choose>
+					<when test="filter_type=='goodsName'">
+						and goodsName like CONCAT('%', #{filter_word},
+						'%')
+					</when>
+					<when test="filter_type=='content'">
+						and content like CONCAT('%',
+						#{filter_word}, '%')
+					</when>
+					<when test="filter_type=='memberId'">
+						and memberId like CONCAT('%',#{filter_word},
+						'%')
+					</when>
+					<when test="filter_type=='sellerId'">
+						and sellerId like
+						CONCAT('%',#{filter_word}, '%')
+					</when>
+					<when test="filter_type=='goodsNo'">
+						and goodsNo=#{filter_word}
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<delete id="deleteReview" parameterType="int">
+		delete from review where reviewNo=#{reviewNo}
+	</delete>
+
+</mapper>

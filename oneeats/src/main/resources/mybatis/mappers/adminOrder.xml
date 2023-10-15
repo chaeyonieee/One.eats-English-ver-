@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.example.demo.admin.order.dao.AdminOrderDAO">
+
+	<resultMap id="OrderResult" type="orderVO">
+		<result property="order_seqNo" column="order_seqNo" />
+		<result property="orderNo" column="orderNo" />
+		<result property="orderer_name" column="orderer_name" />
+		<result property="orderer_phone" column="orderer_phone" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_address" column="receiver_address" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="receiver_comment" column="receiver_comment" />
+		<result property="used_point" column="used_point" />
+		<result property="used_couponId" column="used_couponId" />
+		<result property="payment_price" column="payment_price" />
+		<result property="discount_price" column="discount_price" />
+		<result property="shippingfee" column="shippingfee" />
+		<result property="point_price" column="point_price" />
+		<result property="total_price" column="total_price" />
+		<result property="payment_type" column="payment_type" />
+		<result property="orderDate" column="orderDate" />
+		<result property="delivery_status" column="delivery_status" />
+		<result property="deliveryDate" column="deliveryDate" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="goods_inbun" column="goods_inbun" />
+		<result property="memberNo" column="memberNo" />
+		<result property="goodsNo" column="goodsNo" />		
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="weight" column="weight" />
+		<result property="gun" column="gun" />
+		<result property="shippingFee" column="shippingFee" />
+		<result property="optionNo" column="optionNo" />
+		<result property="orderer_id" column="orderer_id" />
+		<result property="sellerType" column="sellerType" />
+	</resultMap>
+	
+	<select id="selectOrderList" resultMap="OrderResult">
+		<![CDATA[
+			select * from order_by_membertype
+		]]>
+	</select>
+	
+	<select id="selectOrderByMemberType" resultMap="OrderResult" parameterType="java.util.Map">
+	
+		select * from order_by_membertype where sellerType='Admin'
+			
+		<choose>
+			<when test="order_search_type==null or order_search_type==''">
+				and 1=1
+			</when>
+			<when test="order_search_type=='all'">
+				and orderNo like CONCAT('%', #{order_search_word}, '%')
+				or orderer_name like CONCAT('%', #{order_search_word}, '%')
+				or orderer_id like CONCAT('%', #{order_search_word}, '%')
+			</when>
+			<otherwise>
+			 	<choose>
+			 		<when test="order_search_type=='orderNo'">
+			 			and orderNo like CONCAT('%', #{order_search_word}, '%')
+			 		</when>
+			 		<when test="order_search_type=='orderer_name'">
+			 			and orderer_name like CONCAT('%', #{order_search_word}, '%')
+			 		</when>
+			 		<when test="order_search_type=='orderer_id'">
+			 			and orderer_id like CONCAT('%', #{order_search_word}, '%')
+			 		</when>
+			 	</choose>
+			</otherwise>
+		</choose>
+			
+		order by orderNo desc limit #{start},10
+	</select>
+	
+	<select id="selectTotalOrderNum" resultType="int">
+		select count(*) from order_by_membertype where sellerType='Admin'
+	</select>
+	
+	<select id="selectSeqNoByOrderNo" resultType="int" parameterType="int">
+		<![CDATA[
+			select order_seqNo from t_order where orderNo=#{orderNo}
+		]]>
+	</select>
+	
+	<update id="updateDeliveryStatusToCancel" parameterType="int">
+		<![CDATA[
+			update t_order
+	     	set delivery_status='Cancle Complete'
+	     	where order_seqNo=#{order_seqNo}
+		]]>
+	</update>
+	
+	<update id="updateDeliveryStatus" parameterType="orderVO">
+		update t_order
+		set delivery_status=#{delivery_status}
+		where order_seqNo=#{order_seqNo}
+	</update>
+	
+	<select id="selectOrderByOrderSeqNo" parameterType="int" resultType="orderVO">
+		select * from t_order where order_seqNo=#{order_seqNo} limit 1
+	</select>
+	
+	<update id="updateMemberPoint" parameterType="orderVO">
+		update member
+		set point=point+#{point_price}
+		where memberNo=#{memberNo}
+	</update>
+	
+	<insert id="insertPointHistoryWithOrderVO" parameterType="orderVO">
+		insert into point_history
+		(name,finishDate,amount,memberNo)
+		values
+		("Product 구입",date_add(now(),interval 1 month),#{point_price},#{memberNo})
+	</insert>
+</mapper>

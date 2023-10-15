@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.example.demo.admin.coupon.dao.AdminCouponDAO">
+
+	<resultMap id="CouponResult" type="couponVO">
+		<result property="couponNo" column="couponNo" />
+		<result property="name" column="name" />
+		<result property="discount_price" column="discount_price" />
+		<result property="condition" column="condition" />
+		<result property="expDate" column="expDate" />
+		<result property="creDate" column="creDate" />
+		<result property="memberNo" column="memberNo" />
+		<result property="memberName" column="memberName" />
+		<result property="couponCode" column="couponCode" />
+	</resultMap>
+	
+	<select id="selectAdminCouponByMemberNo" resultMap="CouponResult"  parameterType="java.util.Map">
+		
+		select coupon.*, member.name as memberName from coupon 
+		inner join member on coupon.memberNo=member.memberNo 
+		where coupon.memberNo=#{memberNo}
+
+		<choose>
+			<when test="coupon_search_type==null or coupon_search_type==''">
+				and 1=1
+			</when>
+			<when test="coupon_search_type=='all'">
+				and couponNo like CONCAT('%', #{coupon_search_word}, '%')
+				or coupon.name like CONCAT('%', #{coupon_search_word}, '%')
+				or member.name like CONCAT('%', #{coupon_search_word}, '%')
+			</when>
+			<otherwise>
+			 	<choose>
+			 		<when test="coupon_search_type=='couponNo'">
+			 			and couponNo like CONCAT('%', #{coupon_search_word}, '%')
+			 		</when>
+			 		<when test="coupon_search_type=='name'">
+			 			and coupon.name like CONCAT('%', #{coupon_search_word}, '%')
+			 		</when>
+			 		<when test="coupon_search_type=='memberName'">
+			 			and member.name like CONCAT('%', #{coupon_search_word}, '%')
+			 		</when>
+			 	</choose>
+			</otherwise>
+		</choose>
+			
+		order by couponNo desc limit #{start},10
+	</select>
+	
+	<select id="selectTotalCouponNum" resultType="int" parameterType="int">
+		<![CDATA[
+			select count(*) from coupon where memberNo=#{memberNo}
+		]]>
+	</select>
+	
+	<insert id="insertAdminCoupon" parameterType="CouponVO">
+		<![CDATA[
+			insert into coupon (name, discount_price, `condition`, expDate, couponCode, memberNo) 
+			values (#{name}, #{discount_price}, #{condition}, #{expDate}, #{couponCode}, #{memberNo});
+		]]>
+	</insert>
+	
+	<delete id="deleteAdminCoupon" parameterType="int">
+		<![CDATA[
+			delete from coupon
+			where 
+			couponNo=#{couponNo}
+		]]>
+	</delete>
+
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+<!-- Order -->
+   <definition name="/mypage/orderCancel" extends="mainLayout">
+   	   <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="title" value="OrderCancle 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/orderCancel.jsp" />
+    </definition>
+    <definition name="/mypage/orderConfirm" extends="nosidebarLayout">
+       <put-attribute name="title" value="Order하기 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/orderConfirm.jsp" />
+    </definition>
+    <definition name="/mypage/orderDetail" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="title" value="Order Details 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/orderDetail.jsp" />
+    </definition>
+    <definition name="/mypage/orderList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="title" value="Order History 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/orderList.jsp" />
+    </definition>
+
+<!-- Member Information -->
+
+    <definition name="/mypage/mypageProfileModForm" extends="mainLayout">
+       <put-attribute name="title" value="Edit the profile 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageProfileModForm.jsp" />
+    </definition>
+    <definition name="/mypage/mypageMemberModForm" extends="mainLayout">
+       <put-attribute name="title" value="Member Information Modify Password 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageMemberModForm.jsp" />
+    </definition>
+     <definition name="/mypage/mypageMemberInfoModForm" extends="mainLayout">
+       <put-attribute name="title" value="Member Information Modify Password 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageMemberInfoModForm.jsp" />
+    </definition>
+    <definition name="/mypage/mypageAddress" extends="mainLayout">
+       <put-attribute name="title" value="Member Information Modify Password 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageAddress.jsp" />
+    </definition>
+    <definition name="/mypage/mypageBookmarkList" extends="mainLayout">
+       <put-attribute name="title" value="Member Information Modify Password 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageBookmarkList.jsp" />
+    </definition>
+
+    <definition name="/mypage/mypageCouponPoint" extends="mainLayout">
+       <put-attribute name="title" value="Coupon Rewards 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageCouponPoint.jsp" />
+    </definition>
+    
+    <!-- Review -->
+    <definition name="/mypage/mypageReview" extends="mainLayout">
+       <put-attribute name="title" value="Review 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/mypage/mypageReview.jsp" />
+    </definition>
+    
+    <definition name="/review/writeReview" extends="mainLayout">
+       <put-attribute name="title" value="Review 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/review/writeReview.jsp" />
+    </definition>
+    
+    
+</tiles-definitions>
+
+

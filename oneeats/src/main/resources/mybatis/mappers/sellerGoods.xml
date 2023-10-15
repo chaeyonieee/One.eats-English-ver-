@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.example.demo.seller.goods.dao.SellerGoodsDAO">
+	<!-- 리절트 맵 정의 -->
+
+	<resultMap id="GoodsResult" type="goodsVO">
+		<result column="goodsNo" property="goodsNo" />
+		<result column="name" property="name" />
+		<result column="price" property="price" />
+		<result column="rapping" property="rapping" />
+		<result column="manufacturer" property="manufacturer" />
+		<result column="weight" property="weight" />
+		<result column="expDate" property="expDate" />
+		<result column="description" property="description" />
+		<result column="harvest" property="harvest" />
+		<result column="creDate" property="creDate"
+			javaType="java.sql.Date" />
+		<result column="img1" property="img1" />
+		<result column="img2" property="img2" />
+		<result column="img3" property="img3" />
+		<result column="img4" property="img4" />
+		<result column="img5" property="img5" />
+		<result column="category" property="category" />
+		<result column="type" property="type" />
+		<result column="memberNo" property="memberNo" />
+
+	</resultMap>
+
+
+	<resultMap id="OptionResult" type="optionVO">
+		<result column="optionNo" property="optionNo" />
+		<result column="name" property="name" />
+		<result column="option_qty" property="option_qty" />
+		<result column="price" property="price" />
+		<result column="goodsNo" property="goodsNo" />
+
+	</resultMap>
+
+
+	<insert id="insertNewGoods" parameterType="goodsVO">
+		insert goods
+		(category,name,price,rapping,manufacturer,weight,harvest,type,memberNo,description,img1,img2,img3,img4,img5)
+		values(#{category},#{name},#{price},#{rapping},#{manufacturer},#{weight},#{harvest},#{type},#{memberNo},#{description},#{img1},#{img2},#{img3},#{img4},#{img5})
+	</insert>
+
+
+	<select id="selectNewGoodsNo" resultType="int">
+		select
+		ifnull(max(goodsNo),0)+1 from goods
+	</select>
+
+	<select id="selectGoodsVO" resultMap="GoodsResult"
+		parameterType="int">
+		select * from goods where goodsNo=#{goodsNo}
+	</select>
+
+	<select id="selectOptionVO" resultMap="OptionResult"
+		parameterType="int">
+		select * from `option` where goodsNo=#{goodsNo}
+	</select>
+
+	<insert id="insertOptions" parameterType="java.util.List">
+
+		insert into `option`
+		(optionNo,name,option_qty,price,goodsNo) values
+		(#{optionNo}, #{name},
+		#{option_qty},#{price},#{goodsNo})
+	</insert>
+
+
+	<insert id="insertNewGoodsWithMap" parameterType="java.util.Map">
+		insert into
+		goods
+		(category,name,price,rapping,manufacturer,weight,harvest,type,memberNo,description,img1,img2,img3,img4,img5)
+		values(#{category},#{name},#{price},#{rapping},#{manufacturer},#{weight},#{harvest},#{type},#{memberNo},#{description},#{img1},#{img2},#{img3},#{img4},#{img5})
+
+	</insert>
+
+	<update id="updateNewGoodsWithMap" parameterType="goodsVO">
+		update goods
+		set
+		category=#{category}, name=#{name}, price=#{price}, manufacturer=#{manufacturer},
+		weight=#{weight}, harvest=#{harvest}, type=#{type},img1=#{img1}
+		where
+		goodsNo=#{goodsNo} and memberNo=#{memberNo}
+
+	</update>
+
+
+	<update id="updateOptions" parameterType="java.util.List">
+
+		update `option`
+		set
+		name=#{name}, option_qty=#{option_qty}, price=#{price}
+		where
+		goodsNo=#{goodsNo}
+
+	</update>
+
+
+	<delete id="DeleteGoods" parameterType="int">
+		delete from `option` where goodsNo = #{goodsNo}
+	</delete>
+
+
+	<select id="selectNewGoodsList" resultMap="GoodsResult">
+
+		SELECT * FROM goods
+		WHERE memberNo = #{memberNo}
+		AND type = 'Business'
+		ORDER BY creDate DESC
+
+
+	</select>
+
+
+
+
+	<select id="selectGoodsList" resultMap="GoodsResult" parameterType="java.util.Map">
+    SELECT *
+    FROM goods
+    INNER JOIN member ON member.memberNo = goods.memberNo
+    WHERE goods.type = 'Business'
+    <choose>
+        <when test="goods_search_type==null or goods_search_type==''">
+            and 1=1
+        </when>
+        <when test="goods_search_type=='all'">
+           
+            AND (goods.creDate LIKE CONCAT('%', #{goods_search_word}, '%')
+            OR goods.name LIKE CONCAT('%', #{goods_search_word}, '%'))
+        </when>
+        <otherwise>
+            <choose>
+                <when test="goods_search_type=='creDate'">
+                    AND goods.creDate LIKE CONCAT('%', #{goods_search_word}, '%')
+                </when>
+                <when test="goods_search_type=='name'">
+                    AND goods.name LIKE CONCAT('%', #{goods_search_word}, '%')
+                </when>
+            </choose>
+        </otherwise>
+    </choose>
+    ORDER BY goods.creDate DESC
+    LIMIT #{start}, 10
+</select>
+
+
+	<select id="selectTotalGoodsNum" resultType="int">
+		<![CDATA[
+			SELECT count(*) from goods
+			WHERE goods.type = 'Business'
+		]]>
+	</select>
+
+
+
+
+
+	<select id="goodsItem" parameterType="int"
+		resultMap="GoodsResult">
+		select * from goods
+		where goodsNo = #{goodsNo}
+
+	</select>
+
+
+
+
+
+	<delete id="deleteSellerGoods" parameterType="int">
+<![CDATA[
+delete from goods
+where 
+goodsNo=#{goodsNo}
+]]>
+	</delete>
+
+
+
+
+	<!-- 북샵따라하기 -->
+	<update id="updateGoodsInfo" parameterType="java.util.HashMap">
+		update goods
+		<set>
+			<if test=" category!='' and category!=null">
+				category=#{category},
+			</if>
+			<if test=" name!='' and name!=null">
+				name=#{name},
+			</if>
+			<if test=" price!='' and price!=null">
+				price=#{price},
+			</if>
+			<if test=" manufacturer!='' and manufacturer!=null">
+				manufacturer=#{manufacturer},
+			</if>
+			<if test=" weight!='' and weight!=null">
+				weight=#{weight},
+			</if>
+			<if test=" harvest!='' and harvest!=null">
+				harvest=#{harvest},
+			</if>
+			<if test=" type!='' and type!=null">
+				type=#{type},
+			</if>
+			<if test=" img1!='' and img1!=null">
+				img1=#{img1},
+			</if>
+			<if test=" memberNo!='' and memberNo!=null">
+				memberNo=#{memberNo},
+			</if>
+
+		</set>
+		where
+		goodsNo=#{goodsNo} and memberNo=#{memberNo}
+
+
+	</update>
+
+	<!-- 카테고리 -->
+
+	<select id="countGoodsNums" resultType="java.util.Map">
+		select * from (
+		select
+		count(*) as cnt, concat('Total') as category from goods
+		union (select
+		count(*) as cnt, category from goods group by category order
+		by cnt
+		desc limit 10)) as t
+		where category!='' and category!='none'
+	</select>
+
+	<select id="selectGoodsByGoodsNo" resultMap="GoodsResult"
+		parameterType="int">
+		<![CDATA[
+			select * from goods where goodsNo=#{goodsNo}
+		]]>
+	</select>
+
+	<select id="selectOptionNoByGoodsNo" resultType="int"
+		parameterType="int">
+		<![CDATA[
+			select optionNo	from `option` where goodsNo=#{goodsNo};
+		]]>
+	</select>
+
+	<update id="updateOption" parameterType="java.util.List">
+		<foreach collection="list" item="item" separator=";">
+			UPDATE `option`
+			SET
+			option_name = #{item.option_name},
+			option_qty = #{item.option_qty},
+			option_price = #{item.option_price}
+			WHERE optionNo = #{item.optionNo}
+		</foreach>
+	</update>
+
+	<delete id="deleteOption" parameterType="int">
+		delete from `option`
+		where optionNo=#{optionNo}
+	</delete>
+
+	<insert id="insertOptionsForMod" parameterType="java.util.List">
+
+		insert into
+		`option`
+		(name,option_qty,price,goodsNo) values
+		(#{name},
+		#{option_qty},#{price},#{goodsNo})
+	</insert>
+
+	<insert id="insertOptionForMod" parameterType="optionVO">
+		insert into
+		`option`
+		(name,option_qty,price,goodsNo) values
+		(#{name},
+		#{option_qty},#{price},#{goodsNo})
+	</insert>
+
+	<update id="updateSellerGoods" parameterType="goodsVO">
+		update goods
+		set
+		category=#{category}, name=#{name}, price=#{price}, rapping=#{rapping}, manufacturer=#{manufacturer},
+		weight=#{weight}, harvest=#{harvest}, description=#{description}
+		<if test="img1 != null and img1 != ''">
+			, img1=#{img1}
+		</if>
+		<if test="img2 != null and img2 != ''">
+			, img2=#{img2}
+		</if>
+		<if test="img3 != null and img3 != ''">
+			, img3=#{img3}
+		</if>
+		<if test="img4 != null and img4 != ''">
+			, img4=#{img4}
+		</if>
+		<if test="img5 != null and img5 != ''">
+			, img5=#{img5}
+		</if>
+		where goodsNo=#{goodsNo}
+	</update>
+
+
+	<select id="selectOptionByGoodsNo" resultMap="OptionResult"
+		parameterType="int">
+		<![CDATA[
+			select optionNo, name, option_qty, price, goodsNo  from `option` where goodsNo=#{goodsNo}
+		]]>
+	</select>
+
+
+</mapper>

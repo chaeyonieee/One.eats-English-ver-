@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mypage.dao.MypageDAO">
+	<resultMap id="OrderResult" type="orderVO">
+		<result property="order_seqNo" column="order_seqNo" />
+		<result property="orderNo" column="orderNo" />
+		<result property="orderer_name" column="orderer_name" />
+		<result property="orderer_phone" column="orderer_phone" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_address" column="receiver_address" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="receiver_comment" column="receiver_comment" />
+		<result property="used_point" column="used_point" />
+		<result property="used_couponId" column="used_couponId" />
+		<result property="payment_price" column="payment_price" />
+		<result property="discount_price" column="discount_price" />
+		<result property="shippingfee" column="shippingfee" />
+		<result property="point_price" column="point_price" />
+		<result property="total_price" column="total_price" />
+		<result property="payment_type" column="payment_type" />
+		<result property="orderDate" column="orderDate" />
+		<result property="delivery_status" column="delivery_status" />
+		<result property="deliveryDate" column="deliveryDate" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="goods_inbun" column="goods_inbun" />
+		<result property="memberNo" column="memberNo" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="weight" column="weight" />
+		<result property="gun" column="gun" />
+		<result property="shippingFee" column="shippingFee" />
+		<result property="optionNo" column="optionNo" />
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+	</resultMap>
+
+	<resultMap id="MemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="gender" column="gender" />
+		<result property="birth" column="birth" />
+		<result property="sms_agreement" column="sms_agreement" />
+		<result property="email_agreement" column="email_agreement" />
+		<result property="busNo" column="busNo" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+		<result property="nickname" column="nickname" />
+		<result property="intro" column="intro" />
+		<result property="profileImg" column="profileImg" />
+		<result property="point" column="point" />
+	</resultMap>
+
+	<resultMap id="BookResult" type="bookmarkVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="img1" column="img1" />
+		<result property="name" column="name" />
+		<result property="price" column="price" />
+	</resultMap>
+
+	<resultMap id="CouponResult" type="couponVO">
+		<result property="couponNo" column="couponNo" />
+		<result property="name" column="name" />
+		<result property="discount_price" column="discount_price" />
+		<result property="condition" column="condition" />
+		<result property="expDate" column="expDate" />
+		<result property="creDate" column="creDate" />
+		<result property="memberNo" column="memberNo" />
+		<result property="couponCode" column="couponCode" />
+	</resultMap>
+
+
+
+	<resultMap id="DeliveryResult" type="deliveryAddressVO">
+		<result property="deliveryNo" column="deliveryNo" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="memberNo" column="memberNo" />
+	</resultMap>
+
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="deliveryDate" column="deliveryDate" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="delivery_status" column="delivery_status" />
+	</resultMap>
+
+	<resultMap id="PointHistoryResult" type="pointHistoryVO">
+		<result property="pointNo" column="pointNo" />
+		<result property="name" column="name" />
+		<result property="creDate" column="creDate" />
+		<result property="finishDate" column="finishDate" />
+		<result property="amount" column="amount" />
+		<result property="memberNo" column="memberNo" />
+	</resultMap>
+
+	
+
+	<delete id="deleteMember" parameterType="MemberVO">
+    <![CDATA[
+      delete from member
+      where 
+      memberNo=#{memberNo} and id=#{id} 
+    ]]>
+	</delete>
+
+	<select id="selectOrderList" resultMap="OrderResult">
+		<![CDATA[
+			select orderplusgoods.*,orderGun.gun from (select t_order.*,goodsAndHotdealView.name as goodsName, 
+			goodsAndHotdealView.img1 as goodsImg from t_order inner join goodsAndHotdealView 
+			on t_order.goodsNo=goodsAndHotdealView.goodsNo) as orderplusgoods inner join 
+			(select orderNo, count(*) as gun from t_order group by orderNo) as orderGun
+    		on orderplusgoods.orderNo=orderGun.orderNo order by orderplusgoods.orderNo 
+		]]>
+	</select>
+	
+	<select id="selectOrderByMemberNo" resultMap="OrderResult" parameterType="java.util.Map">
+	
+		select * from order_by_membertype where memberNo=#{memberNo}
+		
+		<choose>
+			<when test="order_search_type==null or order_search_type==''">
+				and 1=1
+			</when>
+			<when test="order_search_type == 'all'">
+				and orderDate 
+			 	between DATE_SUB(NOW(), INTERVAL 1 MONTH) and NOW() 
+			 	and memberNo=#{memberNo}
+				or orderDate
+				between DATE_SUB(NOW(), INTERVAL 3 MONTH) and NOW() 
+				and memberNo=#{memberNo}
+				or orderDate
+				between DATE_SUB(NOW(), INTERVAL 1 YEAR) and NOW() 
+				and memberNo=#{memberNo}
+			</when>
+			<otherwise>
+			 	<choose>
+			 		<when test="order_search_type == '1month'">
+			 			and orderDate 
+			 			between DATE_SUB(NOW(), INTERVAL 1 MONTH) and NOW() and
+						memberNo=#{memberNo}
+			 		</when>
+			 		<when test="order_search_type == '3month'">
+			 			and orderDate
+						between DATE_SUB(NOW(), INTERVAL 3 MONTH) and NOW() and
+						memberNo=#{memberNo}
+			 		</when>
+			 		<when test="order_search_type == '1year'">
+			 			and orderDate
+						between DATE_SUB(NOW(), INTERVAL 1 YEAR) and NOW() and
+						memberNo=#{memberNo}
+			 		</when>
+			 	</choose>
+			</otherwise>
+		</choose>
+		
+		order by orderDate desc limit #{start},6
+	</select>
+
+	<select id="selectCountOrderNum" resultType="int" parameterType="java.util.Map">
+    	select count(*) from order_by_membertype where memberNo = #{memberNo}
+    	<choose>
+        	<when test="order_search_type == null or order_search_type == ''">
+            	and 1=1
+        	</when>
+        	<when test="order_search_type == 'all'">
+            	and (
+                	(orderDate between DATE_SUB(NOW(), INTERVAL 1 MONTH) and NOW() 
+                	and memberNo=#{memberNo})
+                	or
+                	(orderDate between DATE_SUB(NOW(), INTERVAL 3 MONTH) and NOW() 
+                	and memberNo=#{memberNo})
+                	or
+                	(orderDate between DATE_SUB(NOW(), INTERVAL 1 YEAR) and NOW() 
+                	and memberNo=#{memberNo})
+            	)
+        	</when>
+        	<otherwise>
+            	<choose>
+                	<when test="order_search_type == '1month'">
+                    	and orderDate between DATE_SUB(NOW(), INTERVAL 1 MONTH) and NOW() 
+                    	and memberNo=#{memberNo}
+                	</when>
+                	<when test="order_search_type == '3month'">
+                    	and orderDate between DATE_SUB(NOW(), INTERVAL 3 MONTH) and NOW() 
+                    	and memberNo=#{memberNo}
+                	</when>
+                	<when test="order_search_type == '1year'">
+                    	and orderDate between DATE_SUB(NOW(), INTERVAL 1 YEAR) and NOW() 
+                    	and memberNo=#{memberNo}
+                	</when>
+            	</choose>
+        	</otherwise>
+    	</choose>
+	</select>
+	
+	<select id="selectOrderByOrderNo" resultMap="OrderResult" parameterType="int">
+		<![CDATA[
+			select t_order.*, goodsAndHotdealView.name as goodsName, goodsAndHotdealView.img1 as goodsImg, 
+			goodsAndHotdealView.price as goodsPrice, goodsAndHotdealView.weight as weight from t_order 
+			inner join goodsAndHotdealView on t_order.goodsNo=goodsAndHotdealView.goodsNo
+			where t_order.orderNo=#{orderNo}
+		]]>
+	</select>
+
+	<select id="selectCouponByMemberNo" resultMap="CouponResult" parameterType="int">
+		<![CDATA[
+			select c.* from coupon c inner join member_coupon m
+			on c.couponNo=m.couponNo where m.memberNo=#{memberNo} and m.used="no"
+		]]>
+	</select>
+
+	<insert id="insertOrderList" parameterType="java.util.List">
+		insert into t_order (orderNo, orderer_name, orderer_phone,
+		receiver_name, receiver_address, receiver_phone, receiver_comment,
+		used_point, used_couponId, payment_price, discount_price, shippingfee,
+		point_price, total_price,
+		payment_type, goods_qty, goods_inbun,
+		memberNo, goodsNo, optionNo)
+
+		values
+
+		<foreach collection="list" item="item" separator=",">
+			(#{item.orderNo}, #{item.orderer_name}, #{item.orderer_phone},
+			#{item.receiver_name}, #{item.receiver_address},
+			#{item.receiver_phone}, #{item.receiver_comment},
+			#{item.used_point},
+			#{item.used_couponId}, #{item.payment_price},
+			#{item.discount_price},
+			#{item.shippingfee}, #{item.point_price},
+			#{item.total_price},
+			#{item.payment_type}, #{item.goods_qty}, #{item.goods_inbun},
+			#{item.memberNo},
+			#{item.goodsNo}, #{item.optionNo})
+		</foreach>
+	</insert>
+
+	<insert id="insertTempOrderList" parameterType="java.util.List">
+		insert into t_order (orderNo, orderer_name, orderer_phone,
+		receiver_name, receiver_address, receiver_phone, receiver_comment,
+		used_point, used_couponId, payment_price, discount_price, shippingfee,
+		point_price, total_price,
+		payment_type, goods_qty, goods_inbun,
+		memberNo, goodsNo, optionNo,delivery_status)
+
+		values
+
+		<foreach collection="list" item="item" separator=",">
+			(#{item.orderNo}, #{item.orderer_name}, #{item.orderer_phone},
+			#{item.receiver_name}, #{item.receiver_address},
+			#{item.receiver_phone}, #{item.receiver_comment},
+			#{item.used_point},
+			#{item.used_couponId}, #{item.payment_price},
+			#{item.discount_price},
+			#{item.shippingfee}, #{item.point_price},
+			#{item.total_price},
+			'Payment중',#{item.goods_qty}, #{item.goods_inbun},
+			#{item.memberNo},
+			#{item.goodsNo}, #{item.optionNo},'Payment중')
+		</foreach>
+	</insert>
+
+	<update id="updateTempOrderList" parameterType="java.util.Map">
+		update t_order
+		set
+		payment_type=#{payment_type},
+		total_price=#{total_price},
+		<choose>
+			<when test="payment_type=='가상계좌'">
+				delivery_status='입금대기중'
+			</when>
+			<otherwise>
+				delivery_status='Payment Complete'
+			</otherwise>
+		</choose>
+		where memberNo=#{memberNo} and
+		orderNo=#{orderNo} and
+		delivery_status='Payment중'
+
+	</update>
+
+	<insert id="insertTossApi" parameterType="java.util.Map">
+		insert into toss_api
+		(json_data,orderNo) values(#{json_data},#{orderNo})
+
+	</insert>
+
+	<select id="selectTempOrder" parameterType="java.util.Map"
+		resultType="orderVO">
+		select * from t_order where orderNo=#{orderNo} and
+		memberNo=#{memberNo} and delivery_status='Payment중' limit 1
+	</select>
+	<update id="updateMemberPoint" parameterType="java.util.Map">
+		update member
+		set
+		point=point+#{point}
+		where memberNo=#{memberNo}
+	</update>
+
+	<insert id="insertPointHistory" parameterType="java.util.Map">
+
+		INSERT INTO
+		point_history
+		(name, memberNo, amount)
+		VALUES ('Product 구입으로 인한
+		소진',#{memberNo}, #{used_point})
+
+	</insert>
+
+	<select id="selectNewOrderNo" resultType="int">
+		<![CDATA[
+			select ifnull(max(orderNo),0)+1 from t_order
+		]]>
+	</select>
+
+
+	<select id="selectSeqNoByOrderNo" resultType="int"
+		parameterType="int">
+		<![CDATA[
+			select order_seqNo from t_order where orderNo=#{orderNo};
+		]]>
+	</select>
+
+	<update id="updateDeliveryStatusToCancel" parameterType="int">
+		<![CDATA[
+			update t_order
+	     	set delivery_status='Cancle Complete'
+	     	where order_seqNo=#{order_seqNo}
+		]]>
+	</update>
+
+	<select id="selectOrderBySearchType" resultMap="OrderResult"
+		parameterType="hashMap">
+		<choose>
+			<when test="orderSearchType == 'all'">
+				select orderplusgoods.*,orderGun.gun from (select
+				t_order.*,goodsAndHotdealView.name as goodsName,
+				goodsAndHotdealView.img1 as goodsImg from t_order inner join
+				goodsAndHotdealView on t_order.goodsNo=goodsAndHotdealView.goodsNo
+				WHERE t_order.memberNo=#{memberNo}) as orderplusgoods inner join
+				(select orderNo, count(*) as gun from t_order group by orderNo)
+				as
+				orderGun on orderplusgoods.orderNo=orderGun.orderNo order by
+				orderplusgoods.orderNo
+			</when>
+			<when test="orderSearchType == '1month'">
+				select * from order_by_membertype where orderDate
+				between DATE_SUB(NOW(), INTERVAL 1 MONTH) and NOW() and
+				memberNo=#{memberNo}
+			</when>
+			<otherwise>
+				<choose>
+					<when test="orderSearchType == '3month'">
+						select * from order_by_membertype where orderDate
+						between DATE_SUB(NOW(), INTERVAL 3 MONTH) and NOW() and
+						memberNo=#{memberNo}
+					</when>
+					<when test="orderSearchType == '1year'">
+						select * from order_by_membertype where orderDate
+						between DATE_SUB(NOW(), INTERVAL 1 YEAR) and NOW() and
+						memberNo=#{memberNo}
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+	</select>
+
+	<update id="updateMemberInfo" parameterType="memberVO">
+		<![CDATA[
+			  update member set
+			  pwd=#{pwd}, name=#{name}, birth=#{birth}, gender=#{gender}, phone=#{phone}, sms_agreement=#{sms_agreement}, email_agreement=#{email_agreement}
+			  where id=#{id}
+		]]>
+	</update>
+
+	<select id="selectMypageList" resultType="memberVO"
+		parameterType="String">
+	    <![CDATA[
+			select * from member
+            where id=#{member_id}
+		]]>
+	</select>
+
+	<update id="mypageintroupdate" parameterType="java.util.HashMap">
+		update member set
+		nickname=#{nickname}, profileImg=#{profileImg}, intro=#{intro}
+		where
+		id=#{id}
+	</update>
+
+	<!-- 민아 찜 : ProductName, Price, 이미지 -->
+	<select id="selectBookList" resultMap="BookResult"
+		parameterType="memberVO">
+		<![CDATA[
+			select  goods.memberNo, goods.goodsNo, goods.name, goods.price, goods.img1 from bookmark 
+			inner join goods 
+			on 
+			bookmark.goodsNo=goods.goodsNO 
+	  	where 
+			bookmark.memberNo=#{memberNo}
+		]]>
+	</select>
+
+	<!-- Review 1 -->
+	<select id="selectAvailableReviewList" parameterType="int"
+		resultMap="OrderResult">
+	    <![CDATA[
+	    select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='미Write'  and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		order by orderDate desc
+		limit 0,5
+		]]>
+	</select>
+
+	<select id="selectTotalAvailableReviewsNum" resultType="int" parameterType="int">
+		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='미Write' and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		) ttt
+	</select>
+	
+	<select id="selectAvailableReviewListWithPagingMap" parameterType="java.util.Map" resultMap="OrderResult">
+		select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='미Write' and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		) ttt 
+		order by orderDate desc
+		limit #{start},#{numForPage}
+	</select>
+	
+
+	<!-- Review 2 -->
+	<select id="selectDoneReviewList" parameterType="int"
+		resultMap="OrderResult">
+	    <![CDATA[
+	     select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		order by orderDate desc
+		limit 5
+		]]>
+	</select>
+	
+	<select id="selectDoneReviewListWithPagingMap" parameterType="java.util.Map" resultMap="OrderResult">
+	 	select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		) ttt 
+		order by orderDate desc
+		limit #{start},#{numForPage}
+		
+	</select>
+	
+	<select id="selectTotalDoneReviewsNum" parameterType="int" resultType="int">
+		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
+		inner join goodsandhotdealview g
+		on g.goodsNo=o.goodsNo
+		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		group by (o.goodsNo*1001+o.orderNo) 
+		) ttt
+	
+	</select>
+
+	<select id="selectCouponListWithPagingMap"
+		parameterType="java.util.Map" resultMap="CouponResult">
+		select * from member_coupon
+		inner join coupon
+		on
+		member_coupon.couponNo=coupon.couponNo
+		where
+		member_coupon.memberNo=#{memberNo} 
+		limit #{start},3 
+	</select>
+
+	<select id="selectCouponListTotalNum" parameterType="int"
+		resultType="int">
+
+		SELECT COUNT(mc.couponNo) AS couponCount
+		FROM member_coupon mc
+		INNER JOIN coupon c ON mc.couponNo = c.couponNo
+		WHERE mc.memberNo = #{memberNo}
+	</select>
+
+	<select id="selectPointListWithPagingMap"
+		parameterType="java.util.Map" resultMap="PointHistoryResult">
+		select * from point_history
+		where memberNo=#{memberNo} order by creDate desc
+		limit #{start1},3
+	</select>
+
+	<select id="selectPointListTotalNum" parameterType="int"
+		resultType="int">
+		select count(pointNo) from point_history where
+		memberNo=#{memberNo}
+	</select>
+	
+	<select id="memberPoint" parameterType="memberVO"
+		resultMap="PointHistoryResult">
+		select * from point_history where memberNo=#{memberNo}
+	</select>
+
+
+	<!-- 민아 Coupon 조회 -->
+	<select id="couponSearch" resultMap="CouponResult"
+		parameterType="memberVO">
+		<![CDATA[
+		    select * from member_coupon 
+			inner join coupon 
+			on 
+			member_coupon.couponNo=coupon.couponNo 
+			where 
+			member_coupon.memberNo=#{memberNo}
+
+		]]>
+	</select>
+	<!-- 민아 Rewards 조회 -->
+	<select id="pointSearch" resultMap="PointHistoryResult"
+		parameterType="memberVO">
+		<![CDATA[
+		    select * from point_history
+			where memberNo=#{memberNo}
+			order by creDate
+		]]>
+	</select>
+
+	<!-- 민아 Coupon, Rewards 조회 -->
+	<select id="couponNum" resultType="couponVO"
+		parameterType="String">
+		<![CDATA[
+		    select couponNo, name, discount_price, expDate, creDate, couponCode from coupon 
+			where 
+			couponCode=#{couponCode}
+		]]>
+	</select>
+
+	<!-- 민아 Coupon 있는 지 없는 지 -->
+	<select id="couponNull" resultType="couponVO"
+		parameterType="couponVO">
+		<![CDATA[
+		    select * from member_coupon 
+			where 
+			couponNo=#{couponNo} and memberNo=#{memberNo}
+		]]>
+	</select>
+
+	<!-- 민아 Coupon 등록 -->
+	<insert id="couponInsert" parameterType="couponVO">
+		<![CDATA[
+		    insert into member_coupon(couponNo, memberNo) 
+		    values(#{couponNo}, #{memberNo})
+		]]>
+	</insert>
+
+	<select id="myAddress" resultMap="DeliveryResult"
+		parameterType="int">
+		<![CDATA[
+		
+		   select * from deliveryaddress 
+		   where 
+		   memberNo=#{memberNo}
+		   order by deliveryNo
+
+		]]>
+	</select>
+
+	<delete id="deleteBookMark" parameterType="int">
+		<![CDATA[
+		delete from bookmark
+		where 
+		goodsNo=#{goodsNo}
+		]]>
+	</delete>
+
+	<delete id="deleteAddress" parameterType="int">
+<![CDATA[
+delete from deliveryaddress
+where 
+deliveryNo=#{deliveryNo}
+]]>
+	</delete>
+
+
+	<insert id="insertAddressWithMap" parameterType="java.util.Map">
+		insert into
+		deliveryaddress
+		(receiver_name,receiver_phone,zipCode,address,address_detail,memberNo)
+		values
+		(#{receiver_name},#{receiver_phone},#{zipCode},#{address},#{address_detail},#{memberNo})
+
+	</insert>
+
+	<update id="updateDeliveryAddressWithMap"
+		parameterType="java.util.Map">
+		update deliveryaddress set
+		receiver_name=#{receiver_name},
+		receiver_phone=#{receiver_phone},
+		zipCode=#{zipCode},
+		address=#{address},
+		address_detail=#{address_detail}
+		where memberNo=#{memberNo} and
+		deliveryNo=#{deliveryNo}
+	</update>
+
+	<update id="updateDeliveryAddress"
+		parameterType="deliveryAddressVO">
+		update deliveryaddress set
+		receiver_name=#{receiver_name},
+		receiver_phone=#{receiver_phone},
+		zipCode=#{zipCode},
+		address=#{address},
+		address_detail=#{address_detail}
+		where memberNo=#{memberNo} and
+		deliveryNo=#{deliveryNo}
+	</update>
+
+	<update id="updateMemberAddressWithMap"
+		parameterType="java.util.Map">
+		update member set
+		zipCode=#{zipCode},
+		address=#{address},
+		address_detail=#{address_detail}
+		where memberNo=#{memberNo}
+	</update>
+	<delete id="deleteDeliveryAddressWithMap"
+		parameterType="java.util.Map">
+		delete from deliveryaddress where memberNo=#{memberNo}
+		and deliveryNo=#{deliveryNo}
+	</delete>
+
+	<select id="selectTossApiByOrderNo" parameterType="int"
+		resultType="String">
+		select json_data from toss_api where orderNo=#{orderNo}
+		limit 1
+	</select>
+
+	<select id="isSNSMember" parameterType="memberVO"
+		resultType="String">
+		select sns_id from t_sns where id=#{id}
+	</select>
+	<select id="selectBookListWithPagingMap"
+		parameterType="java.util.Map" resultMap="BookResult">
+		select goods.memberNo,
+		goods.goodsNo, goods.name, goods.price, goods.img1 from bookmark
+		inner
+		join goods
+		on
+		bookmark.goodsNo=goods.goodsNO
+		where
+		bookmark.memberNo=#{memberNo}
+		limit #{start},10
+	</select>
+
+	<select id="selectBookListTotalNum" parameterType="int"
+		resultType="int">
+		select count(memberNo) from bookmark where
+		memberNo=#{memberNo}
+	</select>
+
+	<update id="updateMemberCouponUsed" parameterType="java.util.Map">
+		update member_coupon
+		set used="yes"
+		where memberNo=#{memberNo} and couponNo=#{used_couponId}
+	</update>
+
+	<select id="selectCouponByCouponNoAndMemberNo" parameterType="java.util.Map" resultType="java.util.Map">
+		select c.* from coupon c
+			inner join member_coupon m
+			on c.couponNo=m.couponNo
+			where c.couponNo=#{couponNo} and m.memberNo=#{memberNo} and m.used="no"
+	
+	</select>
+	
+</mapper>

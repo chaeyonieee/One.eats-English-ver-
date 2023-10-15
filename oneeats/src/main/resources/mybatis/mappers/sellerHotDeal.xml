@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.example.demo.seller.hotdeal.dao.SellerHotDealDAO">
+	<!-- 리절트 맵 정의 -->
+
+	<resultMap id="GoodsResult" type="goodsVO">
+		<result column="goodsNo" property="goodsNo" />
+		<result column="name" property="name" />
+		<result column="price" property="price" />
+		<result column="rapping" property="rapping" />
+		<result column="manufacturer" property="manufacturer" />
+		<result column="weight" property="weight" />
+		<result column="expDate" property="expDate" />
+		<result column="description" property="description" />
+		<result column="harvest" property="harvest" />
+		<result column="creDate" property="creDate"
+			javaType="java.sql.Date" />
+		<result column="img1" property="img1" />
+		<result column="img2" property="img2" />
+		<result column="img3" property="img3" />
+		<result column="img4" property="img4" />
+		<result column="img5" property="img5" />
+		<result column="category" property="category" />
+		<result column="type" property="type" />
+		<result column="memberNo" property="memberNo" />
+	</resultMap>
+
+	<resultMap id="HotDealResult" type="hotDealVO">
+		<result column="hotdealNo" property="hotdealNo" />
+		<result column="name" property="name" />
+		<result column="discounted_price" property="discounted_price" />
+		<result column="goods_qty" property="goods_qty" />
+		<result column="finishDate" property="finishDate" />
+		<result column="description" property="description" />
+		<result column="creDate" property="creDate" />
+		<result column="category" property="category" />
+
+	</resultMap>
+
+
+	<select id="selectGoodsVO" resultMap="GoodsResult"
+		parameterType="int">
+		select * from goods where goodsNo=#{goodsNo}
+	</select>
+
+	<select id="selectNewHotDealNo" resultType="int">
+		select
+		ifnull(max(hotdealNo),1000)+1 from hotdeal
+	</select>
+
+	<insert id="insertHotDeal" parameterType="hotDealVO">
+		insert into
+		hotdeal
+		(hotdealNo,name,discounted_price,goods_qty,finishDate,description,category,goodsNo)
+		values(#{hotdealNo},#{name},#{discounted_price},#{goods_qty},#{finishDate},#{description},#{category},#{goodsNo})
+
+	</insert>
+
+
+	<select id="selectHotDealByHotDealNo" resultType="hotDealVO"
+		parameterType="int">
+		SELECT * from hotdeal
+		where hotdealNo=#{hotdealNo}
+	</select>
+
+	<select id="SearchGoods" resultType="goodsVO"
+		parameterType="int">
+		SELECT * from goods
+		where goodsNo=#{goodsNo}
+	</select>
+
+
+	<select id="selectHotDealList" resultMap="GoodsResult"
+		parameterType="java.util.Map">
+		SELECT goods.*, hotdeal.hotdealNo from goods
+		inner join
+		hotdeal on
+		goods.goodsNo=hotdeal.goodsNo
+		WHERE type = 'Business'
+
+	</select>
+
+
+
+
+	
+	<select id="selectSellerHotDealList" resultMap="HotDealResult" parameterType="java.util.Map">
+    SELECT hotdeal.*, goods.goodsNo, goods.type
+    FROM hotdeal
+    INNER JOIN goods ON goods.goodsNo = hotdeal.goodsNo
+    INNER JOIN member ON member.memberNo = goods.memberNo
+    WHERE goods.type = 'Business'
+    <choose>
+        <when test="hotdeal_search_type==null or hotdeal_search_type==''">
+            and 1=1
+        </when>
+        <when test="hotdeal_search_type=='all'">
+            and (hotdeal.creDate like CONCAT('%', #{hotdeal_search_word}, '%') or hotdeal.name like CONCAT('%', #{hotdeal_search_word}, '%'))
+        </when>
+        <otherwise>
+            <choose>
+                <when test="hotdeal_search_type=='creDate'">
+                    and hotdeal.creDate like CONCAT('%', #{hotdeal_search_word}, '%')
+                </when>
+                <when test="hotdeal_search_type=='name'">
+                    and hotdeal.name like CONCAT('%', #{hotdeal_search_word}, '%')
+                </when>
+            </choose>
+        </otherwise>
+    </choose>
+    order by creDate desc limit #{start}, 10
+</select>
+	
+	
+	
+	
+
+	<select id="selectTotalHotDealNum" resultType="int">
+		<![CDATA[
+			SELECT count(*) from (select hotdeal.*, goods.type FROM hotdeal
+			INNER JOIN goods ON goods.goodsNo = hotdeal.goodsNo
+			WHERE goods.type = 'Business') t
+		]]>
+	</select>
+
+
+
+
+	<select id="selectNewHotDealList" resultMap="HotDealResult">
+		SELECT hotdeal.*,
+		goods.goodsNo, goods.type
+		FROM hotdeal
+		INNER JOIN goods ON goods.goodsNo
+		= hotdeal.goodsNo
+		WHERE goods.type = 'Business' AND hotdeal.hotdealNo =
+		#{hotdealNo}
+		ORDER BY creDate DESC;
+
+	</select>
+
+
+	<delete id="deleteHotdealGoods" parameterType="int">
+	<![CDATA[
+	delete from hotdeal
+	where 
+	hotdealNo=#{hotdealNo}
+	]]>
+	</delete>
+
+
+
+	<select id="selectHotDealByGoodsNo" resultMap="HotDealResult"
+		parameterType="int">
+		<![CDATA[
+			select * from hotdeal where hotdealNo=#{hotdealNo}
+		]]>
+	</select>
+
+
+
+
+	<select id="selectGoodsByGoodsNo" resultType="goodsVO"
+		parameterType="int">
+		SELECT goods.*, hotdeal.hotdealNo from goods inner join
+		hotdeal on
+		goods.goodsNo=hotdeal.goodsNo
+		WHERE type = 'Business' and
+		hotdeal.hotdealNo
+		=
+		#{hotdealNo}
+	</select>
+
+
+
+	<update id="updateSellerHotDeal" parameterType="hotDealVO">
+		update hotdeal
+		set
+		name=#{name}, discounted_price=#{discounted_price},
+		goods_qty=#{goods_qty}, finishDate=#{finishDate},
+		description=#{description},
+		category=#{category}
+		where
+		hotdealNo=#{hotdealNo}
+	</update>
+
+
+
+
+
+
+
+</mapper>

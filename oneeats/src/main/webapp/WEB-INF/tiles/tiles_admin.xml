@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+<!-- Product -->
+    <definition name="/admin/goods/adminGoodsModForm" extends="mainLayout">
+ 	   <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin ProductModify 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsModForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+     <definition name="/admin/goods/adminGoodsForm" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Product등록 페이지" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsForm.jsp" />
+     </definition>
+     
+     <definition name="/admin/goods/adminGoodsList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin ProductList 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsList.jsp" />
+     </definition>
+     
+     <definition name="/admin/goods/adminSellerGoodsList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Business ProductManagement 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminSellerGoodsList.jsp" />
+     </definition>
+     
+<!-- Hot Deal -->
+    <definition name="/admin/hotdeal/adminHotDealForm" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Hot Deal등록 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+
+    <definition name="/admin/hotdeal/adminHotDealModForm" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Hot DealModify 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealModForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/hotdeal/adminHotDealList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Hot DealList 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealList.jsp" />
+    </definition>
+
+<!-- Coupon -->
+    <definition name="/admin/coupon/adminCouponList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Coupon List 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/coupon/adminCouponList.jsp" />
+    </definition>
+    
+    <definition name="/admin/coupon/adminCouponForm" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Coupon Registration 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/coupon/adminCouponForm.jsp" />
+    </definition>
+    
+<!-- Order/Order -->
+    <definition name="/admin/order/adminOrderList" extends="mainLayout">
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+       <put-attribute name="title" value="Admin Order/Order 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/order/adminOrderList.jsp" />
+    </definition>
+    
+    
+    <definition name="/admin/main/adminMain" extends="mainLayout">
+       <put-attribute name="title" value="Admin MainPage" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/main/adminMain.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/community/notice/adminNoticeList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/notice/adminNoticeList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    
+    <definition name="/admin/community/notice/adminNoticeForm" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice Write" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/notice/adminNoticeForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    
+    <definition name="/admin/community/notice/adminNoticeModForm" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice Modify" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/notice/adminNoticeModForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    
+    <definition name="/admin/community/mostQnA/adminMostQnAList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Frequently Asked Questions List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/mostQnA/adminMostQnAList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/community/mostQnA/adminMostQnAForm" extends="mainLayout">
+       <put-attribute name="title" value="Admin Frequently Asked Questions Write" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/mostQnA/adminMostQnAForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/community/mostQnA/adminMostQnAModForm" extends="mainLayout">
+       <put-attribute name="title" value="Admin Frequently Asked Questions Modify" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/mostQnA/adminMostQnAModForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+        
+    <definition name="/admin/community/oneQnA/adminOneQnAList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/oneQnA/adminOneQnAList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/community/recipe/adminRecipeList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/recipe/adminRecipeList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+    <definition name="/admin/community/review/adminReviewList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Notice List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/community/review/adminReviewList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+      <definition name="/admin/member/adminMemberList" extends="mainLayout">
+       <put-attribute name="title" value="Admin Member List" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/member/adminMemberList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+	<definition name="/admin/member/adminMemberDetail" extends="mainLayout">
+       <put-attribute name="title" value="Admin Member 상세" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/member/adminMemberDetail.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    </definition>
+    
+</tiles-definitions>

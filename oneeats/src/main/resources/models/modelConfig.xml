@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <typeAliases>
+    <typeAlias type="com.example.demo.vo.BookmarkVO" alias="bookmarkVO" />
+    <typeAlias type="com.example.demo.vo.CouponVO" alias="couponVO" />
+    <typeAlias type="com.example.demo.vo.DeliveryAddressVO" alias="deliveryAddressVO" />
+    <typeAlias type="com.example.demo.vo.GoodsVO" alias="goodsVO" />
+    <typeAlias type="com.example.demo.vo.HotDealVO" alias="hotDealVO" />
+    <typeAlias type="com.example.demo.vo.MemberVO" alias="memberVO" />
+    <typeAlias type="com.example.demo.vo.MostQnAVO" alias="mostQnAVO" />
+    <typeAlias type="com.example.demo.vo.NoticeVO" alias="noticeVO" />
+    <typeAlias type="com.example.demo.vo.OneQnAVO" alias="oneQnAVO" />
+    <typeAlias type="com.example.demo.vo.OrderVO" alias="orderVO" />
+    <typeAlias type="com.example.demo.vo.RecipeVO" alias="recipeVO" />
+    <typeAlias type="com.example.demo.vo.ReviewVO" alias="reviewVO" />
+    <typeAlias type="com.example.demo.vo.IngredientVO" alias="ingredientVO" />
+	<typeAlias type="com.example.demo.vo.OptionVO" alias="optionVO" />
+    <typeAlias type="com.example.demo.vo.CartVO" alias="cartVO" />
+    <typeAlias type="com.example.demo.vo.PointHistoryVO" alias="pointHistoryVO" />
+    
+  </typeAliases>
+</configuration>
+
+
+

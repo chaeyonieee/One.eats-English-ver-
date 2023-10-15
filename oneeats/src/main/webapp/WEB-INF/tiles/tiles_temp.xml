@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="undersidebarLayout"
+		template="/WEB-INF/views/common/layout_undersidebar.jsp">
+		<put-attribute name="title" value="사이드바 아래에 뭔가 있는 레이아웃" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="body2" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+    <definition name="/admin/community/notice/adminNoticeList" extends="mainLayout">
+    	<put-attribute name="title" value="Admin Notice List" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    	<put-attribute name="body" value="/WEB-INF/views/admin/community/notice/adminNoticeList.jsp" />
+    </definition>
+    
+    <definition name="/sidebartest/customer" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+     <definition name="/sidebartest/customer" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+     <definition name="/sidebartest/goods" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_goods.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+     <definition name="/sidebartest/mypage" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_mypage.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+    <definition name="/sidebartest/recipe" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+    <definition name="/sidebartest/seller" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+    
+    <definition name="/sidebartest/admin" extends="mainLayout">
+    	<put-attribute name="title" value="사이드바 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    <definition name="/alerttest" extends="mainLayout">
+    	<put-attribute name="title" value="알림창 테스트용 페이지" />
+    	<put-attribute name="side" value="/WEB-INF/views/common/side.jsp" />
+    	<put-attribute name="alert" value="/WEB-INF/views/common/notice_window.jsp" />
+    	<put-attribute name="body" value="" />
+    </definition>
+    
+    
+    
+</tiles-definitions>
+

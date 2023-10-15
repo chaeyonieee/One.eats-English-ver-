@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.example.demo.admin.member.dao.AdminMemberDAO">
+	
+	<resultMap id="MemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="gender" column="gender" />
+		<result property="birth" column="birth" />
+		<result property="sms_agreement" column="sms_agreement" />
+		<result property="email_agreement" column="email_agreement" />
+		<result property="busNo" column="busNo" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+		<result property="nickname" column="nickname" />
+		<result property="intro" column="intro" />
+		<result property="profileImg" column="profileImg" />
+		<result property="point" column="point" />
+	</resultMap>
+	
+	<select id="selectAdminMemberList" resultMap="MemberResult" parameterType="java.util.Map">
+	
+		select * from member
+		where 1=1
+			
+		<choose>
+			<when test="adminMember_search_type==null or adminMember_search_type==''">
+				and 1=1
+			</when>
+			<when test="adminMember_search_type=='all'">
+				and id like CONCAT('%', #{adminMember_search_word}, '%')
+				or name like CONCAT('%', #{adminMember_search_word}, '%')
+				or type like CONCAT('%', #{adminMember_search_word}, '%')
+				or creDate like CONCAT('%', #{adminMember_search_word}, '%')
+			</when>
+			<otherwise>
+			 	<choose>
+			 		<when test="adminMember_search_type=='id'">
+			 			and id like CONCAT('%', #{adminMember_search_word}, '%')
+			 		</when>
+			 		<when test="adminMember_search_type=='name'">
+			 			and name like CONCAT('%', #{adminMember_search_word}, '%')
+			 		</when>
+			 		<when test="adminMember_search_type=='type'">
+			 			and type like CONCAT('%', #{adminMember_search_word}, '%')
+			 		</when>
+			 		<when test="adminMember_search_type=='creDate'">
+			 			and creDate like CONCAT('%', #{adminMember_search_word}, '%')
+			 		</when>
+			 	</choose>
+			</otherwise>
+		</choose>
+			
+		order by memberNo desc limit #{start},10
+	</select>
+	
+	<select id="selectTotalMemberNum" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<select id="selectMemberByMemberNo" resultType="memberVO" parameterType="int">
+		select * from member where memberNo=#{memberNo}
+	</select>
+	
+</mapper>

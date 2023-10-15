@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="nosidebarLayout"
+		template="/WEB-INF/views/common/layout_nosidebar.jsp">
+		<put-attribute name="title" value="사이드바 없는 레이아웃" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="/goods/goodsDetail"
+		extends="nosidebarLayout">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/goods/goodsDetail.jsp" />
+	</definition>
+
+	<definition name="/goods/hotdealDetail"
+		extends="nosidebarLayout">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/goods/hotdealDetail.jsp" />
+	</definition>
+
+	<definition name="/goods/goodsList"
+		extends="longimageLayout">
+		<put-attribute name="title" value="ProductList" />
+		<put-attribute name="long_image"
+			value="/WEB-INF/views/goods/longimage.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/sidebar_goods.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/goods/goodsList.jsp" />
+	</definition>
+	
+<definition name="/goods/hotDealList"
+		extends="longimageLayout">
+		<put-attribute name="title" value="Hot DealList" />
+		<put-attribute name="long_image"
+			value="/WEB-INF/views/goods/longimage.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/sidebar_goods.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/goods/hotDealList.jsp" />
+	</definition>
+
+<definition name="/goods/goodsHotDealList"
+		extends="longimageLayout">
+		<put-attribute name="title" value="ProductHot DealList" />
+		<put-attribute name="long_image"
+			value="/WEB-INF/views/goods/longimage.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/sidebar_goods.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/goods/goodsHotDealList.jsp" />
+	</definition>
+
+
+
+</tiles-definitions>
+
+

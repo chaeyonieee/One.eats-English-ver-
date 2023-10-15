@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.example.demo.seller.community.dao.SellerCommunityDAO">
+	
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="sellerNo" column="sellerNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="sellerId" column="sellerId" />
+		<result property="memberId" column="memberId" />
+		<result property="creDate" column="creDate" />
+	</resultMap>
+	
+	<select id="selectReviewListWithPagingMap" parameterType="java.util.Map" resultMap="ReviewResult">
+		select * from
+		(select t2.*,
+		m2.id as memberId from
+		(select t1.*,m.id as
+		sellerId from
+		(select
+		r.*,g.memberNo as sellerNo, g.name as goodsName
+		from review r
+		inner join
+		goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join
+		member m
+		on
+		t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on
+		t2.memberNo=m2.memberNo) t3
+		where 1=1
+		<choose>
+			<when test="filter_type!=null and filter_type!=''">
+				<choose>
+					<when test="filter_type=='all'">
+						and goodsName like concat('%',#{filter_word},'%') or goodsNo=#{filter_word} or  memberId like concat('%',#{filter_word},'%') or content like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='goodsName'">
+						and goodsName like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='goodsNo'">
+						and goodsNo=#{filter_word}
+					</when>
+					<when test="filter_type=='memberId'">
+						and memberId like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='content'">
+						and content like concat('%',#{filter_word},'%')
+					</when>
+				</choose>
+			</when>
+			<otherwise>
+				and 1=1
+			</otherwise>
+		</choose>
+		and sellerNo=#{memberNo}
+		order by reviewNo
+		desc
+		limit #{start},#{numForPage}
+	
+	
+	</select>
+	
+	<select id="selectTotalReviewsNumWithPagingMap" parameterType="java.util.Map" resultType="int">
+		select count(reviewNo) from
+		(select t2.*,
+		m2.id as memberId from
+		(select t1.*,m.id as
+		sellerId from
+		(select
+		r.*,g.memberNo as sellerNo, g.name as goodsName
+		from review r
+		inner join
+		goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join
+		member m
+		on
+		t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on
+		t2.memberNo=m2.memberNo) t3
+		where 1=1
+		<choose>
+			<when test="filter_type!=null and filter_type!=''">
+				<choose>
+					<when test="filter_type=='all'">
+						and goodsName like concat('%',#{filter_word},'%') or goodsNo=#{filter_word} or  memberId like concat('%',#{filter_word},'%') or content like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='goodsName'">
+						and goodsName like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='goodsNo'">
+						and goodsNo=#{filter_word}
+					</when>
+					<when test="filter_type=='memberId'">
+						and memberId like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='content'">
+						and content like concat('%',#{filter_word},'%')
+					</when>
+				</choose>
+			</when>
+			<otherwise>
+				and 1=1
+			</otherwise>
+		</choose>
+		and sellerNo=#{memberNo}
+		
+
+	
+	</select>
+	
+</mapper>

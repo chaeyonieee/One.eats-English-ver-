@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+    <definition name="/community/mostQnA/mostQnAList" extends="mainLayout">
+       <put-attribute name="title" value="Frequently Asked Questions List" />
+       <put-attribute name="body" value="/WEB-INF/views/community/mostQnA/mostQnAList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    <definition name="/community/notice/noticeList" extends="mainLayout">
+       <put-attribute name="title" value="Notice List" />
+       <put-attribute name="body" value="/WEB-INF/views/community/notice/noticeList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    
+    <definition name="/community/oneQnA/oneQnAList" extends="mainLayout">
+       <put-attribute name="title" value="1:1 Inquiry  History" />
+       <put-attribute name="body" value="/WEB-INF/views/community/oneQnA/oneQnAList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    
+    <definition name="/community/notice/noticeDetail" extends="mainLayout">
+       <put-attribute name="title" value="Notice 상세" />
+       <put-attribute name="body" value="/WEB-INF/views/community/notice/noticeDetail.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    
+    <definition name="/community/oneQnA/oneQnADetail" extends="mainLayout">
+       <put-attribute name="title" value="1:1 Inquiry  상세" />
+       <put-attribute name="body" value="/WEB-INF/views/community/oneQnA/oneQnADetail.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    
+    <definition name="/community/oneQnA/oneQnAForm" extends="mainLayout">
+       <put-attribute name="title" value="1:1 Inquiry  Write" />
+       <put-attribute name="body" value="/WEB-INF/views/community/oneQnA/oneQnAForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
+    </definition>
+    
+      
+    <definition name="/community/recipe/recipeList" extends="mainLayout">
+       <put-attribute name="title" value="Recipe List" />
+       <put-attribute name="body" value="/WEB-INF/views/community/recipe/recipeList.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />
+    </definition>
+    
+    <definition name="/community/recipe/recipeDetail" extends="undersidebarLayout">
+       <put-attribute name="title" value="Recipe 상세" />
+       <put-attribute name="body1" value="/WEB-INF/views/community/recipe/recipeDetail.jsp" />
+       <put-attribute name="body2" value="/WEB-INF/views/community/recipe/recipeDetail2.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />
+    </definition>
+    
+    
+    <definition name="/community/recipe/recipeForm" extends="mainLayout">
+       <put-attribute name="title" value="Recipe Write" />
+       <put-attribute name="body" value="/WEB-INF/views/community/recipe/recipeForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />
+    </definition>
+    
+     <definition name="/community/recipe/recipeModForm" extends="mainLayout">
+       <put-attribute name="title" value="Recipe Write" />
+       <put-attribute name="body" value="/WEB-INF/views/community/recipe/recipeModForm.jsp" />
+       <put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />
+    </definition>
+</tiles-definitions>

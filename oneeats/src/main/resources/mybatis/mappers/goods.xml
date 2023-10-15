@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.goods.dao.GoodsDAO">
+
+
+	<resultMap id="GoodsResult" type="goodsVO">
+		<result column="goodsNo" property="goodsNo" />
+		<result column="name" property="name" />
+		<result column="price" property="price" />
+		<result column="rapping" property="rapping" />
+		<result column="manufacturer" property="manufacturer" />
+		<result column="weight" property="weight" />
+		<result column="expDate" property="expDate" />
+		<result column="description" property="description" />
+		<result column="harvest" property="harvest" />
+		<result column="harvest" property="harvest" />
+		<result column="creDate" property="creDate"
+			javaType="java.sql.Date" />
+		<result column="img1" property="img1" />
+		<result column="img2" property="img2" />
+		<result column="img3" property="img3" />
+		<result column="img4" property="img4" />
+		<result column="img5" property="img5" />
+		<result column="category" property="category" />
+		<result column="type" property="type" />
+		<result column="memberNo" property="memberNo" />
+			<result column="sellerNo" property="sellerNo" />
+		<result column="sellerName" property="sellerName" />
+	</resultMap>
+
+	<resultMap id="MemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="gender" column="gender" />
+		<result property="birth" column="birth" />
+		<result property="sms_agreement" column="sms_agreement" />
+		<result property="email_agreement" column="email_agreement" />
+		<result property="busNo" column="busNo" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+		<result property="nickname" column="nickname" />
+		<result property="intro" column="intro" />
+		<result property="profileImg" column="profileImg" />
+		<result property="point" column="point" />
+	</resultMap>
+	<resultMap id="OptionResult" type="optionVO">
+		<result property="optionNo" column="optionNo" />
+		<result property="name" column="name" />
+		<result property="option_qty" column="option_qty" />
+		<result property="option_inbun" column="option_inbun" />
+		<result property="price" column="price" />
+		<result property="goodsNo" column="goodsNo" />
+
+	</resultMap>
+
+	<resultMap id="CartResult" type="cartVO">
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="optionName" column="optionName" />
+		<result property="optionNo" column="optionNo" />
+		<result property="optionQty" column="optionQty" />
+		<result property="optionPrice" column="optionPrice" />
+		<result property="optionInbun" column="optionInbun" />
+	</resultMap>
+
+	<resultMap id="HotDealResult" type="hotDealVO">
+		<result property="hotdealNo" column="hotdealNo" />
+		<result property="name" column="name" />
+		<result property="discounted_price" column="discounted_price" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="finishDate" column="finishDate" />
+		<result property="description" column="description" />
+		<result property="creDate" column="creDate" />
+		<result property="category" column="category" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsImg" column="goodsImg" />
+		<result column="sellerName" property="sellerName" />
+		<result column="manufacturer" property="manufacturer" />
+		
+		
+		
+		
+	</resultMap>
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="memberNo" column="memberNo" />
+		<result property="sellerNo" column="sellerNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="sellerId" column="sellerId" />
+		<result property="memberId" column="memberId" />
+		<result property="creDate" column="creDate" />
+	</resultMap>
+
+	<select id="selectAllGoodsList" resultMap="GoodsResult">
+		 <![CDATA[
+		select * from goods
+		]]>
+	</select>
+
+	<select id="selectGoodsByGoodsNo" resultType="goodsVO">
+		SELECT
+		goods.*,member.name as sellerName FROM goods
+		INNER JOIN member on
+		goods.memberNo = member.memberNo
+		where
+		goodsNo=#{goodsNo}
+	</select>
+
+	<select id="selectNumGoodsList" resultType="goodsVO"
+		parameterType="int">
+		select goodsNo from goods
+		order by goodsNo desc Limit 1
+
+	</select>
+
+	<select id="goodsDetail" resultMap="GoodsResult">
+	 <![CDATA[
+		select goods.*, member.name as sellerName from goods 
+		inner join member
+		on goods.memberNo=member.memberNo
+		where goodsNo=#{goodsNo}
+		
+		]]>
+	</select>
+
+	<select id="selectNewGoodsList" resultMap="GoodsResult"
+		parameterType="java.util.Map">
+
+		select * from goods
+		ORDER BY creDate DESC
+
+	</select>
+
+
+
+	<select id="selectTotalReviewsNum" resultType="int"
+		parameterType="int">
+		select count(*) from (select * from review where
+		goodsNo=#{goodsNo}) t
+	</select>
+
+	<select id="selectReviewAverage" resultType="float"
+		parameterType="int">
+		SELECT ifnull(avg(CAST(star AS DECIMAL(2,1))),0) FROM
+		review where goodsNo=#{goodsNo}
+	</select>
+
+
+	<select id="selectOptionsByGoodsNo" resultMap="CartResult"
+		parameterType="int">
+		select `option`.optionNo, `option`.name as
+		optionName,`option`.option_qty as optionQty,`option`.price as
+		optionPrice,
+		`option`.option_inbun as optionInbun,`option`.goodsNo as
+		goodsNo,
+		goods.name as goodsName, goods.img1 as goodsImg, goods.price
+		as goodsPrice from `option`
+		inner join goods
+		on `option`.goodsNo =
+		goods.goodsNo
+		where
+		goods.goodsNo=#{goodsNo}
+	</select>
+
+	<select id="selectNewHotDealList" resultMap="HotDealResult">
+		SELECT
+		h.hotdealNo,
+		h.name,
+		h.discounted_price,
+		h.goods_qty,
+		h.finishDate,
+		h.description,
+		h.creDate,
+		g.goodsNo,
+		g.price AS goodsPrice,
+		g.category AS category,
+		g.name AS goodsName,
+		g.img1 AS goodsImg
+		FROM
+		hotdeal AS h
+		INNER JOIN
+		goods AS g
+		ON
+		h.goodsNo = g.goodsNo
+		WHERE
+		h.finishDate > Now()
+		ORDER BY
+		h.creDate DESC
+		LIMIT 6;
+	</select>
+
+	<select id="selectTotalGoodsNumForAll" resultType="int">
+		select
+		count(goodsNo) from goods
+	</select>
+
+	<insert id="insertNewBookmark" parameterType="bookmarkVO">
+		insert into
+		bookmark (memberNo,goodsNo) values(#{memberNo},#{goodsNo})
+	</insert>
+
+	<select id="isExistBookmark" resultType="int"
+		parameterType="bookmarkVO">
+		select count(goodsNo) from bookmark where
+		goodsNo=#{goodsNo} and memberNo=#{memberNo}
+	</select>
+
+<select id="selectGoodsListWithSearchFilter" parameterType="java.util.Map" resultMap="GoodsResult">
+    <![CDATA[
+		select * from
+		(select u1.goodsNo,u1.price,u1.img1,u1.name,u1.manufacturer,u1.weight,u1.sellerName,u1.sellerNo
+		from (select g.*,m.name as sellerName,m.memberNo as sellerNo from goods as g
+		inner join member as m
+		on g.memberNo=m.memberNo) u1
+		
+		union all
+		
+		select u2.hotdealNo,u2.price,u2.img1,u2.name,u2.manufacturer,u2.weight,u2.sellerName,u2.sellerNo
+		from(
+		select h2.*,m.name as sellerName from 
+		(select h.*, g.memberNo as sellerNo,g.manufacturer,g.weight,g.price,
+		 concat(g.img1,'&path=goodsNo',g.goodsNo) AS img1 from hotdeal as h
+		inner join goods as g
+		on g.goodsNo=h.goodsNo) as h2
+		inner join member as m
+		on m.memberNo=h2.sellerNo) u2
+		) result_t
+		where 1=1
+		]]>
+		<choose>
+			<when test="filter_type!=null and filter_type!=''">
+				<choose>
+					<when test="filter_type=='all'">
+						and name like concat('%',#{filter_word},'%') or sellerName
+						like concat('%',#{filter_word},'%') or manufacturer like
+						concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Product Name'">
+						and name like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Seller'">
+						and sellerName like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Country of origin'">
+						and manufacturer like concat('%',#{filter_word},'%')
+					</when>
+				</choose>
+			</when>
+			<otherwise>
+				and 1=1
+			</otherwise>
+		</choose>
+	    LIMIT #{start}, 12
+</select>
+
+	<select id="selectMaxPriceWithSearchFilter" parameterType="java.util.Map" resultType="int">
+	
+	 <![CDATA[
+		select ifnull(max(price),0) from
+		(select u1.goodsNo,u1.price,u1.img1,u1.name,u1.manufacturer,u1.weight,u1.sellerName,u1.sellerNo
+		from (select g.*,m.name as sellerName,m.memberNo as sellerNo from goods as g
+		inner join member as m
+		on g.memberNo=m.memberNo) u1
+		
+		union all
+		
+		select u2.hotdealNo,u2.price,u2.img1,u2.name,u2.manufacturer,u2.weight,u2.sellerName,u2.sellerNo
+		from(
+		select h2.*,m.name as sellerName from 
+		(select h.*, g.memberNo as sellerNo,g.manufacturer,g.weight,g.price,
+		 concat(g.img1,'&path=goodsNo',g.goodsNo) AS img1 from hotdeal as h
+		inner join goods as g
+		on g.goodsNo=h.goodsNo) as h2
+		inner join member as m
+		on m.memberNo=h2.sellerNo) u2
+		) result_t
+		where 1=1
+		]]>
+		<choose>
+			<when test="filter_type!=null and filter_type!=''">
+				<choose>
+					<when test="filter_type=='all'">
+						and name like concat('%',#{filter_word},'%') or sellerName
+						like concat('%',#{filter_word},'%') or manufacturer like
+						concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Product Name'">
+						and name like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Seller'">
+						and sellerName like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Country of origin'">
+						and manufacturer like concat('%',#{filter_word},'%')
+					</when>
+				</choose>
+			</when>
+			<otherwise>
+				and 1=1
+			</otherwise>
+		</choose>
+	</select>
+
+
+
+	<select id="selectGoodsTotalNumWithSearchFilter"
+		parameterType="java.util.Map" resultType="int">
+		 <![CDATA[
+		select count(*) from
+		(select u1.goodsNo,u1.price,u1.img1,u1.name,u1.manufacturer,u1.weight,u1.sellerName,u1.sellerNo
+		from (select g.*,m.name as sellerName,m.memberNo as sellerNo from goods as g
+		inner join member as m
+		on g.memberNo=m.memberNo) u1
+		
+		union all
+		
+		select u2.hotdealNo,u2.price,u2.img1,u2.name,u2.manufacturer,u2.weight,u2.sellerName,u2.sellerNo
+		from(
+		select h2.*,m.name as sellerName from 
+		(select h.*, g.memberNo as sellerNo,g.manufacturer,g.weight,g.price,
+		 concat(g.img1,'&path=goodsNo',g.goodsNo) AS img1 from hotdeal as h
+		inner join goods as g
+		on g.goodsNo=h.goodsNo) as h2
+		inner join member as m
+		on m.memberNo=h2.sellerNo) u2
+		) result_t
+		where 1=1
+		]]>
+		<choose>
+			<when test="filter_type!=null and filter_type!=''">
+				<choose>
+					<when test="filter_type=='all'">
+						and name like concat('%',#{filter_word},'%') or sellerName
+						like concat('%',#{filter_word},'%') or manufacturer like
+						concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Product Name'">
+						and name like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Seller'">
+						and sellerName like concat('%',#{filter_word},'%')
+					</when>
+					<when test="filter_type=='Country of origin'">
+						and manufacturer like concat('%',#{filter_word},'%')
+					</when>
+				</choose>
+			</when>
+			<otherwise>
+				and 1=1
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="selectGoodsListWithPagingMap"
+		parameterType="java.util.Map" resultMap="GoodsResult">
+		select * from goods
+		where 1=1
+		<choose>
+			<when test="category!=null and category!=''">
+				<choose>
+					<when test="category=='motnan'">
+						and category='vegetable' or category='fruit' or
+						category='juiceAndJam'
+					</when>
+					<when test="category=='mealkit'">
+						and category='zzigae' or category='meal' or
+						category='porridge' or category='sidedish'
+					</when>
+					<when test="category=='best'">
+						and 1=1
+					</when>
+					<otherwise>
+						and category=#{category}
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+
+		limit #{start},12
+	</select>
+
+	<select id="selectGoodsTotalNumWithPagingMap"
+		parameterType="java.util.Map" resultType="int">
+		select count(goodsNo) from goods where 1=1
+		<choose>
+			<when test="category!=null and category!=''">
+				<choose>
+					<when test="category=='motnan'">
+						and category='vegetable' or category='fruit' or
+						category='juiceAndJam'
+					</when>
+					<when test="category=='mealkit'">
+						and category='zzigae' or category='meal' or
+						category='porridge' or category='mealReplacement' or
+						category='sidedish'
+					</when>
+					<when test="category=='best'">
+						and 1=1
+					</when>
+					<otherwise>
+						and category=#{category}
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+	</select>
+
+	<select id="selectMaxPrice" parameterType="java.util.Map"
+		resultType="int">
+		select ifnull(max(price),0) from goods where 1=1
+		<choose>
+			<when test="category!=null and category!=''">
+				<choose>
+					<when test="category=='motnan'">
+						and category='vegetable' or category='fruit' or
+						category='juiceAndJam'
+					</when>
+					<when test="category=='mealkit'">
+						and category='zzigae' or category='meal' or
+						category='porridge' or category='sidedish'
+					</when>
+					<when test="category=='best'">
+						and 1=1
+					</when>
+					<otherwise>
+						and category=#{category}
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+	</select>
+
+	<select id="selectNewReviewsByGoodsNo" parameterType="int"
+		resultMap="ReviewResult">
+		select * from
+		(select t2.*, m2.id as memberId from
+		(select
+		t1.*,m.id as
+		sellerId from
+		(select r.*,g.memberNo as sellerNo, g.name as
+		goodsName
+		from review r
+		inner join goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join
+		member m
+		on t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on
+		t2.memberNo=m2.memberNo) t3
+		where goodsNo=#{goodsNo}
+		order by reviewNo
+		desc
+		limit 5
+	</select>
+
+	<select id="selectReviewsWithPagingMap"
+		parameterType="java.util.Map" resultMap="ReviewResult">
+		select * from
+		(select t2.*,
+		m2.id as memberId from
+		(select t1.*,m.id as
+		sellerId from
+		(select
+		r.*,g.memberNo as sellerNo, g.name as goodsName
+		from review r
+		inner join
+		goods g
+		on r.goodsNo=g.goodsNo) t1
+		inner join
+		member m
+		on
+		t1.sellerNo=m.memberNo) t2
+		inner join member m2
+		on
+		t2.memberNo=m2.memberNo) t3
+		where goodsNo=#{goodsNo}
+		order by reviewNo
+		desc
+		limit #{start},#{numForPage}
+	</select>
+
+	<select id="selectHotDealListWithPagingMap"
+		parameterType="java.util.Map" resultMap="HotDealResult">
+
+		SELECT hotdeal.*,
+		goods.goodsNo, goods.img1 as goodsImg
+		FROM hotdeal
+		INNER JOIN goods ON goods.goodsNo
+		= hotdeal.goodsNo
+
+
+		where 1=1
+		<choose>
+			<when test="category!=null and category!=''">
+				<choose>
+					<when test="category=='motnan'">
+						and category='vegetable' or category='fruit' or
+						category='juiceAndJam'
+					</when>
+					<when test="category=='mealkit'">
+						and category='zzigae' or category='meal' or
+						category='porridge' or category='sidedish'
+					</when>
+					<when test="category=='best'">
+						and 1=1
+					</when>
+					<otherwise>
+						and category=#{category}
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+
+		limit #{start},12
+	</select>
+
+	<select id="selectHotDealTotalNumWithPagingMap"
+		parameterType="java.util.Map" resultType="int">
+		select count(hotdealNo) from hotdeal where 1=1
+		<choose>
+			<when test="category!=null and category!=''">
+				<choose>
+					<when test="category=='motnan'">
+						and category='vegetable' or category='fruit' or
+						category='juiceAndJam'
+					</when>
+					<when test="category=='mealkit'">
+						and category='zzigae' or category='meal' or
+						category='porridge' or category='mealReplacement' or
+						category='sidedish'
+					</when>
+					<when test="category=='best'">
+						and 1=1
+					</when>
+					<otherwise>
+						and category=#{category}
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+	</select>
+
+
+</mapper> 

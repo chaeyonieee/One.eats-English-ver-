@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.main.dao.MainDAO">
+	<resultMap id="MemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="gender" column="gender" />
+		<result property="birth" column="birth" />
+		<result property="sms_agreement" column="sms_agreement" />
+		<result property="email_agreement" column="email_agreement" />
+		<result property="busNo" column="busNo" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+		<result property="nickname" column="nickname" />
+		<result property="intro" column="intro" />
+		<result property="profileImg" column="profileImg" />
+		<result property="point" column="point" />
+	</resultMap>
+
+	<resultMap id="GoodsResult" type="goodsVO">
+		<result property="goodsNo" column="goodsNo" />
+		<result property="name" column="name" />
+		<result property="price" column="price" />
+		<result property="rapping" column="rapping" />
+		<result property="manufacturer" column="manufacturer" />
+		<result property="weight" column="weight" />
+		<result property="expDate" column="expDate" />
+		<result property="description" column="description" />
+		<result property="harvest" column="harvest" />
+		<result property="creDate" column="creDate" />
+		<result property="img1" column="img1" />
+		<result property="img2" column="img2" />
+		<result property="img3" column="img3" />
+		<result property="img4" column="img4" />
+		<result property="img5" column="img5" />
+		<result property="category" column="category" />
+		<result property="type" column="type" />
+	</resultMap>
+
+	<resultMap id="ReviewResult" type="reviewVO">
+		<result property="reviewNo" column="reviewNo" />
+		<result property="star" column="star" />
+		<result property="reviewImg" column="reviewImg" />
+		<result property="content" column="content" />
+		<result property="memberNO" column="memberNO" />
+		<result property="goodsNO" column="goodsNO" />
+
+	</resultMap>
+
+	<resultMap id="RecipeResult" type="recipeVO">
+		<result property="recipeNO" column="ricipeNO" />
+		<result property="cooking_time" column="cooking_time" />
+		<result property="description" column="description" />
+		<result property="cookingImg" column="cookingImg" />
+		<result property="category" column="category" />
+		<result property="inbun" column="inbun" />
+		<result property="creDate" column="creDate" />
+		<result property="memberNo" column="memberNo" />
+
+	</resultMap>
+
+	<resultMap id="CartResult" type="cartVO">
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="optionName" column="optionName" />
+		<result property="optionNo" column="optionNo" />
+		<result property="optionQty" column="optionQty" />
+		<result property="optionPrice" column="optionPrice" />
+		<result property="optionInbun" column="optionInbun" />
+	</resultMap>
+
+	<resultMap id="CouponResult" type="couponVO">
+		<result property="couponNo" column="couponNo" />
+		<result property="name" column="name" />
+		<result property="discount_price" column="discount_price" />
+		<result property="condition" column="condition" />
+		<result property="expDate" column="expDate" />
+		<result property="creDate" column="creDate" />
+		<result property="memberNo" column="memberNo" />
+		<result property="couponCode" column="couponCode" />
+	</resultMap>
+
+	<resultMap id="OrderResult" type="orderVO">
+		<result property="order_seqNo" column="order_seqNo" />
+		<result property="orderNo" column="orderNo" />
+		<result property="orderer_name" column="orderer_name" />
+		<result property="orderer_phone" column="orderer_phone" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_address" column="receiver_address" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="receiver_comment" column="receiver_comment" />
+		<result property="used_point" column="used_point" />
+		<result property="used_couponId" column="used_couponId" />
+		<result property="payment_price" column="payment_price" />
+		<result property="discount_price" column="discount_price" />
+		<result property="shippingfee" column="shippingfee" />
+		<result property="point_price" column="point_price" />
+		<result property="total_price" column="total_price" />
+		<result property="payment_type" column="payment_type" />
+		<result property="orderDate" column="orderDate" />
+		<result property="delivery_status" column="delivery_status" />
+		<result property="deliveryDate" column="deliveryDate" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="goods_inbun" column="goods_inbun" />
+		<result property="memberNo" column="memberNo" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsImg" column="goodsImg" />
+		<result property="gun" column="gun" />
+		<result property="shippingFee" column="shippingFee" />
+		<result property="optionNo" column="optionNo" />
+	</resultMap>
+
+	<resultMap id="HotDealResult" type="hotDealVO">
+		<result property="hotdealNo" column="hotdealNo" />
+		<result property="name" column="name" />
+		<result property="discounted_price" column="discounted_price" />
+		<result property="goods_qty" column="goods_qty" />
+		<result property="finishDate" column="finishDate" />
+		<result property="description" column="description" />
+		<result property="creDate" column="creDate" />
+		<result property="category" column="category" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsImg" column="goodsImg" />
+	</resultMap>
+
+	<select id="selectGoodsList" resultMap="GoodsResult"
+		parameterType="java.util.HashMap">
+	    <![CDATA[
+		select * from goods
+		]]>
+	</select>
+
+	<select id="selectAllGoodsList" resultMap="GoodsResult">
+	    <![CDATA[
+		select * from goods 
+		order by goodsNo Limit 9
+		]]>
+	</select>
+
+	<select id="orderByNew" resultMap="GoodsResult">
+	    <![CDATA[
+		select * from goods
+		order by creDate desc
+		]]>
+	</select>
+
+	<select id="orderByPrice" resultMap="GoodsResult">
+	    <![CDATA[
+		select * from goods 
+		order by price
+		]]>
+	</select>
+
+	<select id="orderByReview" resultMap="GoodsResult">
+	    <![CDATA[
+		select * from goods
+		order by price
+		]]>
+	</select>
+
+	<select id="selectAllRecipesList" resultMap="RecipeResult">
+	  <![CDATA[
+		select * from recipe 
+		order by creDate desc limit 3
+		]]>
+	</select>
+
+	<select id="selectOptionByNo" resultType="cartVO"
+		parameterType="int">
+		select op.optionNo, op.name as optionName, op.option_qty as optionQty, op.price as optionPrice, op.option_inbun as optionInbun, op.goodsNo as goodsNo, g.name as goodsName, g.img1 as goodsImg, g.price as goodsPrice
+		from (select optionNo,name,option_qty,price,option_inbun,goodsNo from `option`
+		union all 
+		select hotdealNo,name,goods_qty,discounted_price,ifnull(null,null),goodsNo from hotdeal) op
+	    inner join goods g
+	    on op.goodsNo=g.goodsNo
+		where
+		op.optionNo=#{optionNo}
+	</select>
+
+	<select id="selectCouponByMemberNo" resultMap="CouponResult"
+		parameterType="int">
+		<![CDATA[
+			select c.* from coupon c
+			inner join member_coupon m
+			on c.couponNo=m.couponNo
+			where m.memberNo=#{memberNo} and m.used="no"
+		]]>
+	</select>
+
+
+	<select id="selectOptionsGoodsToOrderByOptionNo"
+		parameterType="int" resultMap="OrderResult">
+		select op.option_inbun as goods_inbun,
+		op.optionNo as optionNo, op.goodsNo as goodsNo, op.name as goodsName
+		from (select optionNo,name,option_inbun,goodsNo from `option`
+			union all 
+			select hotdealNo,name,goods_qty,goodsNo from hotdeal) as op
+		inner join goods as go
+		on op.goodsNo=go.goodsNo
+		where op.optionNo=#{optionNo};
+	</select>
+
+
+	<select id="selectNewGoodsList" resultMap="GoodsResult">
+		select * from goods
+		order by creDate desc limit 6
+	</select>
+
+	<select id="selectNewHotDealList" resultMap="HotDealResult">
+	SELECT
+    h.hotdealNo,
+    h.name,
+    h.discounted_price,
+    h.goods_qty,
+    h.finishDate,
+    h.description,
+    h.creDate,
+    g.goodsNo,
+    g.price AS goodsPrice,
+    g.category AS category,
+    g.name AS goodsName,
+    g.img1 AS goodsImg
+FROM
+    hotdeal AS h
+INNER JOIN
+    goods AS g
+ON
+    h.goodsNo = g.goodsNo
+WHERE
+    h.finishDate > Now()
+ORDER BY
+    h.creDate DESC
+LIMIT 6;
+	</select>
+
+	<select id="selectNewRecipeList" resultMap="RecipeResult">
+		select * from recipe
+		order by creDate desc limit 3
+	</select>
+
+	<select id="" resultMap="GoodsResult">
+		select * from goods order by creDate
+		desc limit 3
+	</select>
+
+	<select id="selectTopReviewGoodsList" resultMap="GoodsResult">
+		select g.* from
+		goods as g
+		left outer join
+		(SELECT ifnull(avg(CAST(star AS
+		DECIMAL(2,1))),0) as avgstar, goodsNo FROM review group by goodsNo
+		order by avgstar desc limit 6) as star_tbl
+		on
+		g.goodsNo=star_tbl.goodsNo
+		order by avgstar desc
+	</select>
+
+	<select id="selectBestGoodsList" resultMap="GoodsResult">
+		select g.* from goods
+		as g
+		left outer join (select sum(goods_qty) as sell, goodsNo from
+		t_order group by goodsNo) as sell_tbl
+		on g.goodsNo=sell_tbl.goodsNo
+		order by sell desc
+		limit 6
+
+	</select>
+	<select id="selectOneOptionByGoodsNo" parameterType="int"
+		resultType="cartVO">
+		select `option`.optionNo, `option`.name as
+		optionName,`option`.option_qty as
+		optionQty,`option`.price as
+		optionPrice,
+		`option`.option_inbun as
+		optionInbun,`option`.goodsNo as
+		goodsNo,
+		goods.name as goodsName,
+		goods.img1 as goodsImg, goods.price
+		as
+		goodsPrice from `option`
+		inner
+		join goods
+		on `option`.goodsNo =
+		goods.goodsNo
+		where
+		goods.goodsNo=#{goodsNo}
+		order by `option`.optionNo
+		limit 1
+
+	</select>
+
+</mapper>

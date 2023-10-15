@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<mappers>
+	<mapper resource="mybatis/mappers/adminCommunity.xml"/>
+ 	<mapper resource="mybatis/mappers/adminCoupon.xml"/>
+ 	<mapper resource="mybatis/mappers/adminGoods.xml"/>
+ 	<mapper resource="mybatis/mappers/adminHotDeal.xml"/>
+ 	<mapper resource="mybatis/mappers/adminMain.xml"/>
+ 	<mapper resource="mybatis/mappers/adminMember.xml"/>
+ 	<mapper resource="mybatis/mappers/adminOrder.xml"/>
+ 	<mapper resource="mybatis/mappers/community.xml"/>
+ 	<mapper resource="mybatis/mappers/goods.xml"/>
+ 	<mapper resource="mybatis/mappers/main.xml"/>
+ 	<mapper resource="mybatis/mappers/mypage.xml"/>
+ 	<mapper resource="mybatis/mappers/review.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerCommunity.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerCoupon.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerGoods.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerHotDeal.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerMain.xml"/>
+ 	<mapper resource="mybatis/mappers/sellerOrder.xml"/>
+ 	<mapper resource="mybatis/mappers/member.xml"/>
+</mappers>
+</configuration>
