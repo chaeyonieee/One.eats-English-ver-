@@ -7,16 +7,16 @@ $(document).ready(function() {
 			console.log(key, value);
 			if (value == false) {
 				if (key == "id") {
-					alert("ID Duplicate Confirmation을 해주세요.");
+					alert("Please confirm the ID duplication.");
 				} else if (key == "pwd") {
-					alert("올바른 Password를 입력해주세요.");
+					alert("Please enter the correct Password.");
 					$("#pwd").focus();
 				} else if (key == "pwd_confirm") {
-					alert("Password Confirm을 입력해주세요.");
+					alert("Please enter the Confirm Password.");
 				} else if (key == "busNo") {
-					alert("Business Number 인증을 해주세요.");
+					alert("Please verify your Business Number.");
 				} else if (key == "phone") {
-					alert("Phone Number번호 인증을 해주세요.");
+					alert("Please verify your Phone Number.");
 				} else {
 					alert("Please re-enter.");
 					$("#" + key).focus();
@@ -101,7 +101,7 @@ $(document).ready(function() {
 	$("input[name=name]").on("input", function() {
 		var puttedText = $(this).val();
 		if (puttedText.length < 1) {
-			changeMessage("name", "Name을 입력해주세요", "red");
+			changeMessage("name", "Please enter your Name", "red");
 		} else {
 			changeMessage("name", "", "blue");
 		}
@@ -128,11 +128,11 @@ function checkDuplicateId() {
 	if (idString.length < 1) {
 		changeMessage("id", "Please enter your ID", "red");
 	} else if (idString.length < 4) {
-		changeMessage("id", "ID는 최소 4글자 이상이어야 합니다.", "red");
+		changeMessage("id", "ID must be at least 4 characters long.", "red");
 	} else if (regex.test(idString)) {
 		changeMessage(
 			"id",
-			"ID에는 알파벳과 숫자만 쓸 수 있습니다.",
+			"ID can only contain letters and numbers",
 			"red"
 		);
 	} else {
@@ -147,11 +147,11 @@ function checkDuplicateId() {
 			url: path,
 			success: function(data, textStatus) {
 				if (data == "success") {
-					changeMessage("id", "사용할 수 있는 ID입니다.", "blue");
+					changeMessage("id", "This ID is available for use..", "blue");
 					check_map.set("id", true);
 					console.log(check_map);
 				} else if (data == "fail") {
-					changeMessage("id", "이미 사용중인 ID입니다.", "red");
+					changeMessage("id", "This ID is already in use..", "red");
 				} else {
 					changeMessage("id", "An error of unknown cause occurred", "red");
 				}
@@ -160,7 +160,7 @@ function checkDuplicateId() {
 				alert("Error occurred");
 			},
 			complete: function(data) {
-				// alert("성공적으로 처리되었습니다.");
+				// alert("The process has been successfully completed.");
 			},
 		});
 	}
@@ -171,7 +171,7 @@ function fn_phone_inzung() {
 	var current_time = new Date();
 	var remainingTime = inzung_time.getTime() - current_time.getTime();
 	if (remainingTime < 0) {
-		alert("유효시간이 지났습니다. 다시 요청해주세요.");
+		alert("The validity period has expired. Please request again.");
 		return false;
 	}
 
@@ -202,7 +202,7 @@ function fn_phone_inzung() {
 			alert("Error occurred");
 		},
 		complete: function(data) {
-			// alert("성공적으로 처리되었습니다.");
+			// alert("The process has been successfully completed.");
 		},
 	});
 }
@@ -229,9 +229,9 @@ function fn_open_inzung_row() {
 			url: contextPath + "/sms/sendInzungSMS.do",
 			success: function(data, textStatus) {
 				if (data == "success") {
-					changeMessage("inzung", "verification code를 보냈습니다.", "blue");
+					changeMessage("inzung", "We have sent the verification code.", "blue");
 				} else if (data == "fail") {
-					changeMessage("inzung", "verification code를 보낼 수 없었습니다.", "red");
+					changeMessage("inzung", "Unable to send the verification code.", "red");
 				} else {
 					changeMessage("inzung", "An error of unknown cause occurred", "red");
 				}

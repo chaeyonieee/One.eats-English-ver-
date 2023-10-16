@@ -72,7 +72,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             alert("An error occurred");
           },
           complete: function (data) {
-            // alert("성공적으로 처리되었습니다.");
+            // alert("The process has been successfully completed.");
           },
         });
       }

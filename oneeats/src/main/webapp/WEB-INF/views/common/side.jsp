@@ -16,6 +16,13 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
       var rotate2 = 0;
     </script>
     <script src="${contextPath}/js/side.js"></script>
+    <style>
+      .margin1 {
+        margin-right: 8px;
+        margin-left: 16px;
+        width: 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="row">
@@ -31,12 +38,8 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
               background-color: #568203;
             "
           >
-            <img
-              style="margin-left: 16px"
-              style="width: 20px"
-              src="${contextPath}/img/icon/list.png"
-            />
-            <span class="textbold">&nbsp;Category</span>
+            <img class="margin1" src="${contextPath}/img/icon/list.png" />
+            <span class="textbold">&nbsp;CATEGORY</span>
           </div>
           <ul class="ul_menus" style="margin-left: 16px">
             <li>

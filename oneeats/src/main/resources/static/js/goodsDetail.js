@@ -60,11 +60,11 @@ function fn_toCart() {
 		success: function(response) {
 			if (response == "success") {
 				fn_openalert(
-					"장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?",
+					"Added to your cart. Would you like to go to the cart?",
 					cartPage
 				);
 			} else {
-				alert("장바구니에 담지 못 했습니다.");
+				alert("Unable to add to the cart.");
 			}
 		},
 		error: function(response) {

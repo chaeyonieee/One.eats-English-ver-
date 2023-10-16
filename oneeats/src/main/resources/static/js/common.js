@@ -129,11 +129,11 @@ function fn_addCartOneItem(contextPath,num) {
 		success: function(response) {
 			if (response == "success") {
 				fn_openalert(
-					"장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?",
+					"Added to your cart. Would you like to go to the cart?",
 					contextPath+"/main/cart.do"
 				);
 			} else {
-				alert("장바구니에 담지 못 했습니다.");
+				alert("Unable to add to the cart.");
 			}
 		},
 		error: function(response) {
@@ -152,11 +152,11 @@ function fn_addCartOneOption(contextPath,optionNo){
 		success: function(response) {
 			if (response == "success") {
 				fn_openalert(
-					"장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?",
+					"Added to your cart. Would you like to go to the cart?",
 					contextPath+"/main/cart.do"
 				);
 			} else {
-				alert("장바구니에 담지 못 했습니다.");
+				alert("Unable to add to the cart.");
 			}
 		},
 		error: function(response) {

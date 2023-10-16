@@ -16,6 +16,10 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       div.row div.nice-select {
         width: 100%;
       }
+      .margin {
+        margin-top: 4px;
+        margin-left: 40px;
+      }
     </style>
   </head>
   <body>
@@ -45,14 +49,11 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             </c:when>
 
             <c:otherwise>
-              <a href="${contextPath}/member/registerTypeSelect.do"
-                >Member Registration </a
+              <a href="${contextPath}/member/registerTypeSelect.do">Sign Up</a
               >&nbsp; &nbsp;
               <a href="${contextPath}/member/loginForm.do">Login</a>
               &nbsp;&nbsp;
-              <a href="${contextPath}/community/notice/noticeList.do"
-                >Customer Service</a
-              >
+              <a href="${contextPath}/community/notice/noticeList.do">C&S</a>
             </c:otherwise>
           </c:choose>
         </div>
@@ -125,7 +126,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           </div>
         </div>
         <div class="col-2">
-          <div class="row">
+          <div class="row margin">
             <div
               class="col d-flex align-items-center justify-content-center textsize-3"
             >
