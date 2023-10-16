@@ -188,10 +188,7 @@
   font-weight: 600;
 }
 .text-eng {
-  font-family: "Roboto", Courier, monospace;
-}
-.text-kr {
-  font-family: "NanumSquare", "Arial Narrow", Arial, sans-serif;
+  font-family: "Cairo", Courier, monospace;
 }
 
 .imgsize-square1 {
