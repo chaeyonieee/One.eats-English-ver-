@@ -35,7 +35,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
               height: 50px;
               display: flex;
               align-items: center;
-              background-color: #568203;
+              background-color: #dd2124;
             "
           >
             <img class="margin1" src="${contextPath}/img/icon/list.png" />
