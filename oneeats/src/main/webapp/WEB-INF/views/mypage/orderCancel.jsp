@@ -123,7 +123,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               </dl>
               <dl class="dl-dt">
                 <dt class="dt-2 textsize-1 textcolor-black">
-                  ￦${cancel.goodsPrice} | ${cancel.weight}g ${cancel.goods_qty}
+                  ¥${cancel.goodsPrice} | ${cancel.weight}g ${cancel.goods_qty}
                 </dt>
               </dl>
             </div>

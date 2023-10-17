@@ -93,10 +93,10 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                                 <div class="product__item__price">
                                   <div>
                                     ${item.goods_qty}each
-                                    ￦${item.discounted_price}
+                                    ¥${item.discounted_price}
                                   </div>
                                   <span
-                                    >Single piece ￦${item.goodsPrice}
+                                    >Single piece ¥${item.goodsPrice}
                                   </span>
                                 </div>
                               </div>
@@ -168,7 +168,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               >${item.name}</a
                             >
                           </h6>
-                          <h5>￦${item.price}</h5>
+                          <h5>¥${item.price}</h5>
                           <input
                             type="hidden"
                             class="h_col_goods_price"

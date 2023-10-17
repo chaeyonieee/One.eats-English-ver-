@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 	// Select the select tag
 	var selectTag = $("#select_option");
@@ -10,43 +11,73 @@ $(document).ready(function() {
 		// Get the selected value
 		var selectedOptionNo = $(this).val();
 		if(selectedOptionNo!="0"){
-			var selectedOptionPrice = parseFloat($(".h_option_price_" + selectedOptionNo).val());
-			var selectedOptionName = $(".h_option_name_" + selectedOptionNo).val();
-			
-			var payment_price = parseFloat($("#h_payment_price").val());
-			var goodsPrice = parseFloat($("#h_goods_price").val()); // Make sure to parse the goods price as a float
-			selectedOptionPrice = selectedOptionPrice.toFixed(2); // Format the selected option price to two decimal places
-			
-			var discount_price = parseFloat($("#h_discount_price").val());
-			var option_qty = parseFloat($(".h_option_qty_" + selectedOptionNo).val()); // Make sure to parse the option quantity as a float
+			var selectedOptionPrice = $(
+			".h_option_price_" + selectedOptionNo
+		).val();
+		var selectedOptionName = $(
+			".h_option_name_" + selectedOptionNo
+		).val();
+		
+		var payment_price = parseInt($("#h_payment_price").val());
+		selectedOptionPrice = parseInt(selectedOptionPrice);
+		
+		var discount_price = parseInt($("#h_discount_price").val());
+		var option_qty = parseInt(
+			$(".h_option_qty_" + selectedOptionNo).val()
+		);
+		// 표시되는 상품 가격, 할인가격 변경
+		$("#h_payment_price").val(payment_price + goodsPrice*option_qty);
+		$("#payment_price").text(payment_price + goodsPrice*option_qty);
+		$("#h_discount_price").val(
+			discount_price + (goodsPrice * option_qty - selectedOptionPrice)
+		);
+		$("#discount_price").text(
+			discount_price + (goodsPrice * option_qty - selectedOptionPrice)
+		);
+		
+		changeTotalValue();
 
-			// Update displayed product price and discount price
-			$("#h_payment_price").val((payment_price + goodsPrice * option_qty).toFixed(2));
-			$("#payment_price").text((payment_price + goodsPrice * option_qty).toFixed(2));
-			$("#h_discount_price").val(
-				(discount_price + (goodsPrice * option_qty - selectedOptionPrice)).toFixed(2)
-			);
-			$("#discount_price").text(
-				(discount_price + (goodsPrice * option_qty - selectedOptionPrice)).toFixed(2)
-			);
-			
-			changeTotalValue();
+		// 새 행을 만든다
+		var newRow =
+			`<dl class="property-flex2 goods_option_row">
+                              <dt class="property-font2 epzddad1">
+                                <div
+                                  class="property-font3 font-bold"
+                                  style="margin-bottom: 24px; font-size: 22px"
+                                  id="goods_option_name"
+                                >` +
+			selectedOptionName +
+			`</div><input type="hidden" value=` +
+			selectedOptionNo +
+			` name="optionNo" class="h_optionNo" />
+                                <div class="product__details__quantity">
+                                  <div class="quantity text-left">
+                                    <div class="pro-qty border6">
+                                      <a class="goods_option_minus_btn">-</a>
+                                      <input type="text" value="1" name="goodsQty" class="goodsQty_input" />
+                                      <a class="goods_option_plus_btn">+</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="option_price">` +
+			selectedOptionPrice +
+			`</div><div class="goods_option_x_btn">X</div>
+            <input type="hidden" class="h_option_price" value="` +
+			selectedOptionPrice +
+			`" />
+            <input type="hidden" class="h_option_discount" value="` +
+			(goodsPrice * option_qty - selectedOptionPrice) +
+			`" />
+                              </dt>
+                            </dl>
+                        `;
 
-			// Create a new row
-			var newRow =
-				`<dl class="property-flex2 goods_option_row">
-				<!-- Your HTML for the new row -->
-				</dl>
-			`;
-
-			// Add the new row
-			rowsDiv.append(newRow);
+		// 새 행을 추가
+		rowsDiv.append(newRow);
 		}
+		
 	});
-
-	// Rest of your code...
 });
-
 
 // ajax로 카트 정보를 저장
 function fn_toCart() {
@@ -60,15 +91,15 @@ function fn_toCart() {
 		success: function(response) {
 			if (response == "success") {
 				fn_openalert(
-					"Added to your cart. Would you like to go to the cart?",
+					"장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?",
 					cartPage
 				);
 			} else {
-				alert("Unable to add to the cart.");
+				alert("장바구니에 담지 못 했습니다.");
 			}
 		},
 		error: function(response) {
-			alert("An error of unknown cause");
+			alert("원인불명의 에러");
 			console.log(response);
 		},
 	});

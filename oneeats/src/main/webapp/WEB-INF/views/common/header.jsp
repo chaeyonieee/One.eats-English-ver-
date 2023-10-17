@@ -90,7 +90,6 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                     <div class="input-group">
                       <input
                         type="text"
-                        placeholder="Search..."
                         class="form-control"
                         name="filter_word"
                       />

@@ -57,7 +57,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
               class="btn-toform"
               onclick="location.href='${contextPath}/community/oneQnA/oneQnAForm.do'"
             >
-              Write an Inquiry
+              Write 
             </button>
           </div>
         </div>

@@ -74,7 +74,7 @@
                         <br>
                         <p>
                             <button type="reset" class="btn-midlong_2 textsize-1 textbold input btn-round border-0">Cancle</button>
-                            <button type="submit" class="btn-midlong_2 textsize-1 bg-lightgreen textbold input btn-round border-0">저장</button>
+                            <button type="submit" class="btn-midlong_2 textsize-1 bg-lightgreen textbold input btn-round border-0">Save</button>
                         </p>
                 </div>
             </div>

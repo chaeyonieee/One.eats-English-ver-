@@ -103,7 +103,7 @@ function fn_bookmark(contextPath,goodsNo) {
 				alert("찜 했습니다.");
 			} else if (response == "login") {
 				fn_openalert(
-					"Login이 필요합니다. <br> Login 페이지로 이동하시겠습니까?",
+					"Login is required. <br> Would you like to go to the Login page?",
 					contextPath+"/member/loginForm.do"
 				);
 			} else if(response=="duplicated"){

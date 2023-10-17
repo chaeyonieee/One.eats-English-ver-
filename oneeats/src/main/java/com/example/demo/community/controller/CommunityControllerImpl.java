@@ -453,7 +453,7 @@ System.out.println("map : " + map);
 			System.out.println(mav);
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = Alert.alertAndRedirect("List을 표시하지 못 했습니다.",request.getContextPath()+"/main/mainPage.do");
+			mav = Alert.alertAndRedirect("Unable to display the list.",request.getContextPath()+"/main/mainPage.do");
 		}
 		return mav;
 
@@ -473,7 +473,7 @@ System.out.println("map : " + map);
 		HttpSession session = request.getSession();
 		MemberVO member = (MemberVO) session.getAttribute("memberInfo");
 		if (member==null || member.getId().trim().length()<1) {
-			mav = Alert.alertAndRedirect("Login이 필요합니다.", request.getContextPath()+"/member/loginForm.do");
+			mav = Alert.alertAndRedirect("Login is required.", request.getContextPath()+"/member/loginForm.do");
 			return mav;
 		}
 
@@ -499,7 +499,7 @@ System.out.println("map : " + map);
 			System.out.println(mav);
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = Alert.alertAndRedirect("List을 표시하지 못 했습니다.",request.getContextPath()+"/main/mainPage.do");
+			mav = Alert.alertAndRedirect("Unable to display the list.",request.getContextPath()+"/main/mainPage.do");
 		}
 		mav.addAllObjects(pagingMap);
 		return mav;
