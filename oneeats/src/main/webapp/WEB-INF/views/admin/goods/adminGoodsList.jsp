@@ -41,7 +41,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <th>Number</th>
         <th>Registration Date</th>
         <th>Product Name</th>
-        <th style="text-align: right">Registration Hot Deal</th>
+        <th style="text-align: right">Registration Hot Deal
         <th style="text-align: right">Modify</th>
         <th style="text-align: right">Delete</th>
       </tr>

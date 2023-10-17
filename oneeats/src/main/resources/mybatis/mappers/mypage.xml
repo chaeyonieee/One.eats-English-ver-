@@ -277,9 +277,9 @@
 			#{item.discount_price},
 			#{item.shippingfee}, #{item.point_price},
 			#{item.total_price},
-			'Payment중',#{item.goods_qty}, #{item.goods_inbun},
+			'결제중',#{item.goods_qty}, #{item.goods_inbun},
 			#{item.memberNo},
-			#{item.goodsNo}, #{item.optionNo},'Payment중')
+			#{item.goodsNo}, #{item.optionNo},'결제중')
 		</foreach>
 	</insert>
 
@@ -293,12 +293,12 @@
 				delivery_status='입금대기중'
 			</when>
 			<otherwise>
-				delivery_status='Payment Complete'
+				delivery_status='결제완료'
 			</otherwise>
 		</choose>
 		where memberNo=#{memberNo} and
 		orderNo=#{orderNo} and
-		delivery_status='Payment중'
+		delivery_status='결제중'
 
 	</update>
 
@@ -311,7 +311,7 @@
 	<select id="selectTempOrder" parameterType="java.util.Map"
 		resultType="orderVO">
 		select * from t_order where orderNo=#{orderNo} and
-		memberNo=#{memberNo} and delivery_status='Payment중' limit 1
+		memberNo=#{memberNo} and delivery_status='결제중' limit 1
 	</select>
 	<update id="updateMemberPoint" parameterType="java.util.Map">
 		update member
@@ -325,7 +325,7 @@
 		INSERT INTO
 		point_history
 		(name, memberNo, amount)
-		VALUES ('Product 구입으로 인한
+		VALUES ('상품 구입으로 인한
 		소진',#{memberNo}, #{used_point})
 
 	</insert>
@@ -347,7 +347,7 @@
 	<update id="updateDeliveryStatusToCancel" parameterType="int">
 		<![CDATA[
 			update t_order
-	     	set delivery_status='Cancle Complete'
+	     	set delivery_status='취소완료'
 	     	where order_seqNo=#{order_seqNo}
 		]]>
 	</update>
@@ -411,7 +411,7 @@
 		id=#{id}
 	</update>
 
-	<!-- 민아 찜 : ProductName, Price, 이미지 -->
+	<!-- 민아 찜 : 상품이름, 가격, 이미지 -->
 	<select id="selectBookList" resultMap="BookResult"
 		parameterType="memberVO">
 		<![CDATA[
@@ -424,14 +424,14 @@
 		]]>
 	</select>
 
-	<!-- Review 1 -->
+	<!-- 리뷰 1 -->
 	<select id="selectAvailableReviewList" parameterType="int"
 		resultMap="OrderResult">
 	    <![CDATA[
 	    select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='미Write'  and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='미작성'  and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		order by orderDate desc
 		limit 0,5
@@ -442,7 +442,7 @@
 		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='미Write' and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='미작성' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt
 	</select>
@@ -451,7 +451,7 @@
 		select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='미Write' and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='미작성' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt 
 		order by orderDate desc
@@ -459,14 +459,14 @@
 	</select>
 	
 
-	<!-- Review 2 -->
+	<!-- 리뷰 2 -->
 	<select id="selectDoneReviewList" parameterType="int"
 		resultMap="OrderResult">
 	    <![CDATA[
 	     select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		order by orderDate desc
 		limit 5
@@ -477,7 +477,7 @@
 	 	select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt 
 		order by orderDate desc
@@ -489,7 +489,7 @@
 		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='Order Complete' and review_status='Write Complete' and memberNo=#{memberNo}
+		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt
 	
@@ -534,7 +534,7 @@
 	</select>
 
 
-	<!-- 민아 Coupon 조회 -->
+	<!-- 민아 쿠폰 조회 -->
 	<select id="couponSearch" resultMap="CouponResult"
 		parameterType="memberVO">
 		<![CDATA[
@@ -547,7 +547,7 @@
 
 		]]>
 	</select>
-	<!-- 민아 Rewards 조회 -->
+	<!-- 민아 적립금 조회 -->
 	<select id="pointSearch" resultMap="PointHistoryResult"
 		parameterType="memberVO">
 		<![CDATA[
@@ -557,7 +557,7 @@
 		]]>
 	</select>
 
-	<!-- 민아 Coupon, Rewards 조회 -->
+	<!-- 민아 쿠폰, 적립금 조회 -->
 	<select id="couponNum" resultType="couponVO"
 		parameterType="String">
 		<![CDATA[
@@ -567,7 +567,7 @@
 		]]>
 	</select>
 
-	<!-- 민아 Coupon 있는 지 없는 지 -->
+	<!-- 민아 쿠폰 있는 지 없는 지 -->
 	<select id="couponNull" resultType="couponVO"
 		parameterType="couponVO">
 		<![CDATA[
@@ -577,7 +577,7 @@
 		]]>
 	</select>
 
-	<!-- 민아 Coupon 등록 -->
+	<!-- 민아 쿠폰 등록 -->
 	<insert id="couponInsert" parameterType="couponVO">
 		<![CDATA[
 		    insert into member_coupon(couponNo, memberNo) 

@@ -146,7 +146,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             </option>
           </select>
           <c:choose>
-            <c:when test="${order.payment_type=='가상계좌'}">
+            <c:when test="${order.payment_type=='Virtual Account'}">
               For Virtual Account Payment, please enter your account
               <select name="bank" id="" class="form-control">
                 <option value="20">WORRI</option>

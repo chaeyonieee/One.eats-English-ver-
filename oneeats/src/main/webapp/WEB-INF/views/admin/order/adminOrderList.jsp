@@ -59,7 +59,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <tr>
         <th>Order Number</th>
         <th style="width: 20%">Payment date and time</th>
-        <th>Name of the purchaser</th>
+        <th> purchaser</th>
         <th>ID</th>
         <th style="width: 20%">Order History</th>
         <th>Order Status</th>
@@ -94,7 +94,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   />
                   <c:set
                     var="status_array"
-                    value="${['Payment Complete','Order in process','Order Complete','Cancle Complete']}"
+                    value="${['Payment Complete','Order in process','Delivery Completed','Cancle Complete']}"
                   />
                   <select name="delivery_status">
                     <c:forEach items="${status_array}" var="i">

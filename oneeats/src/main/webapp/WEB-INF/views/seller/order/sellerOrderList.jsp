@@ -24,7 +24,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           <select name="order_search_type">
             <option value="all">Total</option>
             <option value="orderNo">Order Number</option>
-            <option value="orderer_name">Name of the purchaser</option>
+            <option value="orderer_name">purchaser</option>
             <option value="orderer_id">ID</option>
           </select>
           <input
@@ -49,7 +49,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <tr>
         <th>Order Number</th>
         <th style="width: 20%">Payment date and time</th>
-        <th>Name of the purchaser</th>
+        <th>purchaser</th>
         <th>ID</th>
         <th style="width: 20%">Order History</th>
         <th>Order Status</th>
