@@ -36,7 +36,7 @@
             </div>
             <div class ="textpoint-center">
             <div class = " textpoint-center textbold textsize-1 text-left">Password</div>
-             <input class ="textpoint-center brd-lightgray btn-round btn-midlong textsize-1" name ="inputPwd" placeholder="현재 Password를 입력해 주세요." type="password"></input>
+             <input class ="textpoint-center brd-lightgray btn-round btn-midlong textsize-1" name ="inputPwd" placeholder="Please enter your current Password." type="password"></input>
             </div>
         </div>
             <button type="reset" class="btn-midlong_2 textsize-1 textbold input btn-round border-0">Cancle</button>

@@ -18,7 +18,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <form method="post" action="${contextPath}/admin/coupon/adminAddCoupon.do">
       <div class="div-p2">
         <p class="p-1 textsize-2 text-left textcolor-black textbold">
-          Coupon Registration
+          Registration
         </p>
       </div>
 

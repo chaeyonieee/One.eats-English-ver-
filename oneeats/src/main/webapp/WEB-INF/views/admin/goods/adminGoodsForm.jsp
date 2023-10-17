@@ -78,25 +78,23 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <div class="col-lg-6 col-md-6 text-left">
               <div class="product__details__text">
                 <section>
-                  <input name="type" type="hidden" value="Admin" />
+                  <input name="type" type="hidden" value="admin" />
                   <div class="property-margin1">
                     <dl class="property-flex2" style="height: 66px">
                       <dt
                         class="property_title1 textbold"
                         style="margin-top: 16px"
                       >
-                        Category
+                        카테고리
                       </dt>
                       <dd class="property-flex1">
                         <div style="align-content: center; margin-top: 4px">
                           <select name="category" class="opt">
-                            <option value="zzigae">Stew/ Soup/ Steamed</option>
-                            <option value="meal">Meal/ Appetizers</option>
-                            <option value="porridge">porridge</option>
-                            <option value="mealReplacement">
-                              meal Replacement
-                            </option>
-                            <option value="sidedish">Sidedish</option>
+                            <option value="zzigae">찌개 / 탕 /찜</option>
+                            <option value="meal">식사 / 안주류</option>
+                            <option value="porridge">죽</option>
+                            <option value="mealReplacement">식사 대용식</option>
+                            <option value="sidedish">간편 한끼 반찬</option>
                           </select>
                         </div>
                       </dd>
@@ -109,7 +107,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         class="property_title1 textbold"
                         style="margin-top: 16px"
                       >
-                        Product Name
+                        상품명
                       </dt>
                       <dd class="property-flex1">
                         <input
@@ -126,7 +124,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Selling price
+                      판매가격
                     </dt>
                     <dd class="property-flex1">
                       <input
@@ -142,13 +140,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Seller
+                      판매자
                     </dt>
                     <dd class="property-flex1">
                       <input
                         class="property-font1 nice-select"
                         style="width: 176px"
-                        value="OneEAtS"
+                        value="원이츠"
                       />
                     </dd>
                   </dl>
@@ -158,7 +156,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Package Type
+                      포장타입
                     </dt>
                     <dd class="property-flex1">
                       <input
@@ -174,7 +172,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Manufacturer
+                      제조원
                     </dt>
                     <dd class="property-flex1">
                       <input
@@ -190,7 +188,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Weight /Capacity
+                      무게 / 용량
                     </dt>
                     <dd class="property-flex1">
                       <input
@@ -206,7 +204,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Expiration date
+                      유통기한
                     </dt>
                     <dd class="property-flex1">
                       <input
@@ -226,10 +224,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           <div
                             class="row ingredient_row head_row bg-lightgreen"
                           >
-                            <div class="col-md">Name of the option</div>
-                            <div class="col-md">Amount of the option</div>
+                            <div class="col-md">옵션의 이름</div>
+                            <div class="col-md">옵션의 양</div>
 
-                            <div class="col-md">Price</div>
+                            <div class="col-md">가격</div>
                             <div class="col-md-1"></div>
                           </div>
                           <div class="row ingredient_row">
@@ -238,7 +236,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_name"
                                 class="form-control"
-                                placeholder="Product Name"
+                                placeholder="상품명"
                                 required
                               />
                             </div>
@@ -247,7 +245,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_qty"
                                 class="form-control"
-                                placeholder="Amount"
+                                placeholder="양"
                                 required
                               />
                             </div>
@@ -258,7 +256,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_price"
                                 class="form-control"
-                                placeholder="Price"
+                                placeholder="가격"
                                 required
                               />
                             </div>
@@ -271,7 +269,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_name"
                                 class="form-control"
-                                placeholder="Product Name"
+                                placeholder="상품명"
                               />
                             </div>
                             <div class="col-md">
@@ -279,7 +277,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_qty"
                                 class="form-control"
-                                placeholder="Amount"
+                                placeholder="양"
                               />
                             </div>
 
@@ -288,7 +286,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_price"
                                 class="form-control"
-                                placeholder="Price"
+                                placeholder="가격"
                                 required
                               />
                             </div>
@@ -307,7 +305,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_name"
                                 class="form-control"
-                                placeholder="Product Name"
+                                placeholder="상품명"
                               />
                             </div>
                             <div class="col-md">
@@ -315,7 +313,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_qty"
                                 class="form-control"
-                                placeholder="Amount"
+                                placeholder="양"
                               />
                             </div>
 
@@ -324,7 +322,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 type="text"
                                 name="option_price"
                                 class="form-control"
-                                placeholder="Price"
+                                placeholder="가격"
                                 required
                               />
                             </div>
@@ -359,7 +357,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="property_title1 textbold"
                       style="margin-top: 16px"
                     >
-                      Entering product details
+                      상품 정보 기입
                     </div>
                   </div>
                   <p style="margin-top: 16px">
@@ -384,7 +382,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       radius="3"
                       style="width: 100px"
                     >
-                      <span class="css-nytqmg textbold">Rewrite</span>
+                      <span class="css-nytqmg textbold">다시 쓰기</span>
                     </button>
                   </div>
                   <!--중간부분-->
@@ -395,9 +393,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       radius="3"
                       style="width: 100px"
                     >
-                      <span class="css-nytqmg textbold"
-                        >Product Registration</span
-                      >
+                      <span class="css-nytqmg textbold">상품 등록</span>
                     </button>
                   </div>
                 </section>

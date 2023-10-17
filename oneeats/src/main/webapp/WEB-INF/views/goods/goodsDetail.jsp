@@ -27,7 +27,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         color: gold;
       }
     </style>
-    <!--Review 비동기 로드-->
+    <!--리뷰 비동기 로드-->
     <script>
       var section_num = parseInt("${section}");
       function fn_loadReviews(prev_next, pageNum, goodsNo) {
@@ -53,7 +53,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             );
           },
           error: function (response) {
-            alert("Unexplained Error");
+            alert("Unknown Error");
             console.log(response);
           },
         });
@@ -123,13 +123,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <c:set var="temp" value="${Math.ceil(reviewAvg)}" />
                 <c:forEach begin="1" end="${Math.floor(reviewAvg)}">★</c:forEach
                 ><c:if test="${temp>reviewAvg}">☆</c:if>
-                <span>Average ${reviewAvg} point </span>
+                <span>Average ${reviewAvg} </span>
                 <span>(${totalReviewsNum} reviews)</span>
-                <div class="product__details__price">￦${goods.price}</div>
+                <div class="product__details__price">¥${goods.price}</div>
                 <section class="css-1ua1wyk">
                   <div class="css-iqoq9n">
                     <c:choose>
-                      <c:when test="${goods.type=='Business'}">
+                      <c:when test="${goods.type=='Seller'}">
                         <div class="goods_detail_description">
                           <dl class="property-flex2">
                             <dt class="property-input-gd">Seller</dt>
@@ -140,7 +140,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Package Type</dt>
+                            <dt class="property-input-gd">Packaging Type</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.rapping}</span
@@ -148,13 +148,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Country of origin</dt>
+                            <dt class="property-input-gd">Country of Origin</dt>
                             <dd class="property-flex4">
                               ${goods.manufacturer}
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Weight /Capacity</dt>
+                            <dt class="property-input-gd">Weight / Capacity</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.weight}</span
@@ -162,7 +162,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Harvesting Season</dt>
+                            <dt class="property-input-gd">Harvest Time</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.harvest}</span
@@ -176,11 +176,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           <dl class="property-flex2">
                             <dt class="property-input-gd">Seller</dt>
                             <dd class="property-flex4">
-                              <span class="property-input">OneEATS</span>
+                              <span class="property-input">One.EATS</span>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Package Type</dt>
+                            <dt class="property-input-gd">Packaging Type</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.rapping}</span
@@ -196,7 +196,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Weight /Capacity</dt>
+                            <dt class="property-input-gd">Weight / Capacity</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.weight}</span
@@ -204,7 +204,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             </dd>
                           </dl>
                           <dl class="property-flex2">
-                            <dt class="property-input-gd">Expiration date</dt>
+                            <dt class="property-input-gd">Expire Date</dt>
                             <dd class="property-flex4">
                               <span class="property-input"
                                 >${goods.expDate}</span
@@ -219,7 +219,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       action="${contextPath}/orderNow.do"
                       method="post"
                     >
-                      <!--Modify-->
+                      <!--수정-->
                       <div class="property-margin" style="margin-bottom: -40px">
                         <div class="property-margin1">
                           <dl class="property-flex2" style="height: 170px">
@@ -227,7 +227,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-input-gd"
                               style="margin-top: 16px"
                             >
-                              Select a product
+                              Sellect Product
                             </dt>
                             <dd class="property-flex4">
                               <div
@@ -240,7 +240,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                   class="margin4 opt"
                                 >
                                   <option value="0" selected>
-                                    Please select an option
+                                    Please select the product
                                   </option>
                                   <c:forEach
                                     items="${goodsOptionList}"
@@ -280,7 +280,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             class="cart-option-item property-flex5 goods_option_grid"
                             style="width: 525px"
                           >
-                            <!--선택한 Product 옵션이 나타나는 구역 -->
+                            <!--선택한 상품 옵션이 나타나는 구역 -->
                             <div class="goods_option_rows"></div>
                             <span
                               class="property-font3 text-right"
@@ -291,7 +291,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 padding: 10px 0 10px 0;
                               "
                             >
-                              Total product price
+                              Total Product Price
                             </span>
                             <span
                               class="property-font3 text-right"
@@ -308,7 +308,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 padding: 10px 0 10px 0;
                               "
                             >
-                              Discount Price
+                              Discount price
                             </span>
                             <span
                               class="property-font3 text-right"
@@ -326,7 +326,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 padding: 10px 0 10px 0;
                               "
                             >
-                              Payment
+                              Payment Amount
                             </span>
                             <span
                               class="property-font3 text-right"
@@ -334,7 +334,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               id="t_price"
                               >0</span
                             >
-                            <!--Shipping Fee와 ProductPrice hidden-->
+                            <!--배송비와 상품금액 hidden-->
                             <input type="hidden" name="shippingFee" value="0" />
                             <input
                               type="hidden"
@@ -423,7 +423,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   href="#tabs-1"
                   role="tab"
                   aria-selected="true"
-                  >정보</a
+                  >Information</a
                 >
               </li>
               <li class="nav-item">
@@ -440,7 +440,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <div class="tab-content">
               <div class="tab-pane active" id="tabs-1" role="tabpanel">
                 <div class="product__details__tab__desc">
-                  <h6>Product Introduction</h6>
+                  <h6>Product Description</h6>
                   <p>${goods.description}</p>
                 </div>
               </div>
@@ -450,14 +450,14 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     class="text-left textbold"
                     style="padding-left: 20px; font-size: 24px"
                   >
-                    Product 후기
+                    Product Reviews
                   </h6>
 
                   <h6 class="text-left" style="padding-left: 20px">
-                    총 ${totalReviewsNum}개
+                    Total ${totalReviewsNum}
                   </h6>
 
-                  <!--Product 후기-->
+                  <!--상품 후기-->
                   <div id="reviews-grid">
                     <c:forEach var="review" items="${newReviewList}">
                       <div class="property-input1">
@@ -502,7 +502,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 <img
                                   src="${contextPath}/download.do?imageFileName=${review.reviewImg}&path=reviewNo${review.reviewNo}"
                                   class="expand_img"
-                                  alt="Review 사진"
+                                  alt="리뷰 사진"
                                 />
                               </c:if>
                             </p>
@@ -566,7 +566,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     </div>
                   </div>
 
-                  <!--여기까지 Product후기-->
+                  <!--여기까지 상품후기-->
                 </div>
               </div>
             </div>
@@ -582,7 +582,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title product__discount__title">
-              <h2 style="text-align: center">관련 Product</h2>
+              <h2 style="text-align: center">Related Products</h2>
             </div>
           </div>
         </div>
@@ -604,8 +604,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6><a href="#">Ugly 복숭아 1개입</a></h6>
-                <h5>￦2000</h5>
+                <h6><a href="#">Ugly Peach, 1 piece</a></h6>
+                <h5>￦350</h5>
               </div>
             </div>
           </div>
@@ -626,7 +626,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6><a href="#">Ugly 수박 1kg</a></h6>
+                <h6><a href="#">Ugly Watermelon 1kg</a></h6>
                 <h5>￦27900</h5>
               </div>
             </div>
@@ -648,7 +648,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6><a href="#">Ugly 감자 1개입</a></h6>
+                <h6><a href="#">Ugly potato, 1 piece</a></h6>
                 <h5>￦1300</h5>
               </div>
             </div>
@@ -671,7 +671,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6><a href="#">포르치니버섯 크림 뇨끼</a></h6>
+                <h6><a href="#">Mushroom Cream Risotto</a></h6>
                 <h5>￦8800</h5>
               </div>
             </div>

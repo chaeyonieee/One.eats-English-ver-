@@ -59,7 +59,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="row">
           <div class="col text-center">
             <p class="textsize-2 margin1">
-              ----------------------또는----------------------
+              ----------------------OR----------------------
             </p>
           </div>
         </div>

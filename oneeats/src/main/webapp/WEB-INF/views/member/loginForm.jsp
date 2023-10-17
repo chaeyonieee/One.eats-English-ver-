@@ -128,7 +128,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div>
                 <input
                   class="textsize-2 form-control input-tall"
-                  placeholder="Enter Password (8-12 characters, uppercase and lowercase letters + numbers + special characters)"
+                  placeholder="Enter Password (8-12, upper and lower letters+num+special characters)"
                   name="pwd"
                   type="password"
                 />
@@ -152,7 +152,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <a href="${contextPath}/member/idSearchForm.do">Search ID</a>
               /
               <a href="${contextPath}/member/idSearchForm.do"
-                >Search Password</a
+                >Search PWD</a
               >
               /
               <a href="${contextPath}/member/registerTypeSelect.do"
@@ -181,7 +181,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 href="${contextPath}/kakao/loginForm.do"
               >
                 <img src="${contextPath}/img/icon/kakao.png" />
-                KAKAOTALK Login
+                KAKAO Login
               </a>
             </div>
 

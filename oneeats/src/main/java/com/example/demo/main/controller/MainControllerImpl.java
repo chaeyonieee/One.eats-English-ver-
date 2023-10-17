@@ -89,7 +89,7 @@ public class MainControllerImpl implements MainController {
 				cartList = (List<CartVO>) session.getAttribute("cartList");
 			}
 
-			// 같은 옵션으로 Order한 정보가 있는지 참조하기 위한 맵
+			// 같은 옵션으로 주문한 정보가 있는지 참조하기 위한 맵
 			Map<Integer, Integer> optionNoToidxMap = new HashMap();
 			for (int i = 0; i < cartList.size(); i++) {
 				CartVO temp = cartList.get(i);
@@ -144,7 +144,7 @@ public class MainControllerImpl implements MainController {
 				session.removeAttribute("cartList");
 			}
 
-			// 같은 옵션으로 Order한 정보가 있는지 참조하기 위한 맵
+			// 같은 옵션으로 주문한 정보가 있는지 참조하기 위한 맵
 			Map<Integer, Integer> optionNoToidxMap = new HashMap();
 			for (int i = 0; i < cartList.size(); i++) {
 				CartVO temp = cartList.get(i);
@@ -186,7 +186,7 @@ public class MainControllerImpl implements MainController {
 		return result;
 	}
 
-	// ajax로 카트에 Product을 하나 담기 위한 코드
+	// ajax로 카트에 상품을 하나 담기 위한 코드
 	@ResponseBody
 	@PostMapping(value = "/addCartItem.do")
 	public String addCartItem(HttpServletRequest request) throws IOException {
@@ -235,7 +235,7 @@ public class MainControllerImpl implements MainController {
 		return result;
 	}
 
-	// ajax로 cart에 담긴 Product을 지우기 위한 코드
+	// ajax로 cart에 담긴 상품을 지우기 위한 코드
 	@ResponseBody
 	@PostMapping(value = "/removeCartItem.do")
 	public String removeCartItem(HttpServletRequest request) throws IOException {
@@ -272,14 +272,14 @@ public class MainControllerImpl implements MainController {
 		HttpSession session = request.getSession();
 		MemberVO loginMember = (MemberVO) session.getAttribute("memberInfo");
 
-		// Product 상세 페이지에서 넘겨준 옵션 선택 정보를 session에 저장
-		// 그런데 이제 Login이 안 되어 있어 Login 페이지로 다녀온 경우는 이 과정을 생략
+		// 상품 상세 페이지에서 넘겨준 옵션 선택 정보를 session에 저장
+		// 그런데 이제 로그인이 안 되어 있어 로그인 페이지로 다녀온 경우는 이 과정을 생략
 		List<OrderVO> orderNowList = (List<OrderVO>) session.getAttribute("selectGoodsList");
 
 		String loginFor = (String) session.getAttribute("loginFor");
 		if (orderNowList != null && orderNowList.size() > 0 && loginFor != null && loginFor.equals("orderNow")) {
-			System.out.println("Order Product을 선택한 정보가 있음");
-			// 첫번째 원소로부터 Discount Price Price등을 가져와 모델에
+			System.out.println("주문 상품을 선택한 정보가 있음");
+			// 첫번째 원소로부터 할인 가격등을 가져와 모델에
 			int shippingFee = orderNowList.get(0).getShippingfee();
 			int paymentPrice = orderNowList.get(0).getPayment_price();
 			int discountPrice = orderNowList.get(0).getDiscount_price();
@@ -323,28 +323,28 @@ public class MainControllerImpl implements MainController {
 			} catch (Exception e) {
 				e.printStackTrace();
 				String previousPage = request.getHeader("Referer");
-				mav = Alert.alertAndRedirect("Failed to retrieve order information.", previousPage);
+				mav = Alert.alertAndRedirect("주문 정보를 받아오지 못 했습니다.", previousPage);
 				return mav;
 			}
 		}
 
 		if (loginMember == null || loginMember.getId().length() < 1) {
-			mav = Alert.alertAndRedirect("This page requires login.", request.getContextPath() + "/member/loginForm.do");
+			mav = Alert.alertAndRedirect("로그인이 필요한 페이지입니다.", request.getContextPath() + "/member/loginForm.do");
 			session.setAttribute("loginFor", "orderNow");
 			return mav;
 		}
 
-		// 멤버에서 Coupon 리스트를 받아옴
+		// 멤버에서 쿠폰 리스트를 받아옴
 		try {
 			List<CouponVO> couponList = mainService.selectCouponByMemberNo(loginMember.getMemberNo());
 			mav.addObject("couponList", couponList);
 			mav.setViewName("/mypage/orderConfirm");
 
 		} catch (Exception e) {
-			// 에러가 나면 Previous 페이지로 이동
+			// 에러가 나면 이전 페이지로 이동
 			e.printStackTrace();
 			String previousPage = request.getHeader("Referer");
-			mav = Alert.alertAndRedirect("Failed to retrieve customer information.", previousPage);
+			mav = Alert.alertAndRedirect("주문자 정보를 받아오지 못 했습니다.", previousPage);
 			return mav;
 		}
 		System.out.println(mav);

@@ -86,7 +86,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
   
     <div class="div-p ">
         <br>
-        <p class=" textsize-2 text-left textcolor-black textbold">Wish List Product &nbsp <span class ="textsize-1 textcolor-lightgray">찜한 Product의 History입니다.</span></p>
+        <p class=" textsize-2 text-left textcolor-black textbold">Wish List Product &nbsp <span class ="textsize-1 textcolor-lightgray">History of wishlist Products.</span></p>
     <hr class="linebold">
     <br>
     
