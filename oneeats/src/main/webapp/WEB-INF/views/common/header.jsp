@@ -63,7 +63,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <div class="col-3">
           <a href="${contextPath}/main/mainPage.do">
             <img
-              src="${contextPath}/img/logo2.png"
+              src="${contextPath}/img/logo2.jpg"
               alt="Logo"
               style="width: 100%; height: auto"
             />
@@ -95,7 +95,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                       />
                       <div class="input-group-append">
                         <button
-                          style="background-color: #568203"
+                          style="background-color: #dd2124"
                           class="textcolor-white border-0"
                           type="submit"
                         >

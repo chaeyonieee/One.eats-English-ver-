@@ -31,22 +31,13 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 height: 431;
                 justify-content: space-around !important;
               "
-              data-setbg="${contextPath}/img/product/mainPage/mainPage2.JPG"
+              data-setbg="${contextPath}/img/product/mainPage/mainPage3.JPG"
             >
               <div class="hero__text">
-                <span style="margin-left: -68px"
-                  >Join us with fresh products at One.eats</span
-                >
-                <h2 style="margin: 34px 0 12px -74px">UGLY <br />PRODUCTS</h2>
-                <p style="color: #fff; margin-right: 70px">
-                  We sell ugly agricultural products directly from the farm,<br />
-                  bypassing wholesale markets, <br />which is 20% or more lower
-                  than market prices.
-                </p>
                 <a
                   href="${contextPath}/goods/goodsList.do"
                   class="primary-btn"
-                  style="margin: 24px 74px 0 0"
+                  style="margin: 360px 74px 0 0"
                   >View Products</a
                 >
               </div>

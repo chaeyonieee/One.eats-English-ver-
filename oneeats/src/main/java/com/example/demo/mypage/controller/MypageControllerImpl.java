@@ -638,9 +638,9 @@ public class MypageControllerImpl implements MypageController {
 			condMap.put("deliveryNo", deliveryNo);
 			condMap.put("memberNo", memberNo);
 			mypageService.deleteDeliveryAddressWithMap(condMap);
-			mav = Alert.alertAndRedirect("삭제했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Deleted.", request.getContextPath() + "/mypage/myAddress.do");
 		} catch (Exception e) {
-			mav = Alert.alertAndRedirect("삭제하지 못했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Unable to delete.", request.getContextPath() + "/mypage/myAddress.do");
 		}
 
 		return mav;
@@ -688,7 +688,7 @@ public class MypageControllerImpl implements MypageController {
 		if (memberInfo.getPwd().equals(inputPwd)) {
 			mav.setViewName("/mypage/mypageMemberInfoModForm");
 		} else {
-			mav = Alert.alertAndRedirect("비밀번호가 틀립니다. 다시 시도해 주세요",
+			mav = Alert.alertAndRedirect("Incorrect password. Please try again",
 					request.getContextPath() + "/mypage/mypageMemberMod.do");
 		}
 
