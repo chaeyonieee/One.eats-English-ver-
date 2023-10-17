@@ -323,7 +323,7 @@ public class MainControllerImpl implements MainController {
 			} catch (Exception e) {
 				e.printStackTrace();
 				String previousPage = request.getHeader("Referer");
-				mav = Alert.alertAndRedirect("주문 정보를 받아오지 못 했습니다.", previousPage);
+				mav = Alert.alertAndRedirect("Unable to retrieve order information.", previousPage);
 				return mav;
 			}
 		}

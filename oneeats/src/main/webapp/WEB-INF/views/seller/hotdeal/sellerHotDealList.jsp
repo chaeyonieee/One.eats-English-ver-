@@ -44,7 +44,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <tr>
         <th>Hot Deal Number</th>
         <th>Hot Deal Registration Date</th>
-        <th>Hot Deal Product Name</th>
+        <th>Hot Deal Name</th>
         <th style="text-align: right">Modify</th>
         <th style="text-align: right">Delete</th>
       </tr>

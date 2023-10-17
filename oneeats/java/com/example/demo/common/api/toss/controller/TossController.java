@@ -128,7 +128,7 @@ public class TossController {
 		obj.put("cancelReason", cancelReason);
 //		obj.put("cancelAmount", cancelAmount);
 		
-		if (paymentType != null && paymentType.equals("가상계좌")) {
+		if (paymentType != null && paymentType.equals("Virtual Account")) {
 			JSONObject refundReceiveAccount = new JSONObject();
 			refundReceiveAccount.put("bank", bank);
 			refundReceiveAccount.put("accountNumber", accountNumber);

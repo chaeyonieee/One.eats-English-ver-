@@ -48,7 +48,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <table class="textcolor-black textsize-1">
       <tr>
         <th style="width: 10%">Number</th>
-        <th>Coupon Registration Date</th>
+        <th>Registration Date</th>
         <th style="width: 30%">Coupon Name</th>
         <th>Usage Location</th>
         <th>Expiration Date</th>
@@ -81,7 +81,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       type="button"
       onclick="location.href='${contextPath}/admin/coupon/adminCouponForm.do'"
     >
-      Coupon Registration
+      Registration
     </button>
 
     <!-- 페이징 -->

@@ -257,7 +257,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           <div
                             class="row ingredient_row head_row bg-lightgreen"
                           >
-                            <div class="col-md">Hot Deal Product Name</div>
+                            <div class="col-md">Hot Deal Name</div>
                             <div class="col-md">Hot Deal Quantity</div>
 
                             <div class="col-md">Discount PricePrice</div>
@@ -343,7 +343,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       id="input_submit"
                     >
                       <div class="css-nytqmg textbold">
-                        Registration Hot Deal
+                        Registration
                       </div>
                     </button>
                   </div>

@@ -114,7 +114,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           </dl>
           <dl class="dl-dt">
             <dt class="dt-1 textsize-1 textbold textcolor-black">
-              Name of the purchaser
+               purchaser
             </dt>
             <dd class="dd-1 textsize-1 textcolor-black">
               ${order.orderer_name}

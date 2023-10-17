@@ -96,7 +96,7 @@
 		]]>
 	</select>
 	
-	<!-- Review insert -->
+	<!-- 리뷰 insert -->
 	<insert id="reviewInsert" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="reviewNo">
 		<![CDATA[
 		insert into review(star, reviewImg, content, goodsNo, memberNo)
@@ -106,8 +106,8 @@
 	
 	<update id="updateOrderReviewStatus" parameterType="java.util.Map">
 		update t_order
-		set review_status='Write Complete'
-		where review_status='미Write' and memberNo=#{memberNo} and orderNo=#{orderNo} and goodsNo=#{goodsNo}
+		set review_status='작성완료'
+		where review_status='미작성' and memberNo=#{memberNo} and orderNo=#{orderNo} and goodsNo=#{goodsNo}
 	</update>
 	
 	<select id="isReviewed" parameterType="java.util.Map" resultType="int">
@@ -135,10 +135,10 @@
 		values
 		<choose>
 			<when test="reviewImg!=null and reviewImg!=''">
-				('사진Review',date_add(now(),interval 1 month),150,#{memberNo})
+				('사진리뷰',date_add(now(),interval 1 month),150,#{memberNo})
 			</when>
 			<otherwise>
-				('글Review',date_add(now(),interval 1 month),50,#{memberNo})
+				('글리뷰',date_add(now(),interval 1 month),50,#{memberNo})
 			</otherwise>
 		</choose>
 	</insert>
