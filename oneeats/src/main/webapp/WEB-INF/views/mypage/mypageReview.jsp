@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,17 +57,19 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
   <body>
     <div class="profile-edit-header text-left">
       <br />
-      <span class="textsize-3 textbold">리뷰작성</span>
+      <span class="textsize-3 textbold">Write a review</span>
       <hr class="line-black" />
       <br />
       <p class="textsize-1 text-left textcolor-lightgray">
-        · 사진후기 150원, 글후기 50원 적립, 동일 상품의 후기는 월 1회만 적립금을
-        지급해드립니다. <br />
-        · 후기 작성 후 첫 영업일에 적립금이 지급됩니다.
+        · Earn 15 yen for photo reviews and 5 yen for text reviews. You will
+        receive the reward only once a month for reviews of the same product.
+        <br />
+        · Rewards will be credited on the first business day after writing a
+        review.
       </p>
       <br /><br />
       <h5 class="textsize-2 reviewdiv">
-        작성가능 리뷰 ${totalAvailableReviewsNum} 개
+        Writable reviews : ${totalAvailableReviewsNum}
       </h5>
       <br />
       <div id="available_reviews_grid">
@@ -79,7 +81,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               />
             </div>
             <div class="col-md textsize-2 textbold">
-              ${item.goodsName} ${item.goods_qty}개 <br />
+              ${item.goodsName} : ${item.goods_qty} <br />
               ${item.deliveryDate} ${item.delivery_status}
             </div>
             <div class="col-md textsize-2 textbold">
@@ -88,7 +90,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                 type="button"
                 onclick="location.href='${contextPath}/review/writeReview.do?order_seqNo=${item.order_seqNo}'"
               >
-                리뷰작성
+                Write a review
               </button>
             </div>
           </div>
@@ -140,7 +142,9 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <br />
       <hr class="line-black" />
       <br />
-      <h5 class="textsize-2 reviewdiv">작성한 리뷰 ${totalDoneReviewsNum}개</h5>
+      <h5 class="textsize-2 reviewdiv">
+        Writed reviews : ${totalDoneReviewsNum}
+      </h5>
 
       <br />
       <div id="done_reviews_grid">
@@ -155,7 +159,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               />
             </div>
             <div class="col-md textsize-2 textbold">
-              ${item.goodsName} 총 수량 ${item.goods_qty}개 <br />
+              ${item.goodsName} Total count : ${item.goods_qty} <br />
               ${item.deliveryDate} ${item.delivery_status}
             </div>
           </div>
@@ -230,7 +234,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             );
           },
           error: function (response) {
-            alert("원인불명의 에러");
+            alert("Unknown Error");
             console.log(response);
           },
         });
@@ -258,7 +262,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             );
           },
           error: function (response) {
-            alert("원인불명의 에러");
+            alert("Unknown Error");
             console.log(response);
           },
         });

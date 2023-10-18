@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,7 +36,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             placeholder="search.."
           />
           <button
-            class="btn-1 textcolor-white border-0 bg-lightgreen"
+            class="btn-1  border-0 bg-lightgreen"
             type="submit"
           >
             Search
@@ -51,7 +51,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <table class="textcolor-black textsize-1">
       <tr>
         <th style="width: 10%">Number</th>
-        <th>Coupon Registration Date</th>
+        <th>Registration Date</th>
         <th style="width: 30%">Coupon Name</th>
         <th>Usage Location</th>
         <th>Expiration Date</th>
@@ -80,11 +80,11 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 
     <button
       style="font-size: 12px; margin-top: 22px; float: right"
-      class="btn-1 bg-lightgreen textcolor-white border-0"
+      class="btn-1 bg-lightgreen  border-0"
       type="button"
       onclick="location.href='${contextPath}/seller/coupon/sellerCouponForm.do'"
     >
-      Coupon Registration
+      Registration
     </button>
 
     <!-- 페이징 -->

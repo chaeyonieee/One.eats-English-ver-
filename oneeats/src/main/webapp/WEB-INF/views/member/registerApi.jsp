@@ -243,7 +243,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <button
                 type="button"
                 onclick="execDaumPostCode()"
-                class="bg-lightgreen btn-long border-0"
+                class="bg-lightgreen btn-long border-0 btn-border"
               >
                 Address Search
               </button>
@@ -412,7 +412,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col">
               <button
                 type="submit"
-                class="bg-lightgreen textsize-2 border-0 btn-long"
+                class="bg-lightgreen textsize-2 border-0 btn-long btn-border"
               >
                 Member Registration Complete
               </button>

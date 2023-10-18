@@ -222,7 +222,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
             <div class="latest-product__text">
               <h4
                 class="text-left"
-                style="font-size: 18px; padding-bottom: 6px"
+                style="font-size: 16px; padding-bottom: 6px"
               >
                 New Product
               </h4>
@@ -262,7 +262,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
             <div class="latest-product__text">
               <h4
                 class="text-left"
-                style="font-size: 18px; padding-bottom: 6px"
+                style="font-size: 16px; padding-bottom: 6px"
               >
                 Best Product
               </h4>
@@ -302,7 +302,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
             <div class="latest-product__text">
               <h4
                 class="text-left"
-                style="font-size: 18px; padding-bottom: 6px"
+                style="font-size: 16px; padding-bottom: 6px"
               >
                 Top Review Product
               </h4>

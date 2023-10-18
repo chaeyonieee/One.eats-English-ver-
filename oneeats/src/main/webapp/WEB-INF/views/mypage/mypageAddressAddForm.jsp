@@ -77,7 +77,7 @@
 .circle{
     display: inline-block; /* 영역적용가능해짐 */
     width: 20px; height: 20px;
-    border: 2px solid #a3d060;
+    border: 2px solid #FCF75E;
     box-sizing: border-box;
     border-radius: 10px; /* 모서리둥글게 처리 */
     position: relative; top: 4px;
@@ -85,7 +85,7 @@
 }
 .circle:after{
     content: '\2714'; /* 체크박스 특수문자 */
-    font-size: 20px; color: #a3d060;
+    font-size: 20px; color: #FCF75E;
     position: absolute; top: -14px; left: 0;
     opacity: 0; /* 처음엔 안보이게 처리 */
     transition: 0.2s; /* CSS변화에 시간차 처리 */

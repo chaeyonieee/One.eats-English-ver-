@@ -165,7 +165,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col text-center">
               <button
                 type="submit"
-                class="bg-lightgreen textcolor-white textsize-3 textbold border-0 btn-long"
+                class="bg-lightgreen textcolor-black textsize-3 textbold border-0 btn-long"
               >
                 Login
               </button>

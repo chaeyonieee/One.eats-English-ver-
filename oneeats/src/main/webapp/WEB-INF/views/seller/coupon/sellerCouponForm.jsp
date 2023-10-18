@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,8 +82,11 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <tr>
           <th>Coupon Code</th>
           <td>
-            <input type="text" name="couponCode" placeholder="Enter a coupon
-            code />
+            <input
+              type="text"
+              name="couponCode"
+              placeholder="Enter a coupon code"
+            />
           </td>
         </tr>
       </table>
@@ -94,14 +97,12 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <div class="div-btn">
         <button
           class="btn-1 btn-regular bg-white textcolor-black btn-border"
+          style="font-weight: 600"
           type="reset"
         >
           Rewrite
         </button>
-        <button
-          class="btn-1 btn-regular bg-lightgreen textcolor-white border-0"
-          type="submit"
-        >
+        <button class="btn-1 btn-regular bg-lightgreen border-0" type="submit">
           Coupon Registration
         </button>
       </div>

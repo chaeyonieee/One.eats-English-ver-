@@ -34,7 +34,7 @@
         <div class="textsize-2">
           <div class="box">가입</div>
           <div class="box">Agree to Terms</div>
-          <div class="box" style="border-top: solid 5px; border-color: #a3d060">Enter Information</div>
+          <div class="box" style="border-top: solid 5px; border-color: #FCF75E">Enter Information</div>
           <div class="box">Registration Complete</div>
         </div>
             <br>

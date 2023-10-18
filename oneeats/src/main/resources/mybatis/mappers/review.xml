@@ -106,8 +106,8 @@
 	
 	<update id="updateOrderReviewStatus" parameterType="java.util.Map">
 		update t_order
-		set review_status='작성완료'
-		where review_status='미작성' and memberNo=#{memberNo} and orderNo=#{orderNo} and goodsNo=#{goodsNo}
+		set review_status='Completion of writing'
+		where review_status='Not written' and memberNo=#{memberNo} and orderNo=#{orderNo} and goodsNo=#{goodsNo}
 	</update>
 	
 	<select id="isReviewed" parameterType="java.util.Map" resultType="int">
@@ -120,10 +120,10 @@
 		set
 		<choose>
 			<when test="reviewImg!=null and reviewImg!=''">
-				point=point+150
+				point=point+15
 			</when>
 			<otherwise>
-				point=point+50
+				point=point+5
 			</otherwise>
 		</choose>
 		where memberNo=#{memberNo}
@@ -135,10 +135,10 @@
 		values
 		<choose>
 			<when test="reviewImg!=null and reviewImg!=''">
-				('사진리뷰',date_add(now(),interval 1 month),150,#{memberNo})
+				('Photo Review',date_add(now(),interval 1 month),15,#{memberNo})
 			</when>
 			<otherwise>
-				('글리뷰',date_add(now(),interval 1 month),50,#{memberNo})
+				('Article Review',date_add(now(),interval 1 month),5,#{memberNo})
 			</otherwise>
 		</choose>
 	</insert>

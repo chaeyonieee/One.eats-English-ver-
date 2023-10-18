@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="box">Enter Information</div>
               <div
                 class="box"
-                style="border-top: solid 5px; border-color: #a3d060"
+                style="border-top: solid 5px; border-color: #FCF75E"
               >
                 Registration Complete
               </div>
