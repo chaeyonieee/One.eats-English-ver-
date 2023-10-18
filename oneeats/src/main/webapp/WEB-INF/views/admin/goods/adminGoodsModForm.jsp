@@ -429,7 +429,7 @@ ${sellerGoods.description}
                       style="width: 100px"
                     >
                       <span class="css-nytqmg textbold"
-                        >Product Modification</span
+                        >Modification</span
                       >
                     </button>
                   </div>

@@ -55,7 +55,7 @@ public class MypageControllerImpl implements MypageController {
 		MemberVO member = (MemberVO) session.getAttribute("memberInfo");
 		mypageService.deleteMember(member);
 		session.setAttribute("isLogOn", false);
-		mav = Alert.alertAndRedirect("탈퇴가 완료 되었습니다.", request.getContextPath() + "/main/mainPage.do");
+		mav = Alert.alertAndRedirect("Withdrawal has been completed.", request.getContextPath() + "/main/mainPage.do");
 
 		return mav;
 	}
@@ -63,7 +63,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/orderList.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView orderList(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 orderList");
+		System.out.println("Here orderList");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		MemberVO member = (MemberVO) session.getAttribute("memberInfo");
@@ -133,14 +133,14 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/orderConfirm.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView orderConfirm(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 orderConfirm");
+		System.out.println("Here orderConfirm");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		ModelAndView mav = new ModelAndView();
 
 		MemberVO member = (MemberVO) session.getAttribute("memberInfo");
 		if (member == null || member.getId().length() < 1) {
-			mav = Alert.alertAndRedirect("로그인이 필요한 페이지입니다.", request.getContextPath() + "/member/loginForm.do");
+			mav = Alert.alertAndRedirect("This page requires login.", request.getContextPath() + "/member/loginForm.do");
 			return mav;
 		}
 
@@ -190,7 +190,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/newOrder.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView newOrder(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 newOrder");
+		System.out.println("Here newOrder");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		MemberVO member = (MemberVO) session.getAttribute("memberInfo");
@@ -225,7 +225,7 @@ public class MypageControllerImpl implements MypageController {
 			session.removeAttribute("tempOrderNo");
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = Alert.alertAndRedirect("오류가 발생하였습니다.", "redirect:/mypage/orderConfirm.do");
+			mav = Alert.alertAndRedirect("An error has occurred", "redirect:/mypage/orderConfirm.do");
 		}
 
 		return mav;
@@ -233,7 +233,7 @@ public class MypageControllerImpl implements MypageController {
 
 	@RequestMapping(value = "/mypage/orderCancel.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView orderCancel(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 orderCancel");
+		System.out.println("Here orderCancel");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String viewName = (String) request.getAttribute("viewName");
@@ -266,7 +266,7 @@ public class MypageControllerImpl implements MypageController {
 
 	@RequestMapping(value = "/mypage/orderCancelResult.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView orderCancelResult(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 orderCancelResult");
+		System.out.println("Here orderCancelResult");
 		request.setCharacterEncoding("utf-8");
 		int orderNo = (Integer.parseInt(request.getParameter("orderNo")));
 
@@ -283,7 +283,7 @@ public class MypageControllerImpl implements MypageController {
 	@RequestMapping(value = "/mypage/myPageMain.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView myPageMain(@RequestParam(required = false, value = "message") String message,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 myPageMain.do");
+		System.out.println("Here myPageMain.do");
 		HttpSession session = request.getSession();
 		session = request.getSession();
 		String viewName = (String) request.getAttribute("viewName");
@@ -302,7 +302,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/mypageintro.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView mypageintro(MultipartHttpServletRequest request) throws Exception {
-		System.out.println("여기는 mypageintro.do");
+		System.out.println("Here mypageintro.do");
 		String nickname = request.getParameter("nickname");
 		String intro = request.getParameter("intro");
 		System.out.println(intro);
@@ -326,7 +326,7 @@ public class MypageControllerImpl implements MypageController {
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("memberMap", memberMap);
-		mav = Alert.alertAndRedirect("저장되었습니다.", request.getContextPath() + "/mypage/myPageMain.do");
+		mav = Alert.alertAndRedirect("Saved.", request.getContextPath() + "/mypage/myPageMain.do");
 		return mav;
 
 	}
@@ -335,7 +335,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/mypageBookmarkList.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView bookList(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller bookmarkList.do");
+		System.out.println("Here Controller bookmarkList.do");
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("html/text;charset=utf-8");
 		String viewName = (String) request.getAttribute("viewName");
@@ -344,7 +344,7 @@ public class MypageControllerImpl implements MypageController {
 		HttpSession session = request.getSession();
 		MemberVO memberInfo = (MemberVO) session.getAttribute("memberInfo");
 		if (memberInfo == null || memberInfo.getId().trim().length() < 1) {
-			mav = Alert.alertAndRedirect("로그인이 필요한 페이지입니다.", request.getContextPath() + "/member/loginForm.do");
+			mav = Alert.alertAndRedirect("This page requires login.", request.getContextPath() + "/member/loginForm.do");
 			return mav;
 		}
 		int memberNo = memberInfo.getMemberNo();
@@ -386,7 +386,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/deleteBook.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView deleteBook(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller deleteBook.do");
+		System.out.println("Here Controller deleteBook.do");
 		request.setCharacterEncoding("utf-8");
 		String goodsNo_ = request.getParameter("goodsNo");
 		int goodsNo = Integer.parseInt(goodsNo_);
@@ -399,7 +399,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/couponSearch.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView couponSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller couponSearch.do");
+		System.out.println("Here Controller couponSearch.do");
 		request.setCharacterEncoding("utf-8");
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
@@ -477,7 +477,7 @@ public class MypageControllerImpl implements MypageController {
 
 	@RequestMapping(value = "/mypage/couponNum.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView couponNum(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller couponNum.do");
+		System.out.println("Here Controller couponNum.do");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		ModelAndView mav = new ModelAndView();
@@ -486,26 +486,26 @@ public class MypageControllerImpl implements MypageController {
 
 		String couponCode = request.getParameter("couponCode");
 		if (couponCode.isEmpty()) {
-			mav = Alert.alertAndRedirect("쿠폰번호를 입력해주세요.", request.getContextPath() + "/mypage/couponSearch.do");
+			mav = Alert.alertAndRedirect("Please enter the coupon code.", request.getContextPath() + "/mypage/couponSearch.do");
 			return mav;
 		}
 		System.out.println("couponCode = " + couponCode);
 		CouponVO couponVO = mypageService.couponNum(couponCode);
 		System.out.println("couponVO = " + couponVO);
 		if (couponVO == null) {
-			mav = Alert.alertAndRedirect("쿠폰이 존재하지 않습니다.", request.getContextPath() + "/mypage/couponSearch.do");
+			mav = Alert.alertAndRedirect("The coupon does not exist.", request.getContextPath() + "/mypage/couponSearch.do");
 			return mav;
 		}
 		couponVO.setCouponCode(couponCode);
 		couponVO.setMemberNo(memberNo);
 		CouponVO couponNull = mypageService.couponNull(couponVO);
 		if (couponNull != null) {
-			mav = Alert.alertAndRedirect("이미 등록 되어있는 쿠폰입니다.", request.getContextPath() + "/mypage/couponSearch.do");
+			mav = Alert.alertAndRedirect("This coupon has already been registered.", request.getContextPath() + "/mypage/couponSearch.do");
 			return mav;
 		}
 
 		mypageService.couponInsert(couponVO);
-		mav = Alert.alertAndRedirect("등록되었습니다.", request.getContextPath() + "/mypage/couponSearch.do");
+		mav = Alert.alertAndRedirect("Registered.", request.getContextPath() + "/mypage/couponSearch.do");
 		return mav;
 	}
 
@@ -513,7 +513,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/myAddress.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView myAddress(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller myAddress.do");
+		System.out.println("Here Controller myAddress.do");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		MemberVO memberInfo = (MemberVO) session.getAttribute("memberInfo");
@@ -530,7 +530,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/deleteAddress.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView deleteAddress(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller deleteAddress.do");
+		System.out.println("Here Controller deleteAddress.do");
 		request.setCharacterEncoding("utf-8");
 		ModelAndView mav = new ModelAndView();
 		String deliveryNo_ = request.getParameter("deliveryNo");
@@ -543,7 +543,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/bookCart.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView bookCart(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller bookCart.do");
+		System.out.println("Here Controller bookCart.do");
 		request.setCharacterEncoding("utf-8");
 		ModelAndView mav = new ModelAndView();
 		String goodsNo_ = request.getParameter("goodsNo");
@@ -566,11 +566,11 @@ public class MypageControllerImpl implements MypageController {
 			condMap.put("memberNo", memberNo);
 
 			mypageService.insertAddressWithMap(condMap);
-			mav = Alert.alertAndRedirect("주소지를 추가했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Address has been added.", request.getContextPath() + "/mypage/myAddress.do");
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = Alert.alertAndRedirect("배송지를 추가하지 못 했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Failed to add a delivery address.", request.getContextPath() + "/mypage/myAddress.do");
 		}
 
 		return mav;
@@ -617,11 +617,11 @@ public class MypageControllerImpl implements MypageController {
 			} else {
 				mypageService.updateDeliveryAddressWithMap(condMap);
 			}
-			mav = Alert.alertAndRedirect("수정했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Modified.", request.getContextPath() + "/mypage/myAddress.do");
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = Alert.alertAndRedirect("수정하지 못 했습니다.", request.getContextPath() + "/mypage/myAddress.do");
+			mav = Alert.alertAndRedirect("Failed to modified.", request.getContextPath() + "/mypage/myAddress.do");
 		}
 		return mav;
 
@@ -659,7 +659,7 @@ public class MypageControllerImpl implements MypageController {
 	@Override
 	@RequestMapping(value = "/mypage/mypageMemberMod.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView mypageMemberMod(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기는 Controller myAddress.do");
+		System.out.println("Here Controller myAddress.do");
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		MemberVO memberInfo = (MemberVO) session.getAttribute("memberInfo");
@@ -716,7 +716,7 @@ public class MypageControllerImpl implements MypageController {
 		}
 		System.out.println("memberVO = " + memberVO);
 		mypageService.updateMember(memberVO);
-		mav = Alert.alertAndRedirect("수정이 완료되었습니다.", request.getContextPath() + "/mypage/mypageMemberMod.do");
+		mav = Alert.alertAndRedirect("The modification has been completed.", request.getContextPath() + "/mypage/mypageMemberMod.do");
 		HttpSession session = request.getSession();
 		MemberVO memberInfo = (MemberVO) session.getAttribute("memberInfo");
 		memberInfo = memberVO;

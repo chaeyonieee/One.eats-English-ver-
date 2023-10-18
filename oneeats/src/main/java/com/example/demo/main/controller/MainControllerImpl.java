@@ -329,7 +329,7 @@ public class MainControllerImpl implements MainController {
 		}
 
 		if (loginMember == null || loginMember.getId().length() < 1) {
-			mav = Alert.alertAndRedirect("로그인이 필요한 페이지입니다.", request.getContextPath() + "/member/loginForm.do");
+			mav = Alert.alertAndRedirect("This page requires login.", request.getContextPath() + "/member/loginForm.do");
 			session.setAttribute("loginFor", "orderNow");
 			return mav;
 		}
@@ -344,7 +344,7 @@ public class MainControllerImpl implements MainController {
 			// 에러가 나면 이전 페이지로 이동
 			e.printStackTrace();
 			String previousPage = request.getHeader("Referer");
-			mav = Alert.alertAndRedirect("주문자 정보를 받아오지 못 했습니다.", previousPage);
+			mav = Alert.alertAndRedirect("Failed to retrieve customer information.", previousPage);
 			return mav;
 		}
 		System.out.println(mav);

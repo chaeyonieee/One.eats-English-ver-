@@ -78,7 +78,7 @@
 	
 	<update id="updateQnAStatusDone" parameterType="int">
 		update oneqna
-		set status='답변 Complete'
+		set status='Answer Completed'
 		where qnaNo=#{parentNo}
 	</update>
 

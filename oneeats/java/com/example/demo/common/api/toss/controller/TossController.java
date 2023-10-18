@@ -90,7 +90,7 @@ public class TossController {
 
 	@RequestMapping("/toss/orderFail.do")
 	public ModelAndView orderFail(HttpServletRequest request) {
-		ModelAndView mav = Alert.alertAndRedirect("Payment에 실패했습니다.", request.getContextPath() + "/mypage/orderConfirm.do");
+		ModelAndView mav = Alert.alertAndRedirect("Payment Failed.", request.getContextPath() + "/mypage/orderConfirm.do");
 		return mav;
 	}
 
@@ -158,7 +158,7 @@ public class TossController {
 			mav.setViewName("redirect:"+request.getContextPath()+"/mypage/orderCancelResult.do");
 			mav.addObject("orderNo",orderNo);
 		}else {
-			mav = Alert.alertAndRedirect("Cancle되지 못 했습니다.", request.getContextPath()+"/mypage/orderList.do");
+			mav = Alert.alertAndRedirect("Cancellation was not successful.", request.getContextPath()+"/mypage/orderList.do");
 		}
 		
 		return mav;

@@ -318,10 +318,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </li>
                   <li class="text-left" style="font-size: 28px">
                     Total
-                    <span style="font-size: 28px; color: #dd2222"
+                    <span style="font-size: 28px; color: #dd2124"
                       >¥<span
                         class="total_price_text"
-                        style="font-size: 28px; color: #dd2222"
+                        style="font-size: 28px; color: #dd2124"
                         >${payment_price-discount_price+shippingFee}</span
                       ></span
                     >

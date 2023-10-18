@@ -56,6 +56,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                                 <span>
                                   <i class="bi bi-alarm"></i>
                                   Remaining Time
+                                   <i class="bi bi-alarm"></i>
                                 </span>
 
                                 <div class="hotdeal_time_text"></div>
