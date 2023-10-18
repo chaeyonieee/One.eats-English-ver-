@@ -94,10 +94,10 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                                 <div class="product__item__price">
                                   <div>
                                     ${item.goods_qty}each
-                                    ¥${item.discounted_price}
+                                    \${item.discounted_price}
                                   </div>
                                   <span
-                                    >Single piece ¥${item.goodsPrice}
+                                    >Single piece \${item.goodsPrice}
                                   </span>
                                 </div>
                               </div>
@@ -122,7 +122,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
               <div class="row" style="justify-content: space-around">
                 <div class="col-lg-4 col-md-4">
                   <div class="filter__found">
-                    <h6><span>There are ${totalGoodsNum}</span> products.</h6>
+                    <h6><span>There are ${totalGoodsNum} products</span> </h6>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               >${item.name}</a
                             >
                           </h6>
-                          <h5>¥${item.price}</h5>
+                          <h5>\${item.price}</h5>
                           <input
                             type="hidden"
                             class="h_col_goods_price"

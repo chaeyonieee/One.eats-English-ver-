@@ -10,7 +10,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
   <head>
     <meta charset="UTF-8" />
     <title>Header</title>
-
+    <link rel="stylesheet" href="${contextPath}/css/common.css" />
     <link rel="stylesheet" href="${contextPath}/css/header.css" />
     <style>
       div.row div.nice-select {
@@ -39,21 +39,36 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           </c:if>
           <c:choose>
             <c:when test="${isLogOn==true and not empty memberInfo }">
-              <a href="${contextPath}/member/logout.do">Logout</a>
+              <a href="${contextPath}/member/logout.do" class="weight"
+                >Logout</a
+              >
               &nbsp;&nbsp;
-              <a href="${contextPath}/mypage/myPageMain.do">MyPage</a>
+              <a href="${contextPath}/mypage/myPageMain.do" class="weight"
+                >MyPage</a
+              >
               &nbsp;&nbsp;
-              <a href="${contextPath}/community/notice/noticeList.do"
-                >Customer Service</a
+              <a
+                href="${contextPath}/community/notice/noticeList.do"
+                class="weight"
+                >C&S</a
               >
             </c:when>
 
             <c:otherwise>
-              <a href="${contextPath}/member/registerTypeSelect.do">Sign Up</a
+              <a
+                href="${contextPath}/member/registerTypeSelect.do"
+                class="weight"
+                >Sign Up</a
               >&nbsp; &nbsp;
-              <a href="${contextPath}/member/loginForm.do">Login</a>
+              <a href="${contextPath}/member/loginForm.do" class="weight"
+                >Login</a
+              >
               &nbsp;&nbsp;
-              <a href="${contextPath}/community/notice/noticeList.do">C&S</a>
+              <a
+                href="${contextPath}/community/notice/noticeList.do"
+                class="weight"
+                >C&S</a
+              >
             </c:otherwise>
           </c:choose>
         </div>
@@ -76,7 +91,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               <form action="${contextPath}/goods/search.do">
                 <div class="row vertical-align">
                   <div class="col-md-2 p-0">
-                    <select name="filter_type" id="">
+                    <select name="filter_type" class="weight" id="">
                       <option value="all">Total</option>
                       <option value="Product Name">Product Name</option>
                       <option value="Seller">Seller</option>
@@ -96,7 +111,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                       <div class="input-group-append">
                         <button
                           style="background-color: #dd2124"
-                          class="textcolor-white border-0"
+                          class="textcolor-white border-0 weight"
                           type="submit"
                         >
                           Search
@@ -110,16 +125,16 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           </div>
           <div class="row">&nbsp;</div>
           <div class="row">
-            <div class="col-md">
+            <div class="col-md weight">
               <a href="${contextPath}/main/mainPage.do">Home</a>
             </div>
-            <div class="col-md">
+            <div class="col-md weight">
               <a href="${contextPath}/goods/goodsList.do?category=best">Best</a>
             </div>
-            <div class="col-md">
+            <div class="col-md weight">
               <a href="${contextPath}/goods/hotDealList.do">Hot Deal</a>
             </div>
-            <div class="col-md">
+            <div class="col-md weight">
               <a href="${contextPath}/community/recipe/recipeList.do">Recipe</a>
             </div>
           </div>

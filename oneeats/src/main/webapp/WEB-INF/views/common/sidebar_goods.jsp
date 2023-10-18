@@ -233,7 +233,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
                                 ${item.name}
                               </div>
                               <div class="quick_item_price">
-                                ¥${item.price}
+                                \${item.price}
                               </div>
                             </div>
                             <input
@@ -265,7 +265,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
                             <div class="quick_item_name textbold textsize-2">
                               ${item.name}
                             </div>
-                            <div class="quick_item_price">¥${item.price}</div>
+                            <div class="quick_item_price">\${item.price}</div>
                             <input
                               type="hidden"
                               name="h_goods_id"

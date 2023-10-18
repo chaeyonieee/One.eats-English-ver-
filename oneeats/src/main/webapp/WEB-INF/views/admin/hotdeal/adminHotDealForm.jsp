@@ -256,7 +256,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="row ingredient_rows">
                         <div class="col-md-11 ingredient_col">
                           <div
-                            class="row ingredient_row head_row bg-lightgreen"
+                            class="row ingredient_row head_row bg-lightgreen" style="color:#666666"
                           >
                             <div class="col-md">Hot Deal Name</div>
                             <div class="col-md">Hot Deal Quantity</div>

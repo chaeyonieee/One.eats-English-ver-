@@ -82,7 +82,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         <span>
                           <i class="bi bi-alarm"></i>
                           Remaining Time
-                           <i class="bi bi-alarm"></i>
+                          <i class="bi bi-alarm"></i>
                         </span>
                         <div class="hotdeal_time_text"></div>
                       </div>
@@ -118,9 +118,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         <h5><a href="#">${item.name}</a></h5>
                         <div class="product__item__price">
                           <div>
-                            ${item.goods_qty} per ¥${item.discounted_price}
+                            ${item.goods_qty} per \${item.discounted_price}
                           </div>
-                          <span> Original Price:¥${item.goodsPrice} </span>
+                          <span> Original Price:\${item.goodsPrice} </span>
                         </div>
                       </div>
                     </div>
@@ -249,7 +249,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         </div>
                         <div class="latest-product__item__text">
                           <h6 style="font-size: 14px">${item.name}<br /></h6>
-                          <span>¥${item.price}</span>
+                          <span>&#8361;${item.price}</span>
                         </div>
                       </a>
                     </c:forEach>
@@ -289,7 +289,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         </div>
                         <div class="latest-product__item__text">
                           <h6 style="font-size: 14px">${item.name}<br /></h6>
-                          <span>¥${item.price}</span>
+                          <span>&#8361;${item.price}</span>
                         </div>
                       </a>
                     </c:forEach>
@@ -332,7 +332,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         </div>
                         <div class="latest-product__item__text">
                           <h6 style="font-size: 14px">${item.name}<br /></h6>
-                          <span>¥${item.price}</span>
+                          <span>&#8361;${item.price}</span>
                         </div>
                       </a>
                     </c:forEach>
@@ -376,7 +376,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                     <li><i class="fa fa-calendar-o"></i> ${i.creDate}</li>
                   </ul>
                   <h5><a href="#">${i.title}</a></h5>
-                  <c:set var="des" value="${i.description}" />
+                  <c:set var="des" value="${i.category}" />
                   <p>
                     <c:out
                       value='${fn:substring(des.replaceAll("\\\<.*?\\\>",""), 0, 20)}'
