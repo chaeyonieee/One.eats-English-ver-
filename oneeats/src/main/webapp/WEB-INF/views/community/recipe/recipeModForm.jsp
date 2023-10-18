@@ -61,7 +61,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
               <div class="recipe_category textsize-1 text-left textcolor-black">
                 <select name="category" id="">
                   <option class="none" value="none">Uncategorized</option>
-                  <option value="">Quick and Easy 10-Minute Recipe</option>
+                  <option value="">Quick and Easy 10Mins Recipe</option>
                   <option value="">Nutrient-Rich Healthy Recipe</option>
                 </select>
               </div>

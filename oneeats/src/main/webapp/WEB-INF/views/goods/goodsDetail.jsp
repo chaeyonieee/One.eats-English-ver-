@@ -125,7 +125,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 ><c:if test="${temp>reviewAvg}">☆</c:if>
                 <span>Average ${reviewAvg} </span>
                 <span>(${totalReviewsNum} reviews)</span>
-                <div class="product__details__price">¥${goods.price}</div>
+                <div class="product__details__price">&#8361;${goods.price}</div>
                 <section class="css-1ua1wyk">
                   <div class="css-iqoq9n">
                     <c:choose>
@@ -297,7 +297,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="payment_price"
-                              >¥0</span
+                              >&#8361;0</span
                             >
                             <span
                               class="property-font3 text-right"
@@ -314,7 +314,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="discount_price"
-                              >¥0</span
+                              >&#8361;0</span
                             >
 
                             <span
@@ -332,8 +332,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="t_price"
-                              >¥0</span
-                            >
+                              >&#8361;0
+                            </span>
                             <!--배송비와 상품금액 hidden-->
                             <input type="hidden" name="shippingFee" value="0" />
                             <input
@@ -685,7 +685,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script>
       var storeValueUrl = "${contextPath}" + "/addCartToListValue.do";
       var goodsPrice = "${goods.price}";
-      goodsPrice = (goodsPrice);
+      goodsPrice = goodsPrice;
       var cartPage = "${contextPath}/main/cart.do";
     </script>
     <script src="${contextPath}/js/goodsDetail.js"></script>

@@ -199,14 +199,14 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               <h5>${cart.optionName}</h5>
                             </td>
                             <td>
-                              ¥<span class="row_payment_price">
+                              \<span class="row_payment_price">
                                 ${cart.goodsPrice * cart.optionQty *
                                 cart.goodsQty}
                               </span>
                             </td>
 
                             <td>
-                              ¥<span class="row_discount_price"
+                              \<span class="row_discount_price"
                                 >${cart.discountPrice}</span
                               >
                             </td>
@@ -225,7 +225,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               </div>
                             </td>
                             <td>
-                              ¥<span class="row_total_price"
+                              \<span class="row_total_price"
                                 >${cart.optionPrice * cart.goodsQty}</span
                               >
                             </td>
@@ -287,7 +287,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <li class="text-left">
                     Total product amount
                     <span
-                      >¥<span class="payment_price_text"
+                      >\<span class="payment_price_text"
                         >${payment_price}</span
                       ></span
                     >
@@ -295,7 +295,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <li class="text-left">
                     Discount Price
                     <span
-                      >¥<span class="discount_price_text"
+                      >\<span class="discount_price_text"
                         >${discount_price}</span
                       ></span
                     >
@@ -303,7 +303,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <li class="text-left">
                     Payment
                     <span
-                      >¥<span class="noshipping_price_text"
+                      >\<span class="noshipping_price_text"
                         >${payment_price-discount_price}</span
                       ></span
                     >
@@ -311,7 +311,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <li class="text-left">
                     Shipping Fee
                     <span
-                      >¥<span class="shippingFee_text"
+                      >\<span class="shippingFee_text"
                         >${shippingFee}</span
                       ></span
                     >
@@ -319,7 +319,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <li class="text-left" style="font-size: 28px">
                     Total
                     <span style="font-size: 28px; color: #dd2124"
-                      >¥<span
+                      >\<span
                         class="total_price_text"
                         style="font-size: 28px; color: #dd2124"
                         >${payment_price-discount_price+shippingFee}</span

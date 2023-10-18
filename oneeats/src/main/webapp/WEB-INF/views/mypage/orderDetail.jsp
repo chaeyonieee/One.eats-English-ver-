@@ -204,7 +204,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               </dl>
               <dl class="dl-dt">
                 <dt class="dt-2 textsize-1 textcolor-black">
-                  ¥${detail.goodsPrice} | ${detail.weight}g ${detail.goods_qty}
+                  \${detail.goodsPrice} | ${detail.weight}g ${detail.goods_qty}
                 </dt>
               </dl>
             </div>

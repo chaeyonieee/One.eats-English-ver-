@@ -26,7 +26,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
               <div class="row" style="justify-content: space-around">
                 <div class="col-lg-4 col-md-4">
                   <div class="filter__found">
-                    <h6>There are <span>${totalGoodsNum}</span> Products.</h6>
+                    <h6>There are <span>${totalGoodsNum} Products.</span> </h6>
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               >${item.name}</a
                             >
                           </h6>
-                          <h5>¥${item.price}</h5>
+                          <h5>\${item.price}</h5>
                         </div>
                       </div>
                     </c:when>
@@ -75,7 +75,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               ${item.name}
                             </a>
                           </h6>
-                          <h5>¥${item.price}</h5>
+                          <h5>\${item.price}</h5>
                         </div>
                       </div>
                     </c:otherwise>
