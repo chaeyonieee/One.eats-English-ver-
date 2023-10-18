@@ -454,7 +454,7 @@ ${sellerGoods.description}
                       radius="3"
                       style="width: 100px"
                     >
-                      <span class="css-nytqmg textbold">Product Modification</span>
+                      <span class="css-nytqmg textbold">Modification</span>
                     </button>
                   </div>
                 </section>

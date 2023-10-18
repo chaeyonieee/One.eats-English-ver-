@@ -28,7 +28,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
           </select>
           <input type="text" name="goods_search_word" placeholder="search.." />
           <button
-            class="btn-1 bg-lightgreen textcolor-white border-0"
+            class="btn-1 bg-lightgreen border-0"
             type="submit"
           >
             Search
@@ -88,11 +88,11 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     </table>
     <button
       style="font-size: 12px; margin-top: 22px; float: right"
-      class="btn-1 bg-lightgreen textcolor-white border-0"
+      class="btn-1 bg-lightgreen  border-0"
       type="button"
       onclick="location.href='${contextPath}/admin/goods/adminGoodsForm.do'"
     >
-      Product 추가
+      Add
     </button>
     <div>
       <ul class="ul-li">

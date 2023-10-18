@@ -40,7 +40,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="col-lg-4 text-left">
             <p class="textsize-3 textbold">Directions</p>
             <p class="textsize-1 textcolor-black">Address: Tokyo, Japan</p>
-            <img src="${contextPath}/img/banner/map.png" alt="" width="100%" />
+            <img src="${contextPath}/img/banner/map.PNG" alt="" width="100%" />
           </div>
           <div class="col-lg-4 text-left">
             <p class="textsize-3 textbold">Customer Service</p>

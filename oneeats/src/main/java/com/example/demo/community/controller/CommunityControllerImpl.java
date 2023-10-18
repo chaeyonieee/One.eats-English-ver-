@@ -192,14 +192,14 @@ public class CommunityControllerImpl implements CommunityController {
 
 		// 등록 성공했을 경우 해당 Recipe 상세 페이지로. 실패했을 경우 폼에.
 		if (result) {
-			System.out.println("Recipe 등록 성공");
-			mav.addObject("redirectMessage", "Recipe를 등록했습니다.");
+			System.out.println("Recipe registerd");
+			mav.addObject("redirectMessage", "Recipe has been registered.");
 			mav.addObject("redirectPage",
 					request.getContextPath() + "/community/recipe/recipeDetail.do?recipeNo=" + newRecipeNo);
 			mav.setViewName("/alert");
 		} else {
-			System.out.println("Recipe 등록 실패");
-			mav.addObject("redirectMessage", "Recipe 등록에 실패했습니다.");
+			System.out.println("Recipe register X");
+			mav.addObject("redirectMessage", "Unable to register the recipe.");
 			mav.addObject("redirectPage", request.getContextPath() + "/community/recipe/recipeList.do");
 			mav.setViewName("/alert");
 		}
@@ -247,11 +247,11 @@ System.out.println("map : " + map);
 		ModelAndView mav = new ModelAndView();
 
 		if (result) {
-			mav = redirectAlertMessage("Recipe를 Updated successfully.",
+			mav = redirectAlertMessage("Updated recipe successfully.",
 					request.getContextPath() + "/community/recipe/recipeDetail.do?recipeNo=" + recipeNo);
 
 		} else {
-			mav = redirectAlertMessage("오류가 발생해 Recipe를 Modify하지 못했습니다.",
+			mav = redirectAlertMessage("An error occurred, and I couldn't modify the recipe.",
 					request.getContextPath() + "/community/recipe/recipeDetail.do?recipeNo=" + recipeNo);
 		}
 
@@ -266,10 +266,10 @@ System.out.println("map : " + map);
 			RecipeVO recipeVO = communityService.selectRecipeByRecipeNo(recipeNo);
 			communityService.deleteRecipe(recipeNo);
 			GeneralFileUploader.removeFile(recipeVO.getCookingImg(), "/recipe/" + recipeNo);
-			mav = redirectAlertMessage("Recipe를 Delete했습니다", request.getContextPath() + "/community/recipe/recipeList.do");
+			mav = redirectAlertMessage(" Delete the recipe", request.getContextPath() + "/community/recipe/recipeList.do");
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav = redirectAlertMessage("오류가 발생해 Recipe를 Unable to complete delete..",
+			mav = redirectAlertMessage("An error occurred, and couldn't delete the recipe.",
 					request.getContextPath() + "/community/recipe/recipeDetail.do?recipeNo=" + recipeNo);
 		}
 
@@ -391,7 +391,7 @@ System.out.println("map : " + map);
 				HttpSession session = request.getSession();  
 				MemberVO member = (MemberVO) session.getAttribute("memberInfo");  //session에 저장되어있는 Member Information
 				if (member == null) {
-					mav = redirectAlertMessage("Login을 해주세요.",
+					mav = redirectAlertMessage("Please Login",
 							request.getContextPath() + "/member/loginForm.do");
 					return mav;
 				}

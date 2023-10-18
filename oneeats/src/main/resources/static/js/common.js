@@ -100,16 +100,16 @@ function fn_bookmark(contextPath,goodsNo) {
 		},
 		success: function(response) {
 			if (response == "success") {
-				alert("찜 했습니다.");
+				alert("Bookmarked.");
 			} else if (response == "login") {
 				fn_openalert(
 					"Login is required. <br> Would you like to go to the Login page?",
 					contextPath+"/member/loginForm.do"
 				);
 			} else if(response=="duplicated"){
-				alert("이미 찜한 Product입니다.");
+				alert("This product is already bookmarked.");
 			} else {
-				alert("에러가 일어나 찜하지 못 했습니다.");
+				alert("An error occurred, unable to bookmark.");
 			}
 		},
 		error: function(response) {

@@ -91,15 +91,15 @@ function fn_toCart() {
 		success: function(response) {
 			if (response == "success") {
 				fn_openalert(
-					"장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?",
+					"Added to cart. Would you like to go to the cart?",
 					cartPage
 				);
 			} else {
-				alert("장바구니에 담지 못 했습니다.");
+				alert("Could not add to cart.");
 			}
 		},
 		error: function(response) {
-			alert("원인불명의 에러");
+			alert("Unknown error");
 			console.log(response);
 		},
 	});

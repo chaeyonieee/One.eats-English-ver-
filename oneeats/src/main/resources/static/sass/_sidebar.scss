@@ -58,13 +58,13 @@
                 top: 13px;
                 height: 1px;
                 width: 5px;
-                background: #dd2222;
+                background: #dd2124;
                 content: "";
             }
 
             input {
                 font-size: 16px;
-                color: #dd2222;
+                color: #dd2124;
                 font-weight: 700;
                 max-width: 20%;
                 border: none;
@@ -95,11 +95,11 @@
         }
 
         .ui-slider-range {
-            background: #dd2222;
+            background: #dd2124;
             border-radius: 0;
 
             &.ui-corner-all.ui-widget-header:last-child {
-                background: #dd2222;
+                background: #dd2124;
             }
         }
     }

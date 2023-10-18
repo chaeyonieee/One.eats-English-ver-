@@ -176,7 +176,7 @@ public class MemberControllerImpl implements MemberController {
 			session.setAttribute("member", member);
 			mav.setViewName("redirect:/member/newPwSearchForm.do");
 		} catch (NullPointerException e) {
-			System.out.println("Search Password - 정보 X");
+			System.out.println("Search Password - info X");
 			mav = Alert.alertAndRedirect("The corresponding password does not exist.", request.getContextPath() + "/member/idSearchForm.do");
 			e.printStackTrace();
 		}

@@ -254,7 +254,7 @@ public class GoodsControllerImpl implements GoodsController {
 							+ "/download.do?imageFileName="
 							+ review.getReviewImg() + "&path=reviewNo" + review.getReviewNo()
 							+ "\"                              class=\"expand_img\"\r\n"
-							+ "                              alt=\"Review 사진\"\r\n" + "                            />";
+							+ "                              alt=\"Photo Review\"\r\n" + "                            />";
 				}
 
 				result += "</p>\r\n" + "                          <footer class=\"css-1fkegtf\">\r\n"
@@ -265,7 +265,7 @@ public class GoodsControllerImpl implements GoodsController {
 						+ "                            "
 //						+ "<button class=\"property-btn1\">\r\n"
 //						+ "                              <span class=\"ico property-img\"></span\r\n"
-//						+ "                              ><span>도움돼요</span>\r\n"
+//						+ "                              ><span>Helpful</span>\r\n"
 //						+ "                            </button>\r\n" 
 						+ "                          "
 								+ "</footer>\r\n"

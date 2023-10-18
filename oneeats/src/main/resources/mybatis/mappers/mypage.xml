@@ -325,8 +325,7 @@
 		INSERT INTO
 		point_history
 		(name, memberNo, amount)
-		VALUES ('상품 구입으로 인한
-		소진',#{memberNo}, #{used_point})
+		VALUES ('Depletion due to product purchase',#{memberNo}, #{used_point})
 
 	</insert>
 

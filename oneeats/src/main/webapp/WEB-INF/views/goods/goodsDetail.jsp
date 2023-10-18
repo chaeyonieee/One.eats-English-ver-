@@ -297,7 +297,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="payment_price"
-                              >0</span
+                              >¥0</span
                             >
                             <span
                               class="property-font3 text-right"
@@ -314,7 +314,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="discount_price"
-                              >0</span
+                              >¥0</span
                             >
 
                             <span
@@ -332,7 +332,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="t_price"
-                              >0</span
+                              >¥0</span
                             >
                             <!--배송비와 상품금액 hidden-->
                             <input type="hidden" name="shippingFee" value="0" />
@@ -514,7 +514,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               </div>
                               <!-- <button class="property-btn1">
                                 <span class="ico property-img"></span
-                                ><span>도움돼요</span>
+                                ><span>Helpful</span>
                               </button> -->
                             </footer>
                           </div>
@@ -685,7 +685,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script>
       var storeValueUrl = "${contextPath}" + "/addCartToListValue.do";
       var goodsPrice = "${goods.price}";
-      goodsPrice = parseInt(goodsPrice);
+      goodsPrice = (goodsPrice);
       var cartPage = "${contextPath}/main/cart.do";
     </script>
     <script src="${contextPath}/js/goodsDetail.js"></script>

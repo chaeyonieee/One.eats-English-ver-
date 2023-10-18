@@ -1084,13 +1084,13 @@ ol {
   top: 13px;
   height: 1px;
   width: 5px;
-  background: #dd2222;
+  background: #dd2124;
   content: "";
 }
 
 .price-range-wrap .range-slider .price-input input {
   font-size: 16px;
-  color: #dd2222;
+  color: #dd2124;
   font-weight: 700;
   max-width: 47%;
   border: none;
@@ -1120,14 +1120,14 @@ ol {
 }
 
 .price-range-wrap .price-range .ui-slider-range {
-  background: #dd2222;
+  background: #dd2124;
   border-radius: 0;
 }
 
 .price-range-wrap
   .price-range
   .ui-slider-range.ui-corner-all.ui-widget-header:last-child {
-  background: #dd2222;
+  background: #dd2124;
 }
 
 .sidebar__item__color {
@@ -1247,7 +1247,7 @@ ol {
 .product__discount__item__pic .product__discount__percent {
   height: 45px;
   width: 45px;
-  background: #dd2222;
+  background: #dd2124;
   border-radius: 50%;
   font-size: 14px;
   color: #ffffff;
@@ -1661,7 +1661,7 @@ ol {
 
 .product__details__text .product__details__price {
   font-size: 30px;
-color:#dd2222;
+color:#dd2124;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -2088,7 +2088,7 @@ color:#dd2222;
 }
 
 .checkout__input p span {
-  color: #dd2222;
+  color: #dd2124;
 }
 
 .checkout__input input {
@@ -2232,7 +2232,7 @@ color:#dd2222;
 
 .checkout__order .checkout__order__total span {
   float: right;
-  color: #dd2222;
+  color: #dd2124;
 }
 
 .checkout__order button {

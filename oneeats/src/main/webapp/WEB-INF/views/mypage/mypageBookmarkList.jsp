@@ -108,7 +108,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         </td>
         <td>
           <div class=" book text-right">
-            <button type="button" class =" bookserve bg-lightgreen textsize-1 border-0 margin btn-round" onclick='fn_addCartOneItem("${contextPath}","${item.goodsNo}")'>장바구니</button>
+            <button type="button" class =" bookserve bg-lightgreen textsize-1 border-0 margin btn-round" onclick='fn_addCartOneItem("${contextPath}","${item.goodsNo}")'>Cart</button>
             <br>
             <button type="button" onclick="location.href='${contextPath}/mypage/deleteBook.do?goodsNo=${item.goodsNo}'" class ="bookserve bg-lightgreen textsize-1 border-0 margin btn-round">Delete</button>
           </div>

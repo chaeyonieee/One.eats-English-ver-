@@ -45,7 +45,7 @@ public class AdminHotDealControllerImpl implements AdminHotDealController {
 	@RequestMapping(value = "/admin/hotdeal/adminHotDealAdd.do", method = RequestMethod.POST)
 	public ModelAndView addHotdeals(HttpServletRequest request) throws IOException {
 		request.setCharacterEncoding("utf-8");
-		System.out.println("hotdeal등록하기");
+		System.out.println("Register HotDeal");
 		ModelAndView mav = new ModelAndView();
 		int newHotDealNo = adminHotDealService.selectNewHotDealNo();
 
