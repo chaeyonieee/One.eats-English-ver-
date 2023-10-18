@@ -5,7 +5,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -430,7 +430,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </td>
         </tr>
         <tr>
-          <td>Payment방법</td>
+          <td>Payment Method</td>
           <td>
             <div id="payment-method"></div>
           </td>

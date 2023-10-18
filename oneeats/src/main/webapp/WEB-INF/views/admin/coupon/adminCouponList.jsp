@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,7 +33,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             placeholder="search.."
           />
           <button
-            class="btn-1 textcolor-white border-0 bg-lightgreen"
+            class="btn-1  border-0 bg-lightgreen"
             type="submit"
           >
             Search
@@ -77,7 +77,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 
     <button
       style="font-size: 12px; margin-top: 22px; float: right"
-      class="btn-1 bg-lightgreen textcolor-white border-0"
+      class="btn-1 bg-lightgreen border-0"
       type="button"
       onclick="location.href='${contextPath}/admin/coupon/adminCouponForm.do'"
     >

@@ -25,12 +25,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       a.active {
         background-color: rgb(226, 226, 226);
-        border-top: 4px solid #a3d060;
+        border-top: 4px solid #FCF75E;
       }
       .brd-lightgreen {
         border: 0.5px;
         border-style: solid;
-        border-color: #a3d060;
+        border-color: #FCF75E;
       }
       .sellermain-wrap {
         max-width: 600px;
@@ -493,7 +493,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           />
                           <div class="input-group-append">
                             <button
-                              class="bg-lightgreen border-0 textsize-2"
+                              class="bg-lightgreen border-0 textsize-2 textbold"
                               type="button"
                               onclick="checkDuplicateId()"
                             >
@@ -628,11 +628,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           />
                           <div class="input-group-append">
                             <button
-                              class="bg-lightgreen border-0 textsize-2"
+                              class="bg-lightgreen border-0 textsize-2 textbold"
                               onclick="fn_open_inzung_row()"
+                              style="height: 38px"
                               type="button"
                             >
-                              verification code rquest
+                              verification
                             </button>
                           </div>
                         </div>
@@ -658,7 +659,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <button
                                   onclick="fn_phone_inzung()"
                                   type="button"
-                                  class="border-0 textsize-2"
+                                  class="border-0 textsize-2 textbold"
                                 >
                                   Verification
                                 </button>
@@ -736,7 +737,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <button
                             type="button"
                             onclick="execDaumPostCode()"
-                            class="bg-lightgreen btn-long border-0 textsize-2"
+                            class="bg-lightgreen btn-long border-0 textsize-2 textbold"
                           >
                             Search Address
                           </button>
@@ -802,7 +803,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <div class="col">
                           <button
                             type="submit"
-                            class="bg-lightgreen textsize-2 border-0 btn-long"
+                            class="bg-lightgreen textsize-2 border-0 btn-long textbold"
                           >
                             Member Registration Complete
                           </button>

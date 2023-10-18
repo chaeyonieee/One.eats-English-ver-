@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,7 +43,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               type="submit"
               class="btn-couponsubmit bg-lightgreen textsize-0 border-0 margin textbold textsize-1"
              >
-              Coupon Registration
+      Registration
             </button>
             <br />
             <span class="textsize-1 textcolor-red">

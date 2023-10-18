@@ -20,12 +20,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       a.active {
         background-color: rgb(226, 226, 226);
-        border-top: 4px solid #a3d060;
+        border-top: 4px solid #FCF75E;
       }
       .brd-lightgreen {
         border: 0.5px;
         border-style: solid;
-        border-color: #a3d060;
+        border-color: #FCF75E;
       }
       .sellermain-wrap {
         max-width: 600px;

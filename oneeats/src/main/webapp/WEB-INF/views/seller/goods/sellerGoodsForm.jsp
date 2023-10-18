@@ -404,7 +404,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       id="input_submit"
                     >
                       <div class="css-nytqmg textbold">
-                        Product Registration
+                        Registration
                       </div>
                     </button>
                   </div>

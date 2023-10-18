@@ -114,6 +114,6 @@
 		insert into point_history
 		(name,finishDate,amount,memberNo)
 		values
-		("Product 구입",date_add(now(),interval 1 month),#{point_price},#{memberNo})
+		("Purchase of the product",date_add(now(),interval 1 month),#{point_price},#{memberNo})
 	</insert>
 </mapper>

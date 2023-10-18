@@ -47,10 +47,10 @@ div.oneQnAForm_content{
 
 .btn-write {
 	border:0px;
-    background-color: #a3d060;
+    background-color: #FCF75E;
    	width: 100px;
   	height: 40px;
-    color: white;
+    color: #333333;
     font-weight: 600;
     text-align: center;
     font-size: 16px;
@@ -69,8 +69,8 @@ div.oneQnAForm_content{
   
   
 .btn-toform{
-	border:1px solid #a3d060;
-    background-color: white;
+	border:1px solid #FCF75E;
+    background-color: #FCF75E;
     border-radius: 15px;
    	width: 100px;
   	height: 40px;
@@ -81,12 +81,12 @@ div.oneQnAForm_content{
 }
 
 .btn-toform:hover{
-	background-color: #a3d060;
-	color: white;
+	background-color: #FCF75E;
+	color: #d;
 }
 
 .btn-modify{
-	border:1px solid #a3d060;
+	border:1px solid #FCF75E;
     background-color: white;
    	width: 100px;
   	height: 40px;
@@ -107,7 +107,7 @@ div.oneQnAForm_content{
 }
 
 .btn-modify:hover{
-	background-color: #a3d060;
+	background-color: #FCF75E;
 	color: white;
 }
 .btn-remove:hover{
@@ -157,7 +157,7 @@ div.recipeList_grid .recipe_col {
 }
 
 .lightgreen_title {
-        color: #a3d060;
+        color: #333333;
         font-weight: 600;
         font-size: 22px;
       }

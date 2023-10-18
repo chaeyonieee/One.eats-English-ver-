@@ -277,9 +277,9 @@
 			#{item.discount_price},
 			#{item.shippingfee}, #{item.point_price},
 			#{item.total_price},
-			'결제중',#{item.goods_qty}, #{item.goods_inbun},
+			'Payment in progress',#{item.goods_qty}, #{item.goods_inbun},
 			#{item.memberNo},
-			#{item.goodsNo}, #{item.optionNo},'결제중')
+			#{item.goodsNo}, #{item.optionNo},'Payment in progress')
 		</foreach>
 	</insert>
 
@@ -289,16 +289,16 @@
 		payment_type=#{payment_type},
 		total_price=#{total_price},
 		<choose>
-			<when test="payment_type=='가상계좌'">
-				delivery_status='입금대기중'
+			<when test="payment_type=='Virtual Account'">
+				delivery_status='Awaiting deposit'
 			</when>
 			<otherwise>
-				delivery_status='결제완료'
+				delivery_status='Payment completed'
 			</otherwise>
 		</choose>
 		where memberNo=#{memberNo} and
 		orderNo=#{orderNo} and
-		delivery_status='결제중'
+		delivery_status='Payment in progress'
 
 	</update>
 
@@ -311,7 +311,7 @@
 	<select id="selectTempOrder" parameterType="java.util.Map"
 		resultType="orderVO">
 		select * from t_order where orderNo=#{orderNo} and
-		memberNo=#{memberNo} and delivery_status='결제중' limit 1
+		memberNo=#{memberNo} and delivery_status='Payment in progress' limit 1
 	</select>
 	<update id="updateMemberPoint" parameterType="java.util.Map">
 		update member
@@ -347,7 +347,7 @@
 	<update id="updateDeliveryStatusToCancel" parameterType="int">
 		<![CDATA[
 			update t_order
-	     	set delivery_status='취소완료'
+	     	set delivery_status='Cancle Complete'
 	     	where order_seqNo=#{order_seqNo}
 		]]>
 	</update>
@@ -431,7 +431,7 @@
 	    select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='미작성'  and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Not written'  and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		order by orderDate desc
 		limit 0,5
@@ -442,7 +442,7 @@
 		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='미작성' and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Not written' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt
 	</select>
@@ -451,7 +451,7 @@
 		select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='미작성' and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Not written' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt 
 		order by orderDate desc
@@ -466,7 +466,7 @@
 	     select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Completion of writing' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		order by orderDate desc
 		limit 5
@@ -477,7 +477,7 @@
 	 	select * from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Completion of writing' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt 
 		order by orderDate desc
@@ -489,7 +489,7 @@
 		select ifnull(count(orderNo),0) from( select o.*,g.name as goodsName,g.img1 as goodsImg from t_order o
 		inner join goodsandhotdealview g
 		on g.goodsNo=o.goodsNo
-		where delivery_status='배송완료' and review_status='작성완료' and memberNo=#{memberNo}
+		where delivery_status='Delivery completed' and review_status='Completion of writing' and memberNo=#{memberNo}
 		group by (o.goodsNo*1001+o.orderNo) 
 		) ttt
 	

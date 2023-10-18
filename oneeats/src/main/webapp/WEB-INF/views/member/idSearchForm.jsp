@@ -193,7 +193,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="bg-lightgray border-0"
                     onclick="fn_open_inzung_row(1)"
                   >
-                    Request verification code
+                    Request Verification
                   </button>
                 </div>
               </div>
@@ -288,7 +288,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="bg-lightgray border-0"
                     onclick="fn_open_inzung_row(2)"
                   >
-                    Request verification code
+                    Request Verification
                   </button>
                 </div>
               </div>

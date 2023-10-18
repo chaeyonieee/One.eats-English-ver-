@@ -42,7 +42,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
               />
               <div class="input-group-append">
                 <button
-                  class="bg-lightgreen textcolor-white border-0 textsize-2"
+                  class="bg-lightgreen  border-0 textsize-2"
                   style="width: 60px"
                   type="submit"
                 >

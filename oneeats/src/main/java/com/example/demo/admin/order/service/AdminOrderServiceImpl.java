@@ -52,7 +52,7 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 			temp.setDelivery_status(delivery_status);
 			adminOrderDAO.updateDeliveryStatus(temp);
 		}
-		if (delivery_status.equals("Delivery Completed")) {			
+		if (delivery_status.equals("Delivery completed")) {			
 			OrderVO orderVO = adminOrderDAO.selectOrderByOrderSeqNo(order_seqNos[0]);
 			adminOrderDAO.updateMemberPoint(orderVO);
 			adminOrderDAO.insertPointHistoryWithOrderVO(orderVO);

@@ -66,7 +66,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="input-group-append" style="height: 100%">
                 <button
-                  class="bg-lightgreen textcolor-white border-0"
+                  class="bg-lightgreen textcolor-black border-0"
                   style="min-width: 40px"
                   type="submit"
                 >

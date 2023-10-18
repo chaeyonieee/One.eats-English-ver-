@@ -5,7 +5,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,7 +43,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             placeholder="search.."
           />
           <button
-            class="btn-1 bg-lightgreen textcolor-white border-0"
+            class="btn-1 bg-lightgreen  border-0"
             type="submit"
           >
             Search
@@ -94,7 +94,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   />
                   <c:set
                     var="status_array"
-                    value="${['Payment Complete','Order in process','Delivery Completed','Cancle Complete']}"
+                    value="${['Payment Complete','Order in process','Delivery completed','Cancle Complete']}"
                   />
                   <select name="delivery_status">
                     <c:forEach items="${status_array}" var="i">

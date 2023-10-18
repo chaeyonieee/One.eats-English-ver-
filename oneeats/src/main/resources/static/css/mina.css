@@ -53,7 +53,7 @@
 .brd-lightgreen{
 	border:0.5px;
 	border-style:solid;
-	border-color:#a3d060;
+	border-color:#FCF75E;
 }
 
 
@@ -173,7 +173,7 @@ text-align: center;
 	width:66px;
 	text-align: center;
     padding: 10px 0px;
-    border-bottom: 5px solid#a3d060;
+    border-bottom: 5px solid#FCF75E;
 }
 
 .sellerNextAgree{
@@ -183,7 +183,7 @@ text-align: center;
 	width:66px;
 	text-align: center;
     padding: 10px 0px;
-    border-bottom: 5px solid#a3d060;
+    border-bottom: 5px solid#FCF75E;
 }
 .line {
     padding: 10px 0px;

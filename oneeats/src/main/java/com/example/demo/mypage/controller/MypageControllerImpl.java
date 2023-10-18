@@ -732,7 +732,7 @@ public class MypageControllerImpl implements MypageController {
 		HttpSession session = request.getSession();
 		MemberVO memberInfo = (MemberVO) session.getAttribute("memberInfo");
 		int memberNo = memberInfo.getMemberNo();
-		// 1. 작성가능 리뷰 가져오기 (Delivery Completed인 상품들)
+		// 1. 작성가능 리뷰 가져오기 (Delivery completed인 상품들)
 		List<OrderVO> availableReviewList = mypageService.selectAvailableReviewList(memberNo);
 		int totalAvailableReviewsNum = mypageService.selectTotalAvailableReviewsNum(memberNo);
 
