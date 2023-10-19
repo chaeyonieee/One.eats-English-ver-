@@ -61,7 +61,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                           >${item.name}</a
                         >
                       </h6>
-                      <h5>\${item.discounted_price}</h5>
+                      <h5>&#8361;${item.discounted_price}</h5>
                       <input
                         type="hidden"
                         class="h_col_goods_price"

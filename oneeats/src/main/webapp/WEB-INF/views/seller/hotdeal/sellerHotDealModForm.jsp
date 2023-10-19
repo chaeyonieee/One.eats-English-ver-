@@ -89,18 +89,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             <option value="category">
                               Please select a category
                             </option>
-                            <option value="vegetable">Vegetables</option>
-                            <option value="fruit">Fruits</option>
-                            <option value="juiceAndJam">
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value=" Juice / Homemade Jam">
                               Juice / Homemade Jam
                             </option>
-                            <option value="zzigae">Stew/ Soup/ Steamed</option>
-                            <option value="meal">Meal/ Appetizers</option>
-                            <option value="porridge">Porridge</option>
-                            <option value="mealReplacement">
+                            <option value="Stew/ Soup/ Steamed">Stew/ Soup/ Steamed</option>
+                            <option value="Meal/ Appetizers">Meal/ Appetizers</option>
+                            <option value="Porridge">Porridge</option>
+                            <option value="Meal Replacement">
                               Meal Replacement
                             </option>
-                            <option value="sidedish">Sidedish</option>
+                            <option value="Sidedish">Sidedish</option>
                           </select>
                         </div>
                       </dd>
@@ -257,7 +257,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="row ingredient_rows">
                         <div class="col-md-11 ingredient_col">
                           <div
-                            class="row ingredient_row head_row bg-lightgreen"
+                            class="row ingredient_row head_row bg-lightgreen" style="color:#666666"
                           >
                             <div class="col-md">Hot Deal Name</div>
                             <div class="col-md">Hot Deal Quantity</div>

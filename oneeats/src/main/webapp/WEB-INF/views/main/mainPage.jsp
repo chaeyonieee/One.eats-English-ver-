@@ -31,7 +31,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 height: 431;
                 justify-content: space-around !important;
               "
-              data-setbg="${contextPath}/img/product/mainPage/mainPage3.JPG"
+              data-setbg="${contextPath}/img/product/mainPage/mainPage34.JPG"
             >
               <div class="hero__text">
                 <a
@@ -118,9 +118,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         <h5><a href="#">${item.name}</a></h5>
                         <div class="product__item__price">
                           <div>
-                            ${item.goods_qty} per \${item.discounted_price}
+                            ${item.goods_qty} per &#8361;${item.discounted_price}
                           </div>
-                          <span> Original Price:\${item.goodsPrice} </span>
+                          <span> Original Price:&#8361;${item.goodsPrice} </span>
                         </div>
                       </div>
                     </div>
@@ -172,7 +172,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 ><br />
 
                 <a
-                  href="${contextPath}/goods/goodsList.do?category=motnan"
+                  href="${contextPath}/goods/goodsList.do?category=Ugly Products"
                   class="primary-btn"
                   style="margin-top: 12px"
                   >Quick Link</a

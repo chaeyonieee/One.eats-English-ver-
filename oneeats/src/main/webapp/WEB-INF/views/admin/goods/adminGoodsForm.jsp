@@ -90,11 +90,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <dd class="property-flex1">
                         <div style="align-content: center; margin-top: 4px">
                           <select name="category" class="opt">
-                            <option value="zzigae">Stew/ Soup/ Steamed</option>
-                            <option value="meal">Meal/ Appetizers</option>
-                            <option value="porridge">Porridge</option>
-                            <option value="mealReplacement">Meal Replacement</option>
-                            <option value="sidedish">Sidedish</option>
+                            <option value="Stew/ Soup/ Steamed">Stew/ Soup/ Steamed</option>
+                            <option value="Meal/ Appetizers">Meal/ Appetizers</option>
+                            <option value="Porridge">Porridge</option>
+                            <option value="Meal Replacement">Meal Replacement</option>
+                            <option value="Sidedish">Sidedish</option>
                           </select>
                         </div>
                       </dd>

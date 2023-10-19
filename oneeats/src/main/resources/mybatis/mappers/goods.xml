@@ -377,13 +377,13 @@
 		<choose>
 			<when test="category!=null and category!=''">
 				<choose>
-					<when test="category=='motnan'">
-						and category='vegetable' or category='fruit' or
-						category='juiceAndJam'
+					<when test="category=='Ugly Products'">
+						and category='Vegetables' or category='Fruits' or
+						category='Juice / Homemade Jam'
 					</when>
 					<when test="category=='mealkit'">
-						and category='zzigae' or category='meal' or
-						category='porridge' or category='sidedish'
+						and category='Stew/ Soup/ Steamed' or category='Meal/ Appetizers' or
+						category='Porridge' or category='Sidedish' or category='Meal Replacement'
 					</when>
 					<when test="category=='best'">
 						and 1=1
@@ -404,14 +404,14 @@
 		<choose>
 			<when test="category!=null and category!=''">
 				<choose>
-					<when test="category=='motnan'">
-						and category='vegetable' or category='fruit' or
-						category='juiceAndJam'
+					<when test="category=='Ugly Products'">
+						and category='Vegetables' or category='Fruits' or
+						category='Juice / Homemade Jam'
 					</when>
 					<when test="category=='mealkit'">
-						and category='zzigae' or category='meal' or
-						category='porridge' or category='mealReplacement' or
-						category='sidedish'
+						and category='Stew/ Soup/ Steamed' or category='Meal/ Appetizers' or
+						category='Porridge' or category='Meal Replacement' or
+						category='Sidedish'
 					</when>
 					<when test="category=='best'">
 						and 1=1
@@ -430,13 +430,13 @@
 		<choose>
 			<when test="category!=null and category!=''">
 				<choose>
-					<when test="category=='motnan'">
-						and category='vegetable' or category='fruit' or
-						category='juiceAndJam'
+					<when test="category=='Ugly Products'">
+						and category='Vegetables' or category='Fruits' or
+						category='Juice / Homemade Jam'
 					</when>
 					<when test="category=='mealkit'">
-						and category='zzigae' or category='meal' or
-						category='porridge' or category='sidedish'
+						and category='Stew/ Soup/ Steamed' or category='Meal/ Appetizers' or
+						category='Porridge' or category='Sidedish' or category='Meal Replacement'
 					</when>
 					<when test="category=='best'">
 						and 1=1
@@ -513,13 +513,13 @@
 		<choose>
 			<when test="category!=null and category!=''">
 				<choose>
-					<when test="category=='motnan'">
-						and category='vegetable' or category='fruit' or
-						category='juiceAndJam'
+					<when test="category=='Ugly Products'">
+						and category='Vegetables' or category='Fruits' or
+						category='Juice / Homemade Jam'
 					</when>
 					<when test="category=='mealkit'">
-						and category='zzigae' or category='meal' or
-						category='porridge' or category='sidedish'
+						and category='Stew/ Soup/ Steamed' or category='Meal/ Appetizers' or
+						category='Porridge' or category='Sidedish' or category='Meal Replacement'
 					</when>
 					<when test="category=='best'">
 						and 1=1
@@ -540,14 +540,14 @@
 		<choose>
 			<when test="category!=null and category!=''">
 				<choose>
-					<when test="category=='motnan'">
-						and category='vegetable' or category='fruit' or
-						category='juiceAndJam'
+					<when test="category=='Ugly Products'">
+						and category='Vegetables' or category='Fruits' or
+						category='Juice / Homemade Jam'
 					</when>
 					<when test="category=='mealkit'">
-						and category='zzigae' or category='meal' or
-						category='porridge' or category='mealReplacement' or
-						category='sidedish'
+						and category='Stew/ Soup/ Steamed' or category='Meal/ Appetizers' or
+						category='Porridge' or category='Meal Replacement' or
+						category='Sidedish'
 					</when>
 					<when test="category=='best'">
 						and 1=1

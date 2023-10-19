@@ -1,7 +1,8 @@
 .nice-select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius:5px;
   border: solid 1px #e8e8e8;
   box-sizing: border-box;
   clear: both;
@@ -10,7 +11,7 @@
   float: left;
   font-size: 14px;
   font-weight: normal;
-  height: 42px;
+  height: 38px;
   line-height: 40px;
   outline: none;
   padding-left: 18px;

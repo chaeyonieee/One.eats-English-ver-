@@ -98,9 +98,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <dd class="property-flex1">
                         <div style="align-content: center; margin-top: 4px">
                           <select id="category" name="category" class="opt">
-                            <option value="vegetable">Vegetables</option>
-                            <option value="fruit">Fruits</option>
-                            <option value="juiceAndJam">Juice / Homemade Jam</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Juice / Homemade Jam">Juice / Homemade Jam</option>
                           </select>
                         </div>
                       </dd>
@@ -229,7 +229,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="row ingredient_rows">
                         <div class="col-md-11 ingredient_col">
                           <div
-                            class="row ingredient_row head_row bg-lightgreen"
+                            class="row ingredient_row head_row bg-lightgreen" style="color:#666666"
                           >
                             <div class="col-md">Name of the option</div>
                             <div class="col-md">Amount of the option</div>

@@ -57,7 +57,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               >${item.name}</a
                             >
                           </h6>
-                          <h5>\${item.price}</h5>
+                          <h5>&#8361;${item.price}</h5>
                         </div>
                       </div>
                     </c:when>
@@ -75,7 +75,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                               ${item.name}
                             </a>
                           </h6>
-                          <h5>\${item.price}</h5>
+                          <h5>&#8361;${item.price}</h5>
                         </div>
                       </div>
                     </c:otherwise>

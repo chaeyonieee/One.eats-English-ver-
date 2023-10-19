@@ -1,9 +1,9 @@
 function fn_toggle(num){
 	if(num==1){
-		$("#category_motnan").slideToggle();
+		$("#category_Ugly Products").slideToggle();
 		
 		
-		$("#motnan_arrow").rotate({
+		$("#Ugly Products_arrow").rotate({
 			angle:rotate1,
 			animateTo:rotate1+180
 			});
