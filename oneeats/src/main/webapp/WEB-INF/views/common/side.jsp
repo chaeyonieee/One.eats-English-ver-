@@ -51,30 +51,30 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
                 >
                   Ugly Product
                   <img
-                    id="motnan_arrow"
+                    id="Ugly Products_arrow"
                     src="${contextPath}/img/icon/uparrow.png"
                     alt=""
                     style="width: 10px; float: right"
                   />
                 </div>
                 <ul
-                  id="category_motnan"
+                  id="category_Ugly Products"
                   style="margin-left: 12px; margin-top: 12px"
                 >
                   <li>
                     <a
-                      href="${contextPath}/goods/goodsList.do?category=vegetable"
+                      href="${contextPath}/goods/goodsList.do?category=Vegetables"
                       >Vegetables</a
                     >
                   </li>
                   <li>
-                    <a href="${contextPath}/goods/goodsList.do?category=fruit"
+                    <a href="${contextPath}/goods/goodsList.do?category=Fruits"
                       >Fruits</a
                     >
                   </li>
                   <li>
                     <a
-                      href="${contextPath}/goods/goodsList.do?category=juiceAndJam"
+                      href="${contextPath}/goods/goodsList.do?category=Juice / Homemade Jam"
                       >Juice / Homemade Jam</a
                     >
                   </li>
@@ -101,30 +101,30 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
                   style="margin-left: 12px; margin-top: 12px"
                 >
                   <li>
-                    <a href="${contextPath}/goods/goodsList.do?category=zzigae">
+                    <a href="${contextPath}/goods/goodsList.do?category=Stew/ Soup/ Steamed">
                       Stew/ Soup/ Steamed</a
                     >
                   </li>
                   <li>
-                    <a href="${contextPath}/goods/goodsList.do?category=meal"
+                    <a href="${contextPath}/goods/goodsList.do?category=Meal/ Appetizers"
                       >Meal/ Appetizers</a
                     >
                   </li>
                   <li>
                     <a
-                      href="${contextPath}/goods/goodsList.do?category=porridge"
+                      href="${contextPath}/goods/goodsList.do?category=Porridge"
                       >Porridge</a
                     >
                   </li>
                   <li>
                     <a
-                      href="${contextPath}/goods/goodsList.do?category=mealReplacement"
+                      href="${contextPath}/goods/goodsList.do?category=Meal Replacement"
                       >Meal Replacement</a
                     >
                   </li>
                   <li>
                     <a
-                      href="${contextPath}/goods/goodsList.do?category=sidedish"
+                      href="${contextPath}/goods/goodsList.do?category=Sidedish"
                       >Sidedish</a
                     >
                   </li>

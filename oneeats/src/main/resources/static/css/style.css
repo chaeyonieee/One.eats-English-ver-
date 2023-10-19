@@ -996,6 +996,7 @@ ol {
   display: flex;
   align-items: center;
   padding: 45px 0 40px;
+  margin:20px 0 -40px
 }
 
 .breadcrumb__text h2 {
@@ -1215,7 +1216,7 @@ ol {
 }
 
 .product__discount {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .product__discount__title {

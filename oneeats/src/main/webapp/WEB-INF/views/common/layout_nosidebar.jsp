@@ -53,7 +53,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
       href="${contextPath}/css/style.css"
       type="text/css"
     />
-
+    <link rel="stylesheet" href="${contextPath}/css/common.css" />
     <!-- Js Plugins -->
     <script src="${contextPath}/js/jquery-3.3.1.min.js"></script>
     <script src="${contextPath}/js/bootstrap.min.js"></script>
@@ -63,7 +63,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
     <script src="${contextPath}/js/common.js"></script>
 
     <!--추가한 css-->
-    <link rel="stylesheet" href="${contextPath}/css/common.css" />
+
     <link rel="stylesheet" href="${contextPath}/css/font.css" />
     <link rel="stylesheet" href="${contetPath}/css/notice-window.css" />
     <title><tiles:insertAttribute name="title"/></title>

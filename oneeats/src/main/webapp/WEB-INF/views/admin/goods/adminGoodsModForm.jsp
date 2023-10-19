@@ -180,10 +180,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               Please select a category
                             </option>
 
-                            <option value="zzigae">Stew/ Soup/ Steamed</option>
-                            <option value="meal">Meal/ Appetizers</option>
-                            <option value="porridge">Porridge</option>
-                            <option value="mealReplacement">
+                            <option value="Stew/ Soup/ Steamed">Stew/ Soup/ Steamed</option>
+                            <option value="Meal/ Appetizers">Meal/ Appetizers</option>
+                            <option value="Porridge">Porridge</option>
+                            <option value="Meal Replacement">
                               Meal Replacement
                             </option>
                             <option value="sidedish">Sidedish</option>

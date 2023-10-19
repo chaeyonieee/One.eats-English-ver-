@@ -11,6 +11,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <meta charset="UTF-8" />
     <title>Header</title>
     <link rel="stylesheet" href="${contextPath}/css/common.css" />
+    <link rel="stylesheet" href="${contextPath}/css/nice-select.css" />
     <link rel="stylesheet" href="${contextPath}/css/header.css" />
     <style>
       div.row div.nice-select {
@@ -20,6 +21,20 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         margin-top: 4px;
         margin-left: 40px;
       }
+      .form-control1 {
+        display: block;
+        width: 79%;
+        height: 38px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
     </style>
   </head>
   <body>
@@ -27,13 +42,13 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <div class="bg-gray">
         <div style="float: right" class="textsize-1 textcolor-black">
           <c:if test="${isLogOn==true and memberInfo.type =='Admin'}">
-            <a href="${contextPath}/admin/main/adminMain.do"
+            <a href="${contextPath}/admin/main/adminMain.do" class="weight"
               >Admin Menu&nbsp&nbsp</a
             >
           </c:if>
 
           <c:if test="${isLogOn==true and memberInfo.type =='Business'}">
-            <a href="${contextPath}/seller/main/sellerMain.do"
+            <a href="${contextPath}/seller/main/sellerMain.do" class="weight"
               >Business Menu&nbsp&nbsp</a
             >
           </c:if>
@@ -105,12 +120,13 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                     <div class="input-group">
                       <input
                         type="text"
-                        class="form-control"
+                        class="form-control1"
                         name="filter_word"
                       />
                       <div class="input-group-append">
                         <button
-                          style="background-color: #dd2124"
+                          style="background-color: #dd2124;border-top-right-radius: 5px;
+  border-bottom-right-radius:5px;"
                           class="textcolor-white border-0 weight"
                           type="submit"
                         >
