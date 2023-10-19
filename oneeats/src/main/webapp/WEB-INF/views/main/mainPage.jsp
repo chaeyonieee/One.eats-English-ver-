@@ -27,7 +27,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
             <div
               class="hero__item set-bg"
               style="
-                width: 767px;
+                width: 789px;
                 height: 431;
                 justify-content: space-around !important;
               "
@@ -37,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 <a
                   href="${contextPath}/goods/goodsList.do"
                   class="primary-btn"
-                  style="margin: 360px 74px 0 0"
+                  style="margin: 366px 74px 0 0"
                   >View Products</a
                 >
               </div>
@@ -118,9 +118,12 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                         <h5><a href="#">${item.name}</a></h5>
                         <div class="product__item__price">
                           <div>
-                            ${item.goods_qty} per &#8361;${item.discounted_price}
+                            ${item.goods_qty} per
+                            &#8361;${item.discounted_price}
                           </div>
-                          <span> Original Price:&#8361;${item.goodsPrice} </span>
+                          <span>
+                            Original Price:&#8361;${item.goodsPrice}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -153,7 +156,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 src="${contextPath}/img/product/main/sm-banner.jpg"
                 alt=""
                 style="
-                  width: 353px;
+                  width: 364.2px;
                   height: 170px;
                   filter: brightness(50%);
                   position: relative;
@@ -186,7 +189,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
               src="${contextPath}/img/product/main/meal-kit.jpg"
               alt=""
               style="
-                width: 353px;
+                width: 364.2px;
                 height: 170px;
                 filter: brightness(50%);
                 position: relative;
