@@ -37,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 <a
                   href="${contextPath}/goods/goodsList.do"
                   class="primary-btn"
-                  style="margin: 366px 74px 0 0"
+                  style="margin: 366px 74px 0 0; border-radius:50px"
                   >View Products</a
                 >
               </div>
@@ -177,7 +177,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 <a
                   href="${contextPath}/goods/goodsList.do?category=Ugly Products"
                   class="primary-btn"
-                  style="margin-top: 12px"
+                  style="margin-top: 12px; border-radius:50px"
                   >Quick Link</a
                 >
               </div>
@@ -208,7 +208,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
               <a
                 href="${contextPath}/goods/goodsList.do?category=mealkit"
                 class="primary-btn"
-                style="margin-top: 12px"
+                style="margin-top: 12px; border-radius:50px"
                 >Quick Link</a
               >
             </div>

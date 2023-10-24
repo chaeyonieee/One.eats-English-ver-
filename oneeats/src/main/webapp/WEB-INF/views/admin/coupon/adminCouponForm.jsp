@@ -88,13 +88,13 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <!-- 버튼 -->
       <div class="div-btn">
         <button
-          class="btn-1 btn-regular bg-white textcolor-black btn-border"
+          class="btn-1 btn-regular bg-white textcolor-black textbold btn-border"
           type="reset"
         >
-          다시쓰기
+          Rewrite
         </button>
         <button
-          class="btn-1 btn-regular bg-lightgreen textcolor-white textbold border-0"
+          class="btn-1 btn-regular bg-lightgreen textbold border-0"
           type="submit"
         >
           Coupon Registration

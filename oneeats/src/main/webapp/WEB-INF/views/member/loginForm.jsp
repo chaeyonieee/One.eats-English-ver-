@@ -156,7 +156,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               >
               /
               <a href="${contextPath}/member/registerTypeSelect.do"
-                >Member Registration</a
+                >Registration</a
               >
             </div>
           </div>

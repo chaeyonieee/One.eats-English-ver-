@@ -62,23 +62,44 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
 
   <body>
-    <section
-      class="breadcrumb-section set-bg"
-      data-setbg="${contextPath}/img/breadcrumb.jpg"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <div class="breadcrumb__text">
-              <h2>${goods.category}</h2>
-              <div class="breadcrumb__option">
-                <span></span>
+    <c:choose>
+      <c:when
+        test="${goods.category == 'Juice / Homemade Jam' || goods.category == 'Fruits' || goods.category == 'Vegetables'}"
+      >
+        <section
+          class="breadcrumb-section set-bg"
+          data-setbg="${contextPath}/img/breadcrumb1.jpg"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                  <h2>${goods.category}</h2>
+                  <div class="breadcrumb__option"></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </c:when>
+      <c:otherwise>
+        <section
+          class="breadcrumb-section set-bg"
+          data-setbg="${contextPath}/img/breadcrumb5.png"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                  <h2>${goods.category}</h2>
+                  <div class="breadcrumb__option"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </c:otherwise>
+    </c:choose>
 
     <section class="product-details spad">
       <div class="container">
