@@ -7,6 +7,7 @@
 #header {
   padding: 4px;
   margin-bottom: 4px;
+  margin-top:30px;
   border: 0px solid #bcbcbc;
 }
 
@@ -41,7 +42,7 @@
 }
 
 #content {
-  width: 72%;
+  width: 78%;
   min-height: 520px;
   padding: 5px;
   margin-right: 5px;
@@ -194,7 +195,7 @@
   font-weight: 600;
 }
 .text-eng {
-  font-family: "Dosis", Courier, monospace;
+  font-family: "Montserrat", Courier, monospace;
 }
 
 .imgsize-square1 {
@@ -269,12 +270,14 @@ hr.line-black {
   height: 2px;
   background-color: black;
   margin: 4px;
+  width:101%;
 }
 hr.line-gray {
   border: 0px;
   height: 1px;
   background-color: #b3b3b3;
   margin: 4px;
+    width:101%;
 }
 
 

@@ -243,7 +243,7 @@ public class AdminGoodsControllerImpl implements AdminGoodsController {
 			return mav;
 			
 		}
-		
+
 		@RequestMapping(value = "/admin/goods/adminGoodsModForm.do", method = { RequestMethod.GET, RequestMethod.POST })
 		public ModelAndView sellerGoodsModForm(HttpServletRequest request, HttpServletResponse response)
 				throws IOException {

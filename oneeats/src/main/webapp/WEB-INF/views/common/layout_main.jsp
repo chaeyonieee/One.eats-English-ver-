@@ -74,7 +74,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
     </div> -->
     <div id="top"></div>
     <div id="container">
-      <div id="header" class="container-md" style="margin-bottom: 18px">
+      <div id="header" class="container-md" style="margin-bottom: 38px">
         <tiles:insertAttribute name="header" />
       </div>
       <div class="container-md">

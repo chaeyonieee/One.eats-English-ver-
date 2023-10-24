@@ -30,7 +30,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
               <option value="">Category</option>
               <option value="Payment">Payment</option>
               <option value="Order">Order</option>
-              <option value="Order">Order</option>
+              <option value="Delivery">Delivery</option>
             </select>
           </form>
         </div>
