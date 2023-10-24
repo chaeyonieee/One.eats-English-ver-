@@ -140,7 +140,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <span>Average ${reviewAvg} point </span>
                 <span>(${totalReviewsNum} reviews)</span>
                 <div class="product__details__price">
-                  ${hotdeal.discounted_price}
+                  &#8361;${hotdeal.discounted_price}
                 </div>
                 <section class="css-1ua1wyk">
                   <div class="css-iqoq9n">
@@ -344,7 +344,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                     </div>
                                   </div>
                                   <div class="option_price">
-                                    ${hotdeal.discounted_price}
+                                    &#8361; ${hotdeal.discounted_price}
                                   </div>
 
                                   <input
@@ -369,13 +369,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 padding: 10px 0 10px 0;
                               "
                             >
-                              Total product price
+                              Original product price
                             </span>
                             <span
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="payment_price"
-                              >${goods.price*hotdeal.goods_qty}</span
+                              >&#8361;${goods.price*hotdeal.goods_qty}</span
                             >
                             <span
                               class="property-font3 text-right"
@@ -392,7 +392,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="discount_price"
-                              >${goods.price*hotdeal.goods_qty-hotdeal.discounted_price}</span
+                              >&#8361;${goods.price*hotdeal.goods_qty-hotdeal.discounted_price}</span
                             >
 
                             <span
@@ -410,7 +410,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               class="property-font3 text-right"
                               style="font-size: 22px; margin-bottom: -10px"
                               id="t_price"
-                              >${hotdeal.discounted_price}</span
+                              >&#8361;${hotdeal.discounted_price}</span
                             >
                             <!--Shipping Fee와 ProductPrice hidden-->
                             <input type="hidden" name="shippingFee" value="0" />

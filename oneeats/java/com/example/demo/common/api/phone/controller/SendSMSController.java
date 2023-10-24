@@ -115,7 +115,7 @@ public class SendSMSController {
 		// 수신번호와 발신번호는 반드시 -,* 등의 특수문자를 제거한 01012345678 형식으로 입력해주셔야 합니다!
 		MessageListRequest request = new MessageListRequest();
 
-		// Search할 건 수, 값 미지정 시 20건 조회, 최대 500건 까지 설정 가능
+		// Search할 건 수, 값 미지정 시 20건 조회, 최대 500건 까지 setting 가능
 		// request.setLimit(1);
 
 		// 조회 후 next 페이지로 넘어가려면 조회 당시 마지막의 messageId를 입력해주셔야 합니다!
@@ -210,7 +210,7 @@ public class SendSMSController {
 
 		try {
 			// send 메소드로 단일 Message 객체를 넣어도 동작합니다!
-			// 세 번째 파라미터인 showMessageList 값을 true로 설정할 경우
+			// 세 번째 파라미터인 showMessageList 값을 true로 setting할 경우
 			// MultipleDetailMessageSentResponse에서 MessageList를 리턴하게 됩니다!
 			MultipleDetailMessageSentResponse response = this.messageService.send(messageList, false, true);
 

@@ -93,7 +93,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                       Payment Price
                     </dt>
                     <dd class="dd-1 textsize-1 textcolor-black">
-                      ${order.total_price}yen
+                      ${order.total_price}won
                     </dd>
                   </dl>
                 </div>

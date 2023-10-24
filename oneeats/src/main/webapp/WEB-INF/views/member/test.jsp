@@ -978,7 +978,7 @@
               class="css-1262i6n e57xuci1"
             />
             <p class="css-bft4sh e57xuci0">
-              [인증범위] 컬리 쇼핑몰 서비스 개발·운영<br />(심사받지 않은 물리적
+              [인증범위] 컬리 website 서비스 개발·운영<br />(심사받지 않은 물리적
               인프라 제외)<br />[Expiration Date] 2022.01.19 ~ 2025.01.18
             </p></button
           ><button class="css-12t5wjq e57xuci2">

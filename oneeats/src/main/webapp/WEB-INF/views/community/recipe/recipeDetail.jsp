@@ -105,27 +105,6 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
             </div>
           </div>
         </div>
-        <div class="row">&nbsp;</div>
-        <div class="row">&nbsp;</div>
-        <div class="row recipe_footer">
-          <div class="col-md-2"></div>
-          <div class="col-md-2 writer_profile_img">
-            <div class="profile_img_wrapper">
-              <img
-                class="imgsize-square1"
-                src="${contextPath}/download.do?imageFileName=${writer.profileImg}&path=member/${writer.memberNo}"
-                alt="프로필 이미지"
-              />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="row text-left textsize-2 textbold writer_name">
-              ${writer.name}
-            </div>
-            <div class="row textsize-1 writer_description">${writer.intro}</div>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
       </div>
       <div>&nbsp;</div>
       <div>&nbsp;</div>

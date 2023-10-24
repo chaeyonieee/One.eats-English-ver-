@@ -72,7 +72,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               <input
                 type="hidden"
                 value="${order.total_price}"
-              />${order.total_price} yen
+              />${order.total_price} won
             </dd>
           </dl>
           <dl class="dl-dt">
@@ -84,7 +84,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                 type="hidden"
                 value="${order.total_price-order.shippingfee}"
               />
-              ${order.total_price} yen
+              ${order.total_price} won
             </dd>
           </dl>
           <dl class="dl-dt">

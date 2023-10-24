@@ -7,19 +7,19 @@
 <!-- Product -->
     <definition name="/seller/goods/sellerGoodsForm" extends="mainLayout">  
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Product등록 페이지" />
+       <put-attribute name="title" value="Business Product register page" />
        <put-attribute name="body" value="/WEB-INF/views/seller/goods/sellerGoodsForm.jsp" />
     </definition>   
 
     <definition name="/seller/goods/sellerGoodsModForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Product등록 Modify 페이지" /> 
+       <put-attribute name="title" value="Business Product register Modify page" /> 
        <put-attribute name="body" value="/WEB-INF/views/seller/goods/sellerGoodsModForm.jsp" />
     </definition> 
     
     <definition name="/seller/goods/sellerGoodsList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Product 리스트 페이지" /> 
+       <put-attribute name="title" value="Business Product 리스트 page" /> 
        <put-attribute name="body" value="/WEB-INF/views/seller/goods/sellerGoodsList.jsp" />
     </definition>     
     
@@ -27,39 +27,39 @@
 <!-- Hot Deal -->
     <definition name="/seller/hotdeal/sellerHotDealForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Hot Deal등록 페이지" />
+       <put-attribute name="title" value="Business Hot Deal register page" />
        <put-attribute name="body" value="/WEB-INF/views/seller/hotdeal/sellerHotDealForm.jsp" />
     </definition> 
     
     <definition name="/seller/hotdeal/sellerHotDealModForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Hot Deal등록 Modify 페이지" />
+       <put-attribute name="title" value="Business Hot Deal register Modify page" />
        <put-attribute name="body" value="/WEB-INF/views/seller/hotdeal/sellerHotDealModForm.jsp" />
 	</definition>
   
     <definition name="/seller/hotdeal/sellerHotDealList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Hot DealList 페이지" />
+       <put-attribute name="title" value="Business Hot DealList page" />
        <put-attribute name="body" value="/WEB-INF/views/seller/hotdeal/sellerHotDealList.jsp" />
     </definition> 
     
 <!-- Coupon -->    
     <definition name="/seller/coupon/sellerCouponForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Coupon Registration 페이지" />       
+       <put-attribute name="title" value="Business Coupon Registration page" />       
        <put-attribute name="body" value="/WEB-INF/views/seller/coupon/sellerCouponForm.jsp" />
     </definition>
     
     <definition name="/seller/coupon/sellerCouponList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Coupon List 페이지" />
+       <put-attribute name="title" value="Business Coupon List page" />
        <put-attribute name="body" value="/WEB-INF/views/seller/coupon/sellerCouponList.jsp" />
     </definition>
     
 <!-- Order/Order -->
     <definition name="/seller/order/sellerOrderList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_seller.jsp" />
-       <put-attribute name="title" value="Business Order/Order 페이지" />      
+       <put-attribute name="title" value="Business Order/Order page" />      
        <put-attribute name="body" value="/WEB-INF/views/seller/order/sellerOrderList.jsp" />
     </definition>
     
@@ -70,22 +70,22 @@
     </definition>
     
     <definition name="/seller/member/sellerRegisterForm" extends="nosidebarLayout">
-		<put-attribute name="title" value="쇼핑몰 BusinessMember Registration페이지" />
+		<put-attribute name="title" value="website BusinessMember Registrationpage" />
 		<put-attribute name="body" value="/WEB-INF/views/seller/member/sellerRegisterForm.jsp" />
 	</definition>
 	
 	<definition name="/seller/member/sellerRegisterAgreeForm" extends="nosidebarLayout">
-		<put-attribute name="title" value="쇼핑몰 BusinessMember Registration페이지" />
+		<put-attribute name="title" value="website BusinessMember Registrationpage" />
 		<put-attribute name="body" value="/WEB-INF/views/seller/member/sellerRegisterAgreeForm.jsp" />
 	</definition>
 	
 	<definition name="/seller/member/sellerRegisterInfoForm" extends="nosidebarLayout">
-		<put-attribute name="title" value="쇼핑몰 BusinessMember Registration페이지" />
+		<put-attribute name="title" value="website BusinessMember Registrationpage" />
 		<put-attribute name="body" value="/WEB-INF/views/seller/member/sellerRegisterInfoForm.jsp" />
 	</definition>
 	
 	<definition name="/seller/member/sellerRegisterLastForm" extends="nosidebarLayout">
-		<put-attribute name="title" value="쇼핑몰 BusinessMember Registration페이지" />
+		<put-attribute name="title" value="website BusinessMember Registrationpage" />
 		<put-attribute name="body" value="/WEB-INF/views/seller/member/sellerRegisterLastForm.jsp" />
 	</definition>
 

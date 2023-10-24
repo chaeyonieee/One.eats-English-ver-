@@ -104,7 +104,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <td class ="booktext text-center" >
           <a href="${contextPath}/goods/goodsDetail.do?goodsNo=${item.goodsNo}">${item.name}</a>
          <br>
-         <span class = "textsize-1">${item.price}yen</span>
+         <span class = "textsize-1">${item.price}won</span>
         </td>
         <td>
           <div class=" book text-right">

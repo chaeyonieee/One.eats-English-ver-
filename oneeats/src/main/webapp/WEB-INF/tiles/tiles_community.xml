@@ -22,13 +22,13 @@
     </definition>
     
     <definition name="/community/notice/noticeDetail" extends="mainLayout">
-       <put-attribute name="title" value="Notice 상세" />
+       <put-attribute name="title" value="Notice detail" />
        <put-attribute name="body" value="/WEB-INF/views/community/notice/noticeDetail.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
     </definition>
     
     <definition name="/community/oneQnA/oneQnADetail" extends="mainLayout">
-       <put-attribute name="title" value="1:1 Inquiry  상세" />
+       <put-attribute name="title" value="1:1 Inquiry  detail" />
        <put-attribute name="body" value="/WEB-INF/views/community/oneQnA/oneQnADetail.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_customer.jsp" />
     </definition>
@@ -47,7 +47,7 @@
     </definition>
     
     <definition name="/community/recipe/recipeDetail" extends="undersidebarLayout">
-       <put-attribute name="title" value="Recipe 상세" />
+       <put-attribute name="title" value="Recipe detail" />
        <put-attribute name="body1" value="/WEB-INF/views/community/recipe/recipeDetail.jsp" />
        <put-attribute name="body2" value="/WEB-INF/views/community/recipe/recipeDetail2.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_recipe.jsp" />

@@ -49,11 +49,11 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                 Select a usage conditions
               </option>
               <option value="During Sign-Up">During Sign-Up</option>
-              <option value="On purchases of 3000yen or more">
-                On purchases of 3000yen or more
+              <option value="On purchases of 3000won or more">
+                On purchases of 3000won or more
               </option>
-              <option value="On purchases of 5000yen or more">
-                On purchases of 5000yen or more
+              <option value="On purchases of 5000won or more">
+                On purchases of 5000won or more
               </option>
             </select>
           </td>

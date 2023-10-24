@@ -74,7 +74,7 @@ public class MemberControllerImpl implements MemberController {
 		ModelAndView mav = new ModelAndView();
 		Map memberMap = GeneralFileUploader.getParameterMap(request);
 		try {
-			int memberNo = memberService.registerInfoNo(); // 새로운 No
+			int memberNo = memberService.registerInfoNo(); // new로운 No
 			memberMap.put("memberNo", memberNo);
 			String _birth = (String) memberMap.get("birth");
 			String sms_agreement = (String) memberMap.get("sms_agreement");

@@ -576,7 +576,7 @@
 		]]>
 	</select>
 
-	<!-- 민아 쿠폰 등록 -->
+	<!-- 민아 쿠폰  register -->
 	<insert id="couponInsert" parameterType="couponVO">
 		<![CDATA[
 		    insert into member_coupon(couponNo, memberNo) 

@@ -61,7 +61,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         console.log("search : " + search);
 
         if (document.cookie.length > 0) {
-          // 쿠키가 설정되어 있다면
+          // 쿠키가 setting되어 있다면
           offset = document.cookie.indexOf(search);
           console.log("offset : " + offset);
           if (offset != -1) {
@@ -70,7 +70,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             // set index of beginning of value
             end = document.cookie.indexOf(";", offset);
             console.log("end : " + end);
-            // 쿠키 값의 마지막 위치 인덱스 번호 설정
+            // 쿠키 값의 마지막 위치 인덱스 번호 setting
             if (end == -1) end = document.cookie.length;
             console.log("end위치  : " + end);
 

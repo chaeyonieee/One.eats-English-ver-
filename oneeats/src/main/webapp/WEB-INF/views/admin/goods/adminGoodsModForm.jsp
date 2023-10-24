@@ -415,7 +415,7 @@ ${sellerGoods.description}
                       class="cart-button css-cartbtn e4nu7ef3"
                       type="reset"
                       radius="3"
-                      style="width: 100px"
+                      style="width: 120px"
                       onclick="location.href='${contextPath}/admin/goods/adminGoodsList.do'"
                     >
                       <span class="css-nytqmg textbold">Cancle</span>
@@ -427,7 +427,7 @@ ${sellerGoods.description}
                       class="cart-button css-cartbtn"
                       type="submit"
                       radius="3"
-                      style="width: 100px"
+                      style="width: 120px"
                     >
                       <span class="css-nytqmg textbold"
                         >Modification</span

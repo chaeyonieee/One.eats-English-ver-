@@ -47,12 +47,12 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
                   </li>
                   <li>
                     <a href="${contextPath}/mypage/mypageMemberMod.do"
-                      >Member Information Modify</a
+                      >Information Modify</a
                     >
                   </li>
                   <li>
                     <a href="${contextPath}/mypage/myAddress.do"
-                      >Order Address Management</a
+                      >Address Modify</a
                     >
                   </li>
                 </ul>
