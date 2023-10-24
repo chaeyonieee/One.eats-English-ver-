@@ -330,7 +330,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="cart-button css-cartbtn e4nu7ef3"
                       type="reset"
                       radius="3"
-                      style="width: 100px"
+                      style="width: 120px"
                     >
                       <span class="css-nytqmg textbold">Rewrite</span>
                     </button>
@@ -341,7 +341,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="cart-button css-cartbtn e4nu7ef3"
                       type="submit"
                       radius="3"
-                      style="width: 100px"
+                      style="width: 120px"
                     >
                       <span class="css-nytqmg textbold">Hot Deal Modify</span>
                     </button>

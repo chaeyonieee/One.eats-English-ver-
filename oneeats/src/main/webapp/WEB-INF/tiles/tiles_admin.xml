@@ -7,68 +7,68 @@
 <!-- Product -->
     <definition name="/admin/goods/adminGoodsModForm" extends="mainLayout">
  	   <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin ProductModify 페이지" />
+       <put-attribute name="title" value="Admin ProductModify page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsModForm.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
     </definition>
     
      <definition name="/admin/goods/adminGoodsForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Product등록 페이지" />
+       <put-attribute name="title" value="Admin Product register page" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
        <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsForm.jsp" />
      </definition>
      
      <definition name="/admin/goods/adminGoodsList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin ProductList 페이지" />
+       <put-attribute name="title" value="Admin ProductList page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsList.jsp" />
      </definition>
      
      <definition name="/admin/goods/adminSellerGoodsList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Business ProductManagement 페이지" />
+       <put-attribute name="title" value="Admin Business ProductManagement page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/goods/adminSellerGoodsList.jsp" />
      </definition>
      
 <!-- Hot Deal -->
     <definition name="/admin/hotdeal/adminHotDealForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Hot Deal등록 페이지" />
+       <put-attribute name="title" value="Admin Hot Deal register page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealForm.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
     </definition>
 
     <definition name="/admin/hotdeal/adminHotDealModForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Hot DealModify 페이지" />
+       <put-attribute name="title" value="Admin Hot DealModify page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealModForm.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
     </definition>
     
     <definition name="/admin/hotdeal/adminHotDealList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Hot DealList 페이지" />
+       <put-attribute name="title" value="Admin Hot DealList page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/hotdeal/adminHotDealList.jsp" />
     </definition>
 
 <!-- Coupon -->
     <definition name="/admin/coupon/adminCouponList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Coupon List 페이지" />
+       <put-attribute name="title" value="Admin Coupon List page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/coupon/adminCouponList.jsp" />
     </definition>
     
     <definition name="/admin/coupon/adminCouponForm" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Coupon Registration 페이지" />
+       <put-attribute name="title" value="Admin Coupon Registration page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/coupon/adminCouponForm.jsp" />
     </definition>
     
 <!-- Order/Order -->
     <definition name="/admin/order/adminOrderList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Order/Order 페이지" />
+       <put-attribute name="title" value="Admin Order/Order page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/order/adminOrderList.jsp" />
     </definition>
     
@@ -144,7 +144,7 @@
     </definition>
     
 	<definition name="/admin/member/adminMemberDetail" extends="mainLayout">
-       <put-attribute name="title" value="Admin Member 상세" />
+       <put-attribute name="title" value="Admin Member detail" />
        <put-attribute name="body" value="/WEB-INF/views/admin/member/adminMemberDetail.jsp" />
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
     </definition>

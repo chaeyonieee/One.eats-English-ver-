@@ -365,11 +365,11 @@ System.out.println("map : " + map);
 			int memberNo = member.getMemberNo(); // memberNo가져오기
 			System.out.println("content = " + content+ "qnaNo = " +qnaNo);
 			// no을 parentNo으롷 memberNo는 댓글이나 답글을 Write 한 사람
-			int NewqnaNo = communityService.newQnANo(); // 새로운 qnaNo 찾기
+			int NewqnaNo = communityService.newQnANo(); // new로운 qnaNo 찾기
 			OneQnAVO oneqnaVO = new OneQnAVO();
 			oneqnaVO.setParentNo(qnaNo); // parentNo을 qnaNo으로
 			oneqnaVO.setContent(content);
-			oneqnaVO.setQnaNo(NewqnaNo); // 새로운 qnaNo값을 가져와서 set
+			oneqnaVO.setQnaNo(NewqnaNo); // new로운 qnaNo값을 가져와서 set
 			oneqnaVO.setMemberNo(memberNo); // 세션에 있는 Login정보를 가져와서 memberNo에 넣기
 			communityService.replyInsert(oneqnaVO); // parentNo에 1을 넣은 oneqnaVO insert하기
 			mav.addObject("qnaNo",qnaNo);

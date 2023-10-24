@@ -25,12 +25,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       a.active {
         background-color: rgb(226, 226, 226);
-        border-top: 4px solid #FCF75E;
+        border-top: 4px solid #fcf75e;
       }
       .brd-lightgreen {
         border: 0.5px;
         border-style: solid;
-        border-color: #FCF75E;
+        border-color: #fcf75e;
       }
       .sellermain-wrap {
         max-width: 600px;
@@ -270,7 +270,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="row">&nbsp;</div>
                       <div class="row">
                         <div class="col">
-                          <div class="text-center textsize-1">
+                          <div
+                            class="text-center textsize-1"
+                            style="font-size: 16px"
+                          >
                             To join as a Business Member, Business registration
                             certificate verification is required.
 
@@ -321,7 +324,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="row agreement_box_grid">
                         <div class="col">
                           <div class="row toggle-btn border-bottom">
-                            <div class="col">
+                            <div class="col" style="font-size: 16px">
                               [Mandatory] Service Usage agree to the Terms
                             </div>
                             <div class="float-right">
@@ -335,7 +338,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="row toggle-content">
                             <div class="col-md">
                               <div class="row">
-                                <div class="col">
+                                <div class="col" style="font-size: 16px">
                                   Terms of Use Content <br />
                                 </div>
                               </div>
@@ -343,7 +346,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           </div>
                           <div class="row">
                             <div class="col-md agreement_box_col">
-                              <span
+                              <span style="font-size: 16px"
                                 >Agree to the terms and conditions of the
                                 content.</span
                               >
@@ -359,7 +362,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="row agreement_box_grid">
                         <div class="col">
                           <div class="row toggle-btn border-bottom">
-                            <div class="col">
+                            <div class="col" style="font-size: 16px">
                               [Mandatory] Agree to the collection and use of
                               personal information
                             </div>
@@ -374,7 +377,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="row toggle-content">
                             <div class="col-md">
                               <div class="row">
-                                <div class="col">
+                                <div class="col" style="font-size: 16px">
                                   Terms of Use Content <br />
                                 </div>
                               </div>
@@ -382,7 +385,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           </div>
                           <div class="row">
                             <div class="col-md agreement_box_col">
-                              <span
+                              <span style="font-size: 16px"
                                 >Agree to the terms and conditions of the
                                 content.</span
                               >
@@ -398,7 +401,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="row agreement_box_grid">
                         <div class="col select-check">
                           <div class="row border-bottom">
-                            <div class="col">
+                            <div class="col" style="font-size: 16px">
                               [Optional] Consent to receive information and
                               benefits such as urgent Discount Price<br />
                             </div>
@@ -425,7 +428,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <br />
                       <div class="row agreement_box_grid">
                         <div class="col agreement_box_col">
-                          <span>[Mandatory] I am over 14 years old.</span
+                          <span style="font-size: 16px"
+                            >[Mandatory] I am over 14 years old.</span
                           ><input
                             class="req_checkbox check_box"
                             type="checkbox"

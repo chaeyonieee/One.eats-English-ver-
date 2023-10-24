@@ -75,9 +75,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script>
       function fn_changeText(d_price, t_price) {
         $("input[name=discount_price]").val(d_price);
-        $("#discount_price_text").text("-" + d_price + "yen");
+        $("#discount_price_text").text("-" + d_price + "won");
         $("input[name=total_price]").val(t_price);
-        $("#total_price_text").text(t_price + "yen");
+        $("#total_price_text").text(t_price + "won");
       }
       $(document).ready(function () {
         $("#used_point").on("change", function () {
@@ -354,7 +354,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <option value="0" selected>Please choose Coupon</option>
               <c:forEach var="coupon" items="${couponList}">
                 <option value="${coupon.couponNo}">
-                  ${coupon.name} / ${coupon.discount_price}yen Discount Price /
+                  ${coupon.name} / ${coupon.discount_price}won Discount Price /
                   ${coupon.condition}
                 </option>
               </c:forEach>
@@ -384,7 +384,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               type="hidden"
               name="payment_price"
               value="${payment_price}"
-            />${payment_price} yen
+            />${payment_price} won
           </td>
         </tr>
         <tr>
@@ -394,7 +394,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               type="hidden"
               name="discount_price"
               value="${discount_price}"
-            /><span id="discount_price_text">-${discount_price} yen</span>
+            /><span id="discount_price_text">-${discount_price} won</span>
             <input
               type="hidden"
               id="h_original_discount_price"
@@ -409,7 +409,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               type="hidden"
               name="shippingfee"
               value="${shippingfee}"
-            />${shippingFee} yen
+            />${shippingFee} won
           </td>
         </tr>
         <tr>
@@ -419,14 +419,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               type="hidden"
               name="point_price"
               value="${percent}"
-            />${percent} yen
+            />${percent} won
           </td>
         </tr>
         <tr>
           <td>Total PaymentPrice</td>
           <td>
             <input type="hidden" name="total_price" value="${total_price}" />
-            <span id="total_price_text">${total_price} yen</span>
+            <span id="total_price_text">${total_price} won</span>
           </td>
         </tr>
         <tr>
@@ -449,7 +449,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           Cancle
         </button>
         <button
-          class="btn-1 btn-regular bg-lightgreen textcolor-white textbold border-0"
+          class="btn-1 btn-regular bg-lightgreen textbold border-0"
           id="payment-request-button"
           onclick="fn_sendOrderInfo('${contextPath}')"
           type="button"

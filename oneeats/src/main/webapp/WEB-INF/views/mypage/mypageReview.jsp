@@ -61,7 +61,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <hr class="line-black" />
       <br />
       <p class="textsize-1 text-left textcolor-lightgray">
-        · Earn 15 yen for photo reviews and 5 yen for text reviews. You will
+        · Earn 15 won for photo reviews and 5 won for text reviews. You will
         receive the reward only once a month for reviews of the same product.
         <br />
         · Rewards will be credited on the first business day after writing a

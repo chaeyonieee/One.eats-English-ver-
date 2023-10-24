@@ -37,7 +37,7 @@ $(document).ready(function() {
 		
 		changeTotalValue();
 
-		// 새 행을 만든다
+		// new 행을 만든다
 		var newRow =
 			`<dl class="property-flex2 goods_option_row">
                               <dt class="property-font2 epzddad1">
@@ -72,7 +72,7 @@ $(document).ready(function() {
                             </dl>
                         `;
 
-		// 새 행을 추가
+		// new 행을 추가
 		rowsDiv.append(newRow);
 		}
 		

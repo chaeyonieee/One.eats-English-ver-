@@ -45,7 +45,7 @@ public class KakaoExampleController {
     @PostMapping("/send-one-ata")
     public SingleMessageSentResponse sendOneAta() {
         KakaoOption kakaoOption = new KakaoOption();
-        // disableSms를 true로 설정하실 경우 문자로 대체발송 되지 않습니다.
+        // disableSms를 true로 setting하실 경우 문자로 대체발송 되지 않습니다.
         // kakaoOption.setDisableSms(true);
 
         // 등록하신 카카오 비즈니스 채널의 pfPlease enter your ID
@@ -53,7 +53,7 @@ public class KakaoExampleController {
         // 등록하신 카카오 알림톡 템플릿의 templatePlease enter your ID
         kakaoOption.setTemplateId("");
 
-        // 알림톡 템플릿 내에 #{변수} 형태가 존재할 경우 variables를 설정해주세요.
+        // 알림톡 템플릿 내에 #{변수} 형태가 존재할 경우 variables를 setting해주세요.
         /*
         HashMap<String, String> variables = new HashMap<>();
         variables.put("#{변수명1}", "테스트");
@@ -169,7 +169,7 @@ public class KakaoExampleController {
     @PostMapping("/send-cta")
     public SingleMessageSentResponse sendOneCta() {
         KakaoOption kakaoOption = new KakaoOption();
-        // disableSms를 true로 설정하실 경우 문자로 대체발송 되지 않습니다.
+        // disableSms를 true로 setting하실 경우 문자로 대체발송 되지 않습니다.
         // kakaoOption.setDisableSms(true);
 
         // 등록하신 카카오 비즈니스 채널의 pfPlease enter your ID
@@ -245,7 +245,7 @@ public class KakaoExampleController {
         String imageId = this.messageService.uploadFile(file, StorageType.KAKAO, "https://example.com");
 
         KakaoOption kakaoOption = new KakaoOption();
-        // disableSms를 true로 설정하실 경우 문자로 대체발송 되지 않습니다.
+        // disableSms를 true로 setting하실 경우 문자로 대체발송 되지 않습니다.
         // kakaoOption.setDisableSms(true);
 
         // 등록하신 카카오 비즈니스 채널의 pfPlease enter your ID

@@ -54,7 +54,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               Product Price
             </dt>
             <dd class="dd-1 textsize-1 textcolor-black">
-              ${order.payment_price}yen
+              ${order.payment_price}won
             </dd>
           </dl>
           <dl class="dl-dt">
@@ -62,7 +62,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               Product Discount Amount
             </dt>
             <dd class="dd-1 textsize-1 textcolor-black">
-              -${order.discount_price}yen
+              -${order.discount_price}won
             </dd>
           </dl>
           <dl class="dl-dt">
@@ -70,7 +70,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               Shipping Fee
             </dt>
             <dd class="dd-1 textsize-1 textcolor-black">
-              ${order.shippingfee}yen
+              ${order.shippingfee}won
             </dd>
           </dl>
           <dl class="dl-dt">
@@ -92,7 +92,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               Total PaymentPrice
             </dt>
             <dd class="dd-1 textsize-1 textcolor-black">
-              ${order.total_price}yen
+              ${order.total_price}won
             </dd>
           </dl>
         </div>

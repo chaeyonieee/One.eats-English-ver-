@@ -142,7 +142,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         </tr>
         <c:set var= "total" value="${total + point.amount}"/>
         </c:forEach>
-        <c:out value="${total}"/>yen
+        <c:out value="${total}"/>won
            </div>
           </div>
          </div>

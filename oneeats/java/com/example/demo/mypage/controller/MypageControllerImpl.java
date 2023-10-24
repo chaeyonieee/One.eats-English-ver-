@@ -588,7 +588,7 @@ public class MypageControllerImpl implements MypageController {
 			condMap.put("memberNo", memberNo);
 			String isBasicAddress = (String) condMap.get("isBasicAddress");
 
-			// 기본 배송지로 설정을 눌렀을 때. 수정 폼에 넣은 주소지가 가장 작은 deliveryNo을 가지게 한다.
+			// 기본 배송지로 setting을 눌렀을 때. 수정 폼에 넣은 주소지가 가장 작은 deliveryNo을 가지게 한다.
 			// 가장 작은 deliveryNo을 가진 배송지를 찾아내서 -> 그 배송지와 deliveryNo을 교환하는 방식.
 			// member 테이블에 해당하는 배송지 정보도 넣는다.
 			if (isBasicAddress != null && isBasicAddress.equals("yes")) {

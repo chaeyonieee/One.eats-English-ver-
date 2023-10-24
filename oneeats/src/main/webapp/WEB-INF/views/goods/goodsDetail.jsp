@@ -150,7 +150,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <section class="css-1ua1wyk">
                   <div class="css-iqoq9n">
                     <c:choose>
-                      <c:when test="${goods.type=='Seller'}">
+                      <c:when test="${goods.type=='Business'}">
                         <div class="goods_detail_description">
                           <dl class="property-flex2">
                             <dt class="property-input-gd">Seller</dt>
@@ -303,40 +303,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           >
                             <!--선택한 상품 옵션이 나타나는 구역 -->
                             <div class="goods_option_rows"></div>
-                            <span
-                              class="property-font3 text-right"
-                              style="
-                                font-size: 16px;
-                                border-top: 1px solid rgb(244, 244, 244);
-                                margin: 12px 0 -10px 0;
-                                padding: 10px 0 10px 0;
-                              "
-                            >
-                              Total Product Price
-                            </span>
-                            <span
-                              class="property-font3 text-right"
-                              style="font-size: 22px; margin-bottom: -10px"
-                              id="payment_price"
-                              >&#8361;0</span
-                            >
-                            <span
-                              class="property-font3 text-right"
-                              style="
-                                font-size: 16px;
-                                border-top: 1px solid rgb(244, 244, 244);
-                                margin: 12px 0 -10px 0;
-                                padding: 10px 0 10px 0;
-                              "
-                            >
-                              Discount price
-                            </span>
-                            <span
-                              class="property-font3 text-right"
-                              style="font-size: 22px; margin-bottom: -10px"
-                              id="discount_price"
-                              >&#8361;0</span
-                            >
 
                             <span
                               class="property-font3 text-right"
@@ -347,7 +313,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                 padding: 10px 0 10px 0;
                               "
                             >
-                              Payment Amount
+                              Total Amount
                             </span>
                             <span
                               class="property-font3 text-right"

@@ -30,7 +30,7 @@ public class ApiController {
 		boolean result = true;
 		ModelAndView mav = new ModelAndView();
 		try {
-			int memberNo = memberService.registerInfoNo(); // 새로운 No
+			int memberNo = memberService.registerInfoNo(); // new로운 No
 			Map memberMap = GeneralFileUploader.getParameterMap(request);
 			memberMap.put("memberNo", memberNo);
 			System.out.println(memberMap);
