@@ -33,8 +33,8 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <div class="div-sib textsize-1">
           <select name="order_search_type">
             <option value="all">Total</option>
-            <option value="orderNo">Order Number</option>
-            <option value="orderer_name">Name of the purchaser</option>
+            <option value="orderNo">Order No</option>
+            <option value="orderer_name">Purchaser</option>
             <option value="orderer_id">ID</option>
           </select>
           <input
@@ -78,7 +78,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   href="${contextPath}/mypage/orderDetail.do?orderNo=${adminOrder.orderNo}"
                 >
                   <c:if test="${adminOrder.gun>1}">
-                    ${adminOrder.goodsName} 외 ${adminOrder.gun-1}건
+                    ${adminOrder.goodsName} and ${adminOrder.gun-1} more
                   </c:if>
                   <c:if test="${adminOrder.gun==1}">
                     ${adminOrder.goodsName}

@@ -122,7 +122,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   type="button"
                   onclick="checkDuplicateId()"
                 >
-                  Duplicate Confirmation
+                Confirmation
                 </button>
               </div>
             </div>
@@ -238,9 +238,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <button
                   class="bg-lightgreen border-0"
                   onclick="fn_open_inzung_row()"
+                  style="height:38px"
                   type="button"
                 >
-                  verification code rquest
+                  Verification 
                 </button>
               </div>
             </div>

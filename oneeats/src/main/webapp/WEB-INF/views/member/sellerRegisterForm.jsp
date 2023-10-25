@@ -501,7 +501,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               type="button"
                               onclick="checkDuplicateId()"
                             >
-                              Duplicate Confirmation
+                              Confirmation
                             </button>
                           </div>
                         </div>

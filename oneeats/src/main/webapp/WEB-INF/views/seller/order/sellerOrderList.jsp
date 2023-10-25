@@ -68,7 +68,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   href="${contextPath}/mypage/orderDetail.do?orderNo=${sellerOrder.orderNo}"
                 >
                   <c:if test="${sellerOrder.gun>1}">
-                    ${sellerOrder.goodsName} 외 ${sellerOrder.gun-1}건
+                    ${sellerOrder.goodsName} and ${sellerOrder.gun-1} more
                   </c:if>
                   <c:if test="${sellerOrder.gun==1}">
                     ${sellerOrder.goodsName}
