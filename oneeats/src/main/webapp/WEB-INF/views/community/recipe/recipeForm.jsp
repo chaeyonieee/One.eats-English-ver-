@@ -233,7 +233,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                 onclick="location.href='${contextPath}/community/recipe/recipeList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" type="submit">Write</button>

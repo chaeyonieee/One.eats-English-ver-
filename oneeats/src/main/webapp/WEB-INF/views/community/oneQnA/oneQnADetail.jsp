@@ -80,7 +80,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
               <div class="col-md"></div>
               <div class="col-md-4">
                 <button class="btn-cancel" onclick="fn_show(1)" type="reset">
-                  Cancle
+                  cancel
                 </button>
                 &nbsp;
                 <button
@@ -173,7 +173,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                       onclick="fn_show('${loop.index+2}')"
                       type="reset"
                     >
-                      Cancle
+                      cancel
                     </button>
                     &nbsp;
                     <button class="btn-write" type="submit">Write</button>

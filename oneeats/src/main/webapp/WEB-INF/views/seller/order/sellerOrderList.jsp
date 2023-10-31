@@ -10,7 +10,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Order/Order</title>
+    <title>Business Order/Payment</title>
     <link rel="stylesheet" href="${contextPath}/css/minzy.css" />
   </head>
   <body>
@@ -18,7 +18,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <form method="post" action="${contextPath}/seller/order/sellerOrderList.do">
       <div class="div-p2">
         <p class="p-1 textsize-2 text-left textcolor-black textbold">
-          Order/Order
+          Order/Payment
         </p>
         <div class="div-sib textsize-1">
           <select name="order_search_type">
@@ -53,7 +53,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <th>ID</th>
         <th style="width: 20%">Order History</th>
         <th>Order Status</th>
-        <th style="width: 10%">Cancle</th>
+        <th style="width: 10%">cancel</th>
       </tr>
       <c:forEach var="sellerOrder" items="${sellerOrderList}">
         <c:choose>
@@ -68,7 +68,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   href="${contextPath}/mypage/orderDetail.do?orderNo=${sellerOrder.orderNo}"
                 >
                   <c:if test="${sellerOrder.gun>1}">
-                    ${sellerOrder.goodsName} 외 ${sellerOrder.gun-1}건
+                    ${sellerOrder.goodsName} and ${sellerOrder.gun-1} more
                   </c:if>
                   <c:if test="${sellerOrder.gun==1}">
                     ${sellerOrder.goodsName}
@@ -79,8 +79,8 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               <td>
                 <a
                   href="javascript:void(0)"
-                  onclick='fn_openalert("Do you want to cancle the order?","${contextPath}/seller/order/sellerOrderCancel.do?orderNo=${sellerOrder.orderNo}")'
-                  >Cancle</a
+                  onclick='fn_openalert("Do you want to cancel the order?","${contextPath}/seller/order/sellerOrderCancel.do?orderNo=${sellerOrder.orderNo}")'
+                  >cancel</a
                 >
               </td>
             </tr>

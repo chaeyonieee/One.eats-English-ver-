@@ -92,7 +92,7 @@
 	<update id="updateDeliveryStatusToCancel" parameterType="int">
 		<![CDATA[
 			update t_order
-	     	set delivery_status='Cancle Complete'
+	     	set delivery_status='cancel Complete'
 	     	where order_seqNo=#{order_seqNo}
 		]]>
 	</update>

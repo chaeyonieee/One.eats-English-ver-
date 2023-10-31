@@ -68,7 +68,7 @@
 <!-- Order/Order -->
     <definition name="/admin/order/adminOrderList" extends="mainLayout">
        <put-attribute name="side" value="/WEB-INF/views/common/sidebar_admin.jsp" />
-       <put-attribute name="title" value="Admin Order/Order page" />
+       <put-attribute name="title" value="Admin Order/Payment page" />
        <put-attribute name="body" value="/WEB-INF/views/admin/order/adminOrderList.jsp" />
     </definition>
     

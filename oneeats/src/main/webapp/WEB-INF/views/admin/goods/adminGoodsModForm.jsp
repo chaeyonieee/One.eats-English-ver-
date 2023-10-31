@@ -418,7 +418,7 @@ ${sellerGoods.description}
                       style="width: 120px"
                       onclick="location.href='${contextPath}/admin/goods/adminGoodsList.do'"
                     >
-                      <span class="css-nytqmg textbold">Cancle</span>
+                      <span class="css-nytqmg textbold">cancel</span>
                     </button>
                   </div>
                   <!--중간부분-->

@@ -446,7 +446,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           class="btn-1 btn-regular bg-white textcolor-black btn-border"
           type="reset"
         >
-          Cancle
+          cancel
         </button>
         <button
           class="btn-1 btn-regular bg-lightgreen textbold border-0"

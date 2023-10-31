@@ -22,10 +22,10 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       <div class="div-sib textsize-1">
         <button
           class="btn-3 textcolor-black border-0"
-          onclick='fn_openalert("Do you want to cancle the order?","${contextPath}/mypage/orderCancel.do?orderNo=${order.orderNo}")'
+          onclick='fn_openalert("Do you want to cancel the order?","${contextPath}/mypage/orderCancel.do?orderNo=${order.orderNo}")'
           type="button"
         >
-          Order Cancle
+          Order cancel
         </button>
       </div>
     </div>
@@ -74,9 +74,9 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
             </dd>
           </dl>
           <dl class="dl-dt">
-            <dt class="dt-1 textsize-1 textbold textcolor-black">Rewards액</dt>
+            <dt class="dt-1 textsize-1 textbold textcolor-black">Rewards Point</dt>
             <dd class="dd-1 textsize-1 textcolor-black">
-              ${order.point_price}원
+              ${order.point_price}won
             </dd>
           </dl>
           <dl class="dl-dt">
@@ -136,7 +136,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <span class="textcolor-black textbold">Order Information</span>
         <span>${order.delivery_status}</span>
         <a
-          class="bg-lightgreen border-0 textsize-1 float-right btn-5 d-flex align-items-center justify-content-center"
+          class="bg-lightgreen border-0 textsize-1 float-right btn-5 d-flex align-items-center justify-content-center" style="color: #333333"
           href="https://tracker.delivery/#/kr.epost/1111111111111"
           target="_blank"
           >Order Inquiry</a
@@ -204,7 +204,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               </dl>
               <dl class="dl-dt">
                 <dt class="dt-2 textsize-1 textcolor-black">
-                  \${detail.goodsPrice} | ${detail.weight}g ${detail.goods_qty}
+                  &#8361;${detail.goodsPrice} | ${detail.weight}g ${detail.goods_qty}
                 </dt>
               </dl>
             </div>

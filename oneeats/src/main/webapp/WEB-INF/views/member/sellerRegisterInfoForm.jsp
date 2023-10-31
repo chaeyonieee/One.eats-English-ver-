@@ -44,7 +44,7 @@
         <input class =" brd-lightgray btn-round btn-midlong-input textsize-1 border-0.5" name="id" placeholder=" ID를 입력해 주세요." type="text"></input>
             &nbsp
             <button class = "btn-fatfat-mina bg-lightgreen textbold textsize-0 border-0 btn-round">
-                Duplicate Confirmation
+               Confirmation
             </button>
             <br>
             <p class = " text-left textsize-1 margin1 textbold">Password<span class="textcolor-red">*</span></p>
@@ -63,7 +63,7 @@
             <input class ="brd-lightgray btn-round btn-midlong-input textsize-1 " name="phone" placeholder="Please enter your phone number" type="text"></input>
             &nbsp
             <button class = "btn-fatfat-mina bg-lightgreen textsize-0 border-0 margin btn-round textbold">
-                verification code rquest
+                verification 
             </button><br>
             <input class ="brd-lightgray btn-round btn-midlong bg-lightgray border-0 textsize-1 margin1 " placeholder="Please enter the verification code." type="text"></input>
             <p class = "textsize-0 margin-id">If you haven't received the verification code, 통신사 수신 차단 혹은 Phone Number 번호</p>

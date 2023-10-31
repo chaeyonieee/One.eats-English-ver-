@@ -80,7 +80,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
 
     <button
       style="font-size: 12px; margin-top: 22px; float: right"
-      class="btn-1 bg-lightgreen  border-0"
+      class="btn-2 bg-lightgreen  border-0"
       type="button"
       onclick="location.href='${contextPath}/seller/coupon/sellerCouponForm.do'"
     >

@@ -65,7 +65,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
             alt=""
           />
           &nbsp;
-          <span>Order/Order Management</span>
+          <span>Order/Payment Management</span>
         </a>
       </div>
       <div>&nbsp;</div>

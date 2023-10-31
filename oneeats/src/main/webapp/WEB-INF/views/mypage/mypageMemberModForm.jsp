@@ -39,7 +39,7 @@
              <input class ="textpoint-center brd-lightgray btn-round btn-midlong textsize-1" name ="inputPwd" placeholder="Please enter your current Password." type="password"></input>
             </div>
         </div>
-            <button type="reset" class="btn-midlong_2 textsize-1 textbold input btn-round border-0">Cancle</button>
+            <button type="reset" class="btn-midlong_2 textsize-1 textbold input btn-round border-0">cancel</button>
             <button type="submit" class="btn-midlong_2 textsize-1 bg-lightgreen textbold input btn-round border-0">Confirm</button>
         </div>
     </div>

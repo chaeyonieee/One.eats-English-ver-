@@ -25,8 +25,8 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         >
           <select name="hotdeal_search_type">
             <option value="all">Total</option>
-            <option value="creDate">Registration Date</option>
-            <option value="name">Hot DealProduct Name</option>
+            <option value="creDate">Date</option>
+            <option value="name">Product Name</option>
           </select>
           <input
             type="text"
