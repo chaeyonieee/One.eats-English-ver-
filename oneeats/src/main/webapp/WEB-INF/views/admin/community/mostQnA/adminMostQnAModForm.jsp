@@ -84,7 +84,7 @@ ${mostQnA.content}</textarea
                 onclick="location.href='${contextPath}/admin/community/mostQnA/adminMostQnAList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" onclick="" type="submit">Write</button>

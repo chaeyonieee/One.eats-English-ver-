@@ -6,7 +6,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
     <p id="alert_message">Notification Message</p>
   </div>
   <div class="btn-group">
-    <button class="btn-second">Cancle</button>
+    <button class="btn-second">cancel</button>
     <button class="btn-primary">Confirm</button>
   </div>
 </div>

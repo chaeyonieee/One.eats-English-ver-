@@ -105,7 +105,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
             class="btn textcolor-lightgray border-0 m-0"
             onclick="closeModal();"
           >
-            Cancle
+            cancel
           </button>
           <button id="confirm-button" class="btn textcolor-green border-0 m-0">
             Confirm

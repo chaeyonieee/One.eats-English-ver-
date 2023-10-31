@@ -23,8 +23,8 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         >
           <select name="goods_search_type">
             <option value="all">Total</option>
-            <option value="memberNo">Business Number</option>
-            <option value="name">Product Name</option>
+            <option value="memberNo">Number</option>
+            <option value="name">Name</option>
             <option value="seller_id">ID</option>
             <option value="creDate">Registration Date</option>
           </select>

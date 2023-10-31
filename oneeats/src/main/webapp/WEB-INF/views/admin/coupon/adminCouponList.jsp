@@ -23,9 +23,9 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <div class="div-sib textsize-1">
           <select name="coupon_search_type">
             <option value="all">Total</option>
-            <option value="couponNo">Coupon Number</option>
-            <option value="name">Coupon Name</option>
-            <option value="memberName">Usage Location</option>
+            <option value="couponNo">Number</option>
+            <option value="name">Name</option>
+            <option value="memberName">Location</option>
           </select>
           <input
             type="search"

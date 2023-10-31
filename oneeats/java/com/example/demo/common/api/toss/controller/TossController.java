@@ -107,7 +107,7 @@ public class TossController {
 		String paymentType = request.getParameter("paymentType");
 		String secretKey = TOSS_SECRET + ":";
 
-		// 부분 Cancle에서만 사용
+		// 부분 cancel에서만 사용
 //		String cancelAmount = "300";
 
 

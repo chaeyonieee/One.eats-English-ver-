@@ -51,14 +51,14 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               <option value="Select a usage conditions">
                 Select a usage conditions
               </option>
-              <option value="more than 1000won">
-                Purchase more than 1000won
+              <option value="more than 10000won">
+                Purchase more than 10000won
               </option>
-              <option value="Purchase more than 3000won">
-                Purchase more than 3000won
+              <option value="Purchase more than 30000won">
+                Purchase more than 30000won
               </option>
-              <option value="Purchase more than 3000won">
-                Purchase more than 5000won
+              <option value="Purchase more than 30000won">
+                Purchase more than 50000won
               </option>
             </select>
           </td>

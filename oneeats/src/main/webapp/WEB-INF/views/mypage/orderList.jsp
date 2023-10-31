@@ -108,7 +108,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   type="button"
                   onclick="location.href='${contextPath}/mypage/orderCancel.do?orderNo=${order.orderNo}'"
                 >
-                  <span>Cancle</span>
+                  <span>cancel</span>
                 </button>
               </div>
             </div>

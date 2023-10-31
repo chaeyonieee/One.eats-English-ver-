@@ -226,7 +226,7 @@ ${recipe.description}</textarea
                 onclick="location.href='${contextPath}/community/recipe/recipeList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" type="submit">Write</button>

@@ -75,7 +75,7 @@ ${notice.content}</textarea
                 onclick="location.href='${contextPath}/admin/community/notice/adminNoticeList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" onclick="" type="submit">Write</button>

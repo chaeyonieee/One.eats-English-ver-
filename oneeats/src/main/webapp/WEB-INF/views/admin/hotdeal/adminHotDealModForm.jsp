@@ -343,7 +343,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       radius="3"
                       style="width: 120px"
                     >
-                      <span class="css-nytqmg textbold">Hot Deal Modify</span>
+                      <span class="css-nytqmg textbold">Modify</span>
                     </button>
                   </div>
                 </section>

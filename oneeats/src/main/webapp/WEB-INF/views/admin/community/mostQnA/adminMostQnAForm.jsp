@@ -74,7 +74,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                 onclick="location.href='${contextPath}/admin/community/mostQnA/adminMostQnAList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" type="submit">Write</button>

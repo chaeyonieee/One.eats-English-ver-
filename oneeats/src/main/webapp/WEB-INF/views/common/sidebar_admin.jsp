@@ -90,7 +90,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
               <div style="margin-right: 12px">
                 <div class="textbold" style="width: 100%">
                   <a href="${contextPath}/admin/order/adminOrderList.do"
-                    >Order/Order</a
+                    >Order/Payment</a
                   >
                 </div>
               </div>

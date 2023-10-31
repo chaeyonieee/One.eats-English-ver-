@@ -209,7 +209,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               type="reset"
               class="btn-midlong_2 textsize-1 textbold input btn-round border-0"
             >
-              Cancle
+              cancel
             </button>
             <button
               type="submit"

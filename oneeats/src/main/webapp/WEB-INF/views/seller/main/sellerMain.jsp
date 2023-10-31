@@ -53,7 +53,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
             alt=""
           />
           &nbsp;
-          <span>Order/OrderManagement</span>
+          <span>Order/Payment Management</span>
         </a>
         <a
           href="${contextPath}/seller/hotdeal/sellerHotDealList.do"

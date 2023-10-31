@@ -50,7 +50,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
               <input type="text" name="filter_word" class="form-control" />
               <div class="input-group-append">
                 <button
-                  class="bg-lightgreen border-0 textsize-2"
+                  class="bg-lightgreen border-0 textsize-1"
                   style="width: 60px"
                   type="submit"
                 >

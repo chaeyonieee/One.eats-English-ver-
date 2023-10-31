@@ -58,7 +58,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                 onclick="location.href='${contextPath}/community/oneQnA/oneQnAList.do'"
                 type="reset"
               >
-                Cancle
+                cancel
               </button>
               &nbsp;
               <button class="btn-write" onclick="" type="submit">Write</button>

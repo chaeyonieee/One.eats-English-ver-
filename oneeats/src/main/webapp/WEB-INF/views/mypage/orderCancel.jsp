@@ -10,14 +10,14 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrderCancle</title>
+    <title>Ordercancel</title>
     <link rel="stylesheet" href="${contextPath}/css/minzy.css" />
   </head>
   <body>
-    <!-- OrderCancle -->
+    <!-- Ordercancel -->
     <div class="div-p">
       <p class="p-1 textsize-2 text-left textcolor-black textbold">
-        OrderCancle
+        Ordercancel
       </p>
     </div>
 
@@ -102,10 +102,10 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
       </div>
     </div>
 
-    <!-- CancleProduct -->
+    <!-- cancelProduct -->
     <div class="div-tot">
       <div class="div-t1 textbold textcolor-black textsize-1">
-        <span>CancleProduct</span>
+        <span>cancelProduct</span>
       </div>
       <c:forEach var="cancel" items="${orderCancel}">
         <div class="div-t2">
@@ -123,7 +123,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               </dl>
               <dl class="dl-dt">
                 <dt class="dt-2 textsize-1 textcolor-black">
-                  \${cancel.goodsPrice} | ${cancel.weight}g ${cancel.goods_qty}
+                  &#8361;${cancel.goodsPrice} | ${cancel.weight}g ${cancel.goods_qty}
                 </dt>
               </dl>
             </div>
@@ -176,14 +176,14 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         </form>
       </div>
     </div>
-    <!-- OrderCancle버튼 -->
+    <!-- Ordercancel버튼 -->
     <div class="div-btn">
       <button
-        class="btn-4 btn-regular bg-lightgreen textcolor-white textbold border-0"
-        onclick='fn_openalert("Do you want to cancle the order?","${contextPath}/toss/orderCancel.do",fn_cancel)'
+        class="btn-4 btn-regular bg-lightgreen textbold border-0"
+        onclick='fn_openalert("Do you want to cancel the order?","${contextPath}/toss/orderCancel.do",fn_cancel)'
         type="button"
       >
-        Cancle
+        cancel
       </button>
     </div>
   </body>

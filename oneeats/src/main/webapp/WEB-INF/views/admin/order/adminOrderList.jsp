@@ -10,7 +10,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Order/Order</title>
+    <title>Admin Order/Payment</title>
     <link rel="stylesheet" href="${contextPath}/css/minzy.css" />
     <script>
       $(document).ready(function () {
@@ -28,7 +28,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
     <form method="post" action="${contextPath}/admin/order/adminOrderList.do">
       <div class="div-p2">
         <p class="p-1 textsize-2 text-left textcolor-black textbold">
-          Order/Order
+          Order/Payment
         </p>
         <div class="div-sib textsize-1">
           <select name="order_search_type">
@@ -63,7 +63,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
         <th>ID</th>
         <th style="width: 20%">Order History</th>
         <th>Order Status</th>
-        <th style="width: 10%">Cancle</th>
+        <th style="width: 10%">cancel</th>
       </tr>
       <c:forEach var="adminOrder" items="${adminOrderList}">
         <c:choose>
@@ -94,7 +94,7 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
                   />
                   <c:set
                     var="status_array"
-                    value="${['Payment Complete','Order in process','Delivery completed','Cancle Complete']}"
+                    value="${['Payment Complete','Order in process','Delivery completed','cancel Complete']}"
                   />
                   <select name="delivery_status">
                     <c:forEach items="${status_array}" var="i">
@@ -113,8 +113,8 @@ pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib prefix ="fmt" uri
               <td>
                 <a
                   href="javascript:void(0)"
-                  onclick='fn_openalert("Do you want to cancle the order?","${contextPath}/admin/order/adminOrderCancel.do?orderNo=${adminOrder.orderNo}")'
-                  >Cancle</a
+                  onclick='fn_openalert("Do you want to cancel the order?","${contextPath}/admin/order/adminOrderCancel.do?orderNo=${adminOrder.orderNo}")'
+                  >cancel</a
                 >
               </td>
             </tr>
