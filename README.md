@@ -9,7 +9,7 @@ Hwang Chaeyeon (myself), Choi Mina, Han Yeji ,Kang Minji
 https://docs.google.com/presentation/d/1wQYtMzdymeWPGMnCWv6PBOkQBbNFcg5TeU-6Kv_tMfs/edit?usp=sharing
 
 ### Final Project Notion(What I felt about this Project)
-[https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4](https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4)
+[[https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4](https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4)](https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4)
 <br>
 
 ### Final Project
