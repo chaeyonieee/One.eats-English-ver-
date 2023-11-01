@@ -13,7 +13,13 @@ https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9
 <br>
 
 ### Final Project
-<img width="4768" alt="diagram (1)" src="https://github.com/remonpie1814/shoppingmall/assets/108705125/d649b00d-6106-4194-8d55-595d9bfdd1ca">
+User
+<img width="5344" alt="user pics" src="https://github.com/chaeyonieee/One.eats-English-ver-/assets/141098135/5c89eafa-c958-4566-8786-e6c375e96e84">
+Businessman
+<img width="3296" alt="Business pics" src="https://github.com/chaeyonieee/One.eats-English-ver-/assets/141098135/27305e0a-6f4b-481d-80ca-385b3df327e1">
+Administrator
+<img width="4816" alt="admin pics" src="https://github.com/chaeyonieee/One.eats-English-ver-/assets/141098135/0460a571-f6a8-42c8-82b1-c43f3a7c9a77">
+
 According to statistics, the number of single-person households has exceeded 7 million last year, and the trend is continuously increasing over the past 5 years. It is expected that the number of single-person households will continue to grow in the future. <br><br>
 Additionally, according to the Ministry of Environment, 70% of food waste comes from households and small restaurants, and the amount of uneaten food waste reaches 30%, leading to serious environmental pollution annually. <br><br>
 Lastly, compared to before the COVID-19 pandemic, the number of single-person households dining out at least once a week has increased by 40%, and households that cook at home have decreased by 20%, resulting in an increase in the ratio of delivery and takeaway food for single-person households. <br><br>
@@ -29,7 +35,7 @@ To address this, we aimed to sell "ugly" produce. By contracting directly with f
 <br><br>
 
 ### Technology Stack
-<img width="3360" alt="diagram" src="https://github.com/remonpie1814/shoppingmall/assets/108705125/3ff97399-0efd-4b44-b1f3-75c7ac7b8982">
+<img width="3288" alt="Untitled (4)" src="https://github.com/chaeyonieee/One.eats-English-ver-/assets/141098135/65a90551-6007-4117-99ec-a8283961de57">
 Integrated Development Environment (IDE): STS version 4 <br> <br>
 Frameworks: Spring Boot, Bootstrap, MyBatis <br> <br>
 Database: MySQL version 8 <br> <br>
