@@ -6,7 +6,7 @@ Hwang Chaeyeon (myself), Choi Mina, Han Yeji ,Kang Minji
 
 
 ### Final Project PPT
-[https://docs.google.com/presentation/d/1J-PL0NV9SaZfiEgFh2mzPpsb4jInlQHayPuv9VKQ-YM/edit?usp=sharing](https://docs.google.com/presentation/d/1V9tuWyzpFg_7o7kB4mSv15HBjInJlAOzdr2AgGf96_E/edit?usp=sharing)
+https://docs.google.com/presentation/d/1wQYtMzdymeWPGMnCWv6PBOkQBbNFcg5TeU-6Kv_tMfs/edit?usp=sharing
 
 ### Final Project Notion
 https://translucent-watchmaker-61e.notion.site/Team-project-One-EATS-f015e968ab9b4b5cb118013aceccef88?pvs=4
